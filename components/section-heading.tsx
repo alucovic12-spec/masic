@@ -34,7 +34,7 @@ export function SectionHeading({
     <div className={cn('flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between', className)}>
       <div className="max-w-2xl">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h2 id={id} className="mt-5 font-serif text-4xl leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
+        <h2 id={id} className="mt-5 font-display text-4xl leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
           {title}
         </h2>
       </div>

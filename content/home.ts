@@ -65,9 +65,9 @@ export const home: HomeContent = {
     },
     dishes: [
       { menuItemId: 'hercegovacka-plata', image: images.plata },
-      { menuItemId: 'ramstek', image: images.steak },
-      { menuItemId: 'teletina-peka', image: images.peka },
-      { menuItemId: 'cevapi', image: images.cevapi },
+      { menuItemId: 'ramstek' },
+      { menuItemId: 'teletina-peka' },
+      { menuItemId: 'cevapi' },
     ],
   },
   menuPreview: {
@@ -79,7 +79,7 @@ export const home: HomeContent = {
     },
     menuItemIds: ['ustipci', 'mijesano-meso', 'svinjetina-peka', 'becki-odrezak', 'pite', 'blatina'],
     cta: { hr: 'Cijeli jelovnik', en: 'Full menu' },
-    image: images.plata,
+    image: images.sok,
   },
   atmosphere: {
     eyebrow: { hr: 'Atmosfera', en: 'Atmosphere' },
@@ -88,7 +88,7 @@ export const home: HomeContent = {
       hr: 'Ručak na putu za Blidinje, večera u dvoje ili krizma, krštenje i proslava za 50 gostiju — u svijetloj blagovaonici ili na ostakljenoj terasi.',
       en: 'Lunch on the way to Blidinje, dinner for two, or a christening or family celebration for 50 — in the bright dining room or on the glass-enclosed terrace.',
     },
-    galleryImageIds: ['stol', 'terasa', 'vanjski'],
+    galleryImageIds: ['terasa', 'vanjski', 'koktel'],
     cta: { hr: 'Pogledaj galeriju', en: 'View the gallery' },
   },
   reviews: {
@@ -145,6 +145,6 @@ export const home: HomeContent = {
       hr: 'Jela dana, sezonske novosti i Rakitno kroz godišnja doba.',
       en: 'Dishes of the day, seasonal news and Rakitno through the seasons.',
     },
-    galleryImageIds: ['plata', 'koktel', 'zima', 'sok'],
+    galleryImageIds: ['zima'],
   },
 }

@@ -1,16 +1,9 @@
-import { Fraunces, Inter } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 
-export const fraunces = Fraunces({
+export const manrope = Manrope({
   subsets: ['latin', 'latin-ext'],
-  style: ['normal', 'italic'],
-  variable: '--font-fraunces',
+  variable: '--font-manrope',
   display: 'swap',
 })
 
-export const inter = Inter({
-  subsets: ['latin', 'latin-ext'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-export const fontVariables = `${fraunces.variable} ${inter.variable}`
+export const fontVariables = manrope.variable

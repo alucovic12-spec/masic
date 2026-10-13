@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { MenuItemRow } from '@/components/menu/menu-item-row'
-import { MenuLegend } from '@/components/menu/menu-legend'
 import { PageHeader } from '@/components/page-header'
 import { menuCategories } from '@/content/menu'
 import { pageSeo } from '@/content/site'
@@ -51,13 +50,13 @@ export default async function MenuPage({ params }: PageProps<'/[locale]/menu'>) 
         </ul>
       </nav>
 
-      <div className="shell grid gap-16 py-20 md:py-28 lg:grid-cols-12 lg:gap-8">
-        <div className="flex flex-col gap-20 lg:col-span-8">
+      <div className="shell py-20 md:py-28">
+        <div className="mx-auto flex max-w-4xl flex-col gap-20">
           {menuCategories.map((category, i) => (
             <section key={category.id} id={category.id} aria-labelledby={`${category.id}-title`} className="scroll-mt-40">
               <div className="flex items-baseline gap-4 border-b border-charcoal pb-4">
                 <span className="text-xs tracking-[0.2em] text-terracotta">{String(i + 1).padStart(2, '0')}</span>
-                <h2 id={`${category.id}-title`} className="font-serif text-3xl md:text-4xl">
+                <h2 id={`${category.id}-title`} className="font-display text-3xl md:text-4xl">
                   {category.title[locale]}
                 </h2>
               </div>
@@ -69,10 +68,8 @@ export default async function MenuPage({ params }: PageProps<'/[locale]/menu'>) 
               </div>
             </section>
           ))}
+          <p className="border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground">{t.menu.priceNote}</p>
         </div>
-        <aside className="lg:col-span-4">
-          <MenuLegend locale={locale} className="lg:sticky lg:top-40" />
-        </aside>
       </div>
     </>
   )

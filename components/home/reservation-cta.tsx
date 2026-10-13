@@ -14,7 +14,7 @@ export function ReservationCta({ locale }: { locale: Locale }) {
       <div className="shell flex flex-col gap-12 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
           <Eyebrow className="text-ivory/80">{reservation.eyebrow[locale]}</Eyebrow>
-          <h2 id="reservation-title" className="mt-6 font-serif text-5xl leading-[1] tracking-tight md:text-7xl">
+          <h2 id="reservation-title" className="mt-6 font-display text-5xl leading-[1] tracking-tight md:text-7xl">
             {reservation.title[locale]}
           </h2>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-ivory/85">{reservation.body[locale]}</p>

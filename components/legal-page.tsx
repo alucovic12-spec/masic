@@ -18,7 +18,7 @@ export function LegalPage({ doc, locale }: { doc: LegalDocument; locale: Locale 
           <p className="mt-6 text-lg leading-relaxed">{doc.intro[locale]}</p>
           {doc.sections.map((section) => (
             <section key={section.heading.en} className="mt-12">
-              <h2 className="font-serif text-2xl md:text-3xl">{section.heading[locale]}</h2>
+              <h2 className="font-display text-2xl md:text-3xl">{section.heading[locale]}</h2>
               <div className="mt-4 flex flex-col gap-4 leading-relaxed text-foreground/80">
                 {section.body[locale].map((p) => (
                   <p key={p}>{p}</p>

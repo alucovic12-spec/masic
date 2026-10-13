@@ -18,7 +18,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         <div className="flex flex-col gap-10 border-b border-ivory/15 pb-16 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <Wordmark size="lg" />
-            <p className="mt-6 max-w-md font-serif text-xl italic text-ivory/80">{site.tagline[locale]}</p>
+            <p className="mt-6 max-w-md font-display text-xl font-medium text-ivory/80">{site.tagline[locale]}</p>
           </div>
           <Link href={`${localePath(locale, routes.contact)}#rezervacija`} className={actionStyles('primary', 'self-start lg:self-auto')}>
             {t.reserve}
@@ -67,7 +67,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
               href={site.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-block font-serif text-2xl transition-opacity hover:opacity-80"
+              className="mt-5 inline-block font-display text-2xl transition-opacity hover:opacity-80"
             >
               {site.instagram.handle}
               <span className="sr-only"> {t.contact.opensInNewTab}</span>

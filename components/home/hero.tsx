@@ -30,10 +30,10 @@ export function Hero({ locale }: { locale: Locale }) {
           <Eyebrow className="animate-rise text-ivory/80">{hero.eyebrow[locale]}</Eyebrow>
           <h1
             id="hero-title"
-            className="mt-8 font-serif text-[clamp(3rem,8vw,7.5rem)] leading-[0.95] tracking-tight"
+            className="mt-8 font-display text-[clamp(2.75rem,7vw,6.5rem)] leading-[0.98] tracking-[-0.04em]"
           >
-            <span className="block animate-rise [animation-delay:120ms]">{hero.titleLine1[locale]}</span>
-            <span className="block animate-rise italic text-ivory/85 [animation-delay:240ms]">{hero.titleLine2[locale]}</span>
+            <span className="block animate-rise font-extrabold [animation-delay:120ms]">{hero.titleLine1[locale]}</span>
+            <span className="block animate-rise font-light text-ivory/85 [animation-delay:240ms]">{hero.titleLine2[locale]}</span>
           </h1>
           <p className="mt-8 max-w-xl animate-rise text-lg leading-relaxed text-ivory/80 [animation-delay:360ms] md:text-xl">
             {hero.lead[locale]}

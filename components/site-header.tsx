@@ -142,7 +142,7 @@ export function SiteHeader({
                     href={item.href}
                     onClick={() => setOpen(false)}
                     aria-current={isActive(item.href) ? 'page' : undefined}
-                    className="flex items-baseline gap-4 py-4 font-serif text-4xl"
+                    className="flex items-baseline gap-4 py-4 font-display text-4xl"
                   >
                     <span className="font-sans text-xs tracking-[0.2em] text-ivory/50">
                       {String(i + 1).padStart(2, '0')}

@@ -84,8 +84,8 @@ export const pageSeo: Record<'menu' | 'gallery' | 'contact', SeoFields> = {
   menu: {
     title: { hr: 'Jelovnik', en: 'Menu' },
     description: {
-      hr: 'Jelovnik Restorana Mašić: hercegovačka plata, uštipci, ćevapi i roštilj sa žara, teletina ispod peke, pite i domaći kruh — s alergenima i cijenama.',
-      en: 'The Restoran Mašić menu: Herzegovinian platter, uštipci, ćevapi and charcoal grill, veal under the peka, pies and homemade bread — with allergens and prices.',
+      hr: 'Jelovnik Restorana Mašić: hercegovačka plata, uštipci, ćevapi i roštilj sa žara, teletina ispod peke, pite i domaći kruh — s cijenama.',
+      en: 'The Restoran Mašić menu: Herzegovinian platter, uštipci, ćevapi and charcoal grill, veal under the peka, pies and homemade bread — with prices.',
     },
     image: images.plata,
   },

@@ -1,10 +1,8 @@
-import type { AllergenCode, DietaryTag, MenuCategory, MenuItem } from './types'
-import type { Localized } from '@/lib/i18n'
+import type { MenuCategory, MenuItem } from './types'
 
 /**
  * Menu data. Dishes follow the restaurant's known offer (press and Instagram);
  * prices are indicative in KM (BAM) and must be confirmed by the restaurant.
- * Allergen codes follow the 14 standard allergens.
  */
 export const menuCategories: MenuCategory[] = [
   {
@@ -24,8 +22,6 @@ export const menuCategories: MenuCategory[] = [
         },
         price: 30,
         unit: { hr: 'za dvoje', en: 'for two' },
-        allergens: ['gluten', 'milk', 'nuts'],
-        dietary: [],
         signature: true,
       },
       {
@@ -36,8 +32,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Crisp homemade fried dough with fresh kajmak and young cheese.',
         },
         price: 9,
-        allergens: ['gluten', 'milk'],
-        dietary: ['vegetarian'],
       },
       {
         id: 'jaja-sir',
@@ -47,8 +41,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Farm eggs baked with fresh cheese, with bread from our own bakery.',
         },
         price: 8,
-        allergens: ['eggs', 'milk', 'gluten'],
-        dietary: ['vegetarian'],
       },
       {
         id: 'teleca-corba',
@@ -58,8 +50,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'A hearty home-style soup of veal and vegetables.',
         },
         price: 6,
-        allergens: ['celery', 'gluten'],
-        dietary: [],
       },
     ],
   },
@@ -79,8 +69,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Ten ćevapi in warm somun flatbread, with kajmak and onion.',
         },
         price: 11,
-        allergens: ['gluten', 'milk'],
-        dietary: [],
         signature: true,
       },
       {
@@ -91,8 +79,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Grilled beef rump, roast potato wedges, mushrooms and peppers, with homemade sauces.',
         },
         price: 32,
-        allergens: ['mustard'],
-        dietary: ['glutenFree'],
         signature: true,
       },
       {
@@ -103,8 +89,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Juicy pljeskavica filled with cheese and kajmak, with fries and salad.',
         },
         price: 14,
-        allergens: ['gluten', 'milk'],
-        dietary: [],
       },
       {
         id: 'mijesano-meso',
@@ -115,8 +99,6 @@ export const menuCategories: MenuCategory[] = [
         },
         price: 45,
         unit: { hr: 'za dvoje', en: 'for two' },
-        allergens: ['gluten', 'milk', 'mustard'],
-        dietary: [],
       },
       {
         id: 'raznjici',
@@ -126,8 +108,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Local pork on skewers, roast potatoes and ajvar.',
         },
         price: 15,
-        allergens: [],
-        dietary: ['glutenFree'],
       },
       {
         id: 'ljuta-kobasica',
@@ -137,8 +117,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Grilled house sausage, mustard and roast potatoes. Also available spicy.',
         },
         price: 12,
-        allergens: ['mustard'],
-        dietary: ['spicy', 'glutenFree'],
       },
     ],
   },
@@ -159,8 +137,6 @@ export const menuCategories: MenuCategory[] = [
         },
         price: 70,
         unit: { hr: 'za dvoje', en: 'for two' },
-        allergens: [],
-        dietary: ['glutenFree'],
         signature: true,
       },
       {
@@ -172,8 +148,6 @@ export const menuCategories: MenuCategory[] = [
         },
         price: 60,
         unit: { hr: 'za dvoje', en: 'for two' },
-        allergens: [],
-        dietary: ['glutenFree'],
       },
       {
         id: 'kruh-peka',
@@ -183,8 +157,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Bread the way our grandmothers baked it — crisp crust, soft inside.',
         },
         price: 5,
-        allergens: ['gluten'],
-        dietary: ['vegan'],
       },
     ],
   },
@@ -204,8 +176,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'A different home-cooked stew every day — ask your server.',
         },
         price: 12,
-        allergens: ['celery'],
-        dietary: [],
       },
       {
         id: 'becki-odrezak',
@@ -215,8 +185,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Breaded veal, fries and seasonal salad.',
         },
         price: 18,
-        allergens: ['gluten', 'eggs', 'milk'],
-        dietary: [],
       },
       {
         id: 'zapeceni-makaroni',
@@ -226,8 +194,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Macaroni baked with minced meat, eggs and cheese.',
         },
         price: 12,
-        allergens: ['gluten', 'eggs', 'milk'],
-        dietary: [],
       },
       {
         id: 'pite',
@@ -237,8 +203,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Potato, cheese or spinach pie made from hand-stretched pastry.',
         },
         price: 8,
-        allergens: ['gluten', 'milk', 'eggs'],
-        dietary: ['vegetarian'],
       },
     ],
   },
@@ -251,32 +215,24 @@ export const menuCategories: MenuCategory[] = [
         name: { hr: 'Pečeni krumpir', en: 'Roast potato wedges' },
         description: { hr: 'Sa začinskim biljem.', en: 'With herbs.' },
         price: 5,
-        allergens: [],
-        dietary: ['vegan', 'glutenFree'],
       },
       {
         id: 'gljive-povrce',
         name: { hr: 'Gljive i povrće s gradele', en: 'Grilled mushrooms and vegetables' },
         description: { hr: 'Šampinjoni i paprike sa žara.', en: 'Mushrooms and peppers from the grill.' },
         price: 6,
-        allergens: [],
-        dietary: ['vegan', 'glutenFree'],
       },
       {
         id: 'salata',
         name: { hr: 'Sezonska salata', en: 'Seasonal salad' },
         description: { hr: 'Domaće povrće iz okolice.', en: 'Local vegetables from nearby.' },
         price: 4,
-        allergens: [],
-        dietary: ['vegan', 'glutenFree'],
       },
       {
         id: 'kruh',
         name: { hr: 'Kruh iz naše pekarne', en: 'Bread from our bakery' },
         description: { hr: 'Pečen svako jutro.', en: 'Baked fresh every morning.' },
         price: 2,
-        allergens: ['gluten'],
-        dietary: ['vegan'],
       },
     ],
   },
@@ -296,8 +252,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Thin crêpes with ground walnuts and homemade jam.',
         },
         price: 6,
-        allergens: ['gluten', 'eggs', 'milk', 'nuts'],
-        dietary: ['vegetarian'],
       },
       {
         id: 'baklava',
@@ -307,8 +261,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Thin pastry, walnuts and syrup.',
         },
         price: 5,
-        allergens: ['gluten', 'nuts', 'milk'],
-        dietary: ['vegetarian'],
       },
       {
         id: 'kolac-dana',
@@ -318,8 +270,6 @@ export const menuCategories: MenuCategory[] = [
           en: 'Ask what came out of our oven today.',
         },
         price: 5,
-        allergens: ['gluten', 'eggs', 'milk'],
-        dietary: ['vegetarian'],
       },
     ],
   },
@@ -336,16 +286,12 @@ export const menuCategories: MenuCategory[] = [
         name: { hr: 'Domaća Žilavka', en: 'House Žilavka' },
         description: { hr: 'Bijelo vino iz Čitluka. Čaša 0,2 l.', en: 'White wine from Čitluk. Glass, 0.2 l.' },
         price: 4,
-        allergens: ['sulphites'],
-        dietary: ['vegan', 'glutenFree'],
       },
       {
         id: 'blatina',
         name: { hr: 'Domaća Blatina', en: 'House Blatina' },
         description: { hr: 'Crno vino iz Čitluka. Čaša 0,2 l.', en: 'Red wine from Čitluk. Glass, 0.2 l.' },
         price: 4,
-        allergens: ['sulphites'],
-        dietary: ['vegan', 'glutenFree'],
       },
       {
         id: 'gemist',
@@ -355,16 +301,12 @@ export const menuCategories: MenuCategory[] = [
           en: 'House wine with sparkling or still water.',
         },
         price: 3,
-        allergens: ['sulphites'],
-        dietary: ['vegan', 'glutenFree'],
       },
       {
         id: 'sok-nar',
         name: { hr: 'Domaći sok od nara', en: 'Homemade pomegranate juice' },
         description: { hr: 'Sezonski, prema dostupnosti.', en: 'Seasonal, while available.' },
         price: 5,
-        allergens: [],
-        dietary: ['vegan', 'glutenFree'],
       },
     ],
   },
@@ -376,48 +318,3 @@ export function getMenuItem(id: string): MenuItem | undefined {
   return allMenuItems.find((item) => item.id === id)
 }
 
-const standardAllergenOrder: AllergenCode[] = [
-  'gluten',
-  'crustaceans',
-  'eggs',
-  'fish',
-  'peanuts',
-  'soy',
-  'milk',
-  'nuts',
-  'celery',
-  'mustard',
-  'sesame',
-  'sulphites',
-  'lupin',
-  'molluscs',
-]
-
-const usedAllergens = new Set(allMenuItems.flatMap((item) => item.allergens))
-
-/** Only allergens that actually appear on the menu are listed in the legend. */
-export const allergenOrder: AllergenCode[] = standardAllergenOrder.filter((code) => usedAllergens.has(code))
-
-export const allergenLabels: Record<AllergenCode, Localized> = {
-  gluten: { hr: 'Gluten', en: 'Gluten' },
-  crustaceans: { hr: 'Rakovi', en: 'Crustaceans' },
-  eggs: { hr: 'Jaja', en: 'Eggs' },
-  fish: { hr: 'Riba', en: 'Fish' },
-  peanuts: { hr: 'Kikiriki', en: 'Peanuts' },
-  soy: { hr: 'Soja', en: 'Soy' },
-  milk: { hr: 'Mlijeko', en: 'Milk' },
-  nuts: { hr: 'Orašasti plodovi', en: 'Tree nuts' },
-  celery: { hr: 'Celer', en: 'Celery' },
-  mustard: { hr: 'Gorušica', en: 'Mustard' },
-  sesame: { hr: 'Sezam', en: 'Sesame' },
-  sulphites: { hr: 'Sulfiti', en: 'Sulphites' },
-  lupin: { hr: 'Lupina', en: 'Lupin' },
-  molluscs: { hr: 'Mekušci', en: 'Molluscs' },
-}
-
-export const dietaryLabels: Record<DietaryTag, { short: Localized; label: Localized }> = {
-  vegetarian: { short: { hr: 'V', en: 'V' }, label: { hr: 'Vegetarijansko', en: 'Vegetarian' } },
-  vegan: { short: { hr: 'VG', en: 'VG' }, label: { hr: 'Vegansko', en: 'Vegan' } },
-  glutenFree: { short: { hr: 'BG', en: 'GF' }, label: { hr: 'Bez glutena', en: 'Gluten-free' } },
-  spicy: { short: { hr: 'LJ', en: 'S' }, label: { hr: 'Ljuto', en: 'Spicy' } },
-}

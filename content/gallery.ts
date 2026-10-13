@@ -23,11 +23,6 @@ export const galleryImages: GalleryImage[] = [
     caption: { hr: 'Ostakljena terasa u sumrak', en: 'The glass terrace at dusk' },
   },
   {
-    id: 'peka',
-    image: images.peka,
-    caption: { hr: 'Domaća teletina ispod peke', en: 'Local veal under the peka' },
-  },
-  {
     id: 'vanjski',
     image: images.vanjski,
     caption: { hr: 'Dobro došli u Mašić', en: 'Welcome to Mašić' },
@@ -38,11 +33,6 @@ export const galleryImages: GalleryImage[] = [
     caption: { hr: 'Osvježenje na terasi', en: 'Refreshments on the terrace' },
   },
   {
-    id: 'cevapi',
-    image: images.cevapi,
-    caption: { hr: 'Ćevapi u somunu', en: 'Ćevapi in somun' },
-  },
-  {
     id: 'zima',
     image: images.zima,
     caption: { hr: 'Rakitno pod snijegom', en: 'Rakitno under snow' },
@@ -51,16 +41,6 @@ export const galleryImages: GalleryImage[] = [
     id: 'sok',
     image: images.sok,
     caption: { hr: 'Domaći sok od nara', en: 'Homemade pomegranate juice' },
-  },
-  {
-    id: 'kitchen',
-    image: images.kitchen,
-    caption: { hr: 'Pravi žar, svaki dan', en: 'Real charcoal, every day' },
-  },
-  {
-    id: 'dessert',
-    image: images.dessert,
-    caption: { hr: 'Domaći desert i kava', en: 'Homemade dessert and coffee' },
   },
 ]
 

@@ -29,22 +29,22 @@ export function ConsentBanner({ cookiesHref, labels }: { cookiesHref: string; la
     <section
       role="region"
       aria-labelledby="consent-title"
-      className="fixed inset-x-3 bottom-3 z-[55] max-w-md animate-rise border border-border bg-card p-6 text-card-foreground shadow-[0_20px_60px_-20px_oklch(0.235_0.008_60/0.35)] sm:inset-x-auto sm:left-6 sm:bottom-6"
+      className="fixed inset-x-2 bottom-2 z-[55] animate-rise border border-border bg-card/95 p-3 text-card-foreground shadow-[0_12px_40px_-16px_oklch(0.235_0.008_60/0.4)] backdrop-blur sm:inset-x-auto sm:bottom-4 sm:right-4 sm:max-w-sm sm:p-4"
     >
-      <h2 id="consent-title" className="font-serif text-xl">
+      <h2 id="consent-title" className="sr-only">
         {labels.title}
       </h2>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+      <p className="text-xs leading-relaxed text-muted-foreground">
         {labels.body}{' '}
-        <Link href={cookiesHref} className="underline underline-offset-4 hover:text-foreground">
+        <Link href={cookiesHref} className="whitespace-nowrap underline underline-offset-2 hover:text-foreground">
           {labels.policy}
         </Link>
       </p>
-      <div className="mt-5 flex flex-wrap gap-3">
-        <button type="button" onClick={() => choose('granted')} className={actionStyles('primary', 'min-h-11 px-5')}>
+      <div className="mt-3 flex gap-2">
+        <button type="button" onClick={() => choose('granted')} className={actionStyles('primary', 'min-h-9 flex-1 px-3 text-xs')}>
           {labels.accept}
         </button>
-        <button type="button" onClick={() => choose('denied')} className={actionStyles('outline-dark', 'min-h-11 px-5')}>
+        <button type="button" onClick={() => choose('denied')} className={actionStyles('outline-dark', 'min-h-9 flex-1 px-3 text-xs')}>
           {labels.decline}
         </button>
       </div>

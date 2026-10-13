@@ -14,7 +14,7 @@ export function Visit({ locale }: { locale: Locale }) {
       <div className="shell grid gap-14 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-5">
           <Eyebrow>{visit.eyebrow[locale]}</Eyebrow>
-          <h2 id="visit-title" className="mt-6 font-serif text-4xl leading-[1.05] tracking-tight md:text-6xl">
+          <h2 id="visit-title" className="mt-6 font-display text-4xl leading-[1.05] tracking-tight md:text-6xl">
             {visit.title[locale]}
           </h2>
           {visit.intro && <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">{visit.intro[locale]}</p>}

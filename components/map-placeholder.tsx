@@ -29,7 +29,7 @@ export function MapPlaceholder({ locale, className }: { locale: Locale; classNam
       <MapPin className="size-8" aria-hidden="true" />
       <figcaption className="mt-5 flex flex-col items-center gap-2">
         <span className="text-[0.7rem] uppercase tracking-[0.24em] opacity-75">{t.contact.mapTitle}</span>
-        <span className="font-serif text-2xl">{site.name}</span>
+        <span className="font-display text-2xl">{site.name}</span>
         <span className="text-sm opacity-85">
           {address.street[locale]}, {address.postalCode} {address.city[locale]}
         </span>

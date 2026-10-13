@@ -12,6 +12,7 @@ export function Instagram({ locale }: { locale: Locale }) {
   const { instagram } = home
   const t = ui[locale]
   const photos = getGalleryImages(instagram.galleryImageIds)
+  const single = photos.length === 1
 
   return (
     <section aria-labelledby="instagram-title" className="py-24 md:py-32">
@@ -29,20 +30,20 @@ export function Instagram({ locale }: { locale: Locale }) {
             </a>
           }
         />
-        <ul className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+        <ul className={single ? 'mt-14' : 'mt-14 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4'}>
           {photos.map((photo) => (
             <li key={photo.id}>
               <a
                 href={site.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block aspect-square overflow-hidden"
+                className={`group relative block overflow-hidden ${single ? 'aspect-[4/3] md:aspect-[21/8]' : 'aspect-square'}`}
               >
                 <Image
                   src={photo.image.src}
                   alt={photo.image.alt[locale]}
                   fill
-                  sizes="(min-width: 768px) 25vw, 50vw"
+                  sizes={single ? '100vw' : '(min-width: 768px) 25vw, 50vw'}
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <span className="absolute inset-0 flex items-center justify-center bg-charcoal/0 text-ivory opacity-0 transition-all duration-300 group-hover:bg-charcoal/40 group-hover:opacity-100 group-focus-visible:bg-charcoal/40 group-focus-visible:opacity-100">

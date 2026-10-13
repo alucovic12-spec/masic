@@ -13,7 +13,7 @@ export default function RootRedirect() {
       <meta httpEquiv="refresh" content={`2;url=/${defaultLocale}`} />
       <script dangerouslySetInnerHTML={{ __html: script }} />
       <main className="flex min-h-svh flex-col items-center justify-center gap-6 p-6 text-center">
-        <p className="font-serif text-3xl">{site.name}</p>
+        <p className="font-display text-3xl">{site.name}</p>
         <nav aria-label="Jezik / Language" className="flex gap-6 text-sm tracking-[0.2em]">
           <a href="/hr" hrefLang="hr" className="underline underline-offset-4">
             HRVATSKI

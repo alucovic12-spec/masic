@@ -12,10 +12,10 @@ export function Reviews({ locale }: { locale: Locale }) {
           {reviews.items.map((review) => (
             <li key={review.quote.en}>
               <figure className="flex h-full flex-col border-t border-charcoal/25 pt-8">
-                <span aria-hidden="true" className="font-serif text-6xl leading-none text-terracotta">
+                <span aria-hidden="true" className="font-display text-6xl leading-none text-terracotta">
                   {'“'}
                 </span>
-                <blockquote className="mt-2 flex-1 font-serif text-xl leading-snug md:text-2xl">
+                <blockquote className="mt-2 flex-1 font-display text-xl leading-snug md:text-2xl">
                   <p>{review.quote[locale]}</p>
                 </blockquote>
                 <figcaption className="mt-8 text-sm">

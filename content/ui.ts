@@ -50,16 +50,9 @@ const hr = {
   },
   menu: {
     categories: 'Kategorije jelovnika',
-    allergens: 'Alergeni',
-    noAllergens: 'Bez glavnih alergena',
-    legendTitle: 'Oznake i alergeni',
-    dietaryTitle: 'Prehrambene oznake',
-    allergenTitle: 'Alergeni (EU 1169/2011)',
     signature: 'Preporuka kuće',
     priceNote:
       'Cijene su izražene u konvertibilnim markama (KM) i uključuju PDV. Prikazane cijene su okvirne i bit će potvrđene.',
-    allergyNote:
-      'Imate li alergiju ili posebne prehrambene potrebe, obratite se našem osoblju — rado ćemo pomoći.',
   },
   gallery: {
     open: 'Otvori fotografiju: {caption}',
@@ -124,7 +117,7 @@ const hr = {
   },
   consent: {
     title: 'Vaša privatnost',
-    body: 'Koristimo samo nužnu lokalnu pohranu (npr. odabrani jezik). Anonimnu analitiku uključit ćemo isključivo uz vaš pristanak.',
+    body: 'Koristimo nužnu pohranu, a anonimnu analitiku samo uz vaš pristanak.',
     accept: 'Prihvaćam analitiku',
     decline: 'Samo nužno',
     policy: 'Politika kolačića',
@@ -191,14 +184,8 @@ const en: UiStrings = {
   },
   menu: {
     categories: 'Menu categories',
-    allergens: 'Allergens',
-    noAllergens: 'No major allergens',
-    legendTitle: 'Symbols & allergens',
-    dietaryTitle: 'Dietary symbols',
-    allergenTitle: 'Allergens (EU 1169/2011)',
     signature: 'House favourite',
     priceNote: 'Prices are in convertible marks (KM) and include VAT. Prices shown are indicative and will be confirmed.',
-    allergyNote: 'If you have an allergy or special dietary needs, please ask our team — we’re happy to help.',
   },
   gallery: {
     open: 'Open photo: {caption}',
@@ -263,7 +250,7 @@ const en: UiStrings = {
   },
   consent: {
     title: 'Your privacy',
-    body: 'We only use essential local storage (such as your chosen language). Anonymous analytics will only be enabled with your consent.',
+    body: 'We use essential storage, and anonymous analytics only with your consent.',
     accept: 'Allow analytics',
     decline: 'Essential only',
     policy: 'Cookie policy',

@@ -118,7 +118,7 @@ export function ReservationForm({
     return (
       <div ref={statusRef} tabIndex={-1} role="status" className="flex flex-col items-start gap-4 border-t-2 border-olive bg-ivory-deep p-8 outline-none">
         <CheckCircle2 className="size-8 text-olive" aria-hidden="true" />
-        <h3 className="font-serif text-3xl">{status === 'success' ? t.successTitle : t.mailtoTitle}</h3>
+        <h3 className="font-display text-3xl">{status === 'success' ? t.successTitle : t.mailtoTitle}</h3>
         <p className="max-w-md leading-relaxed text-foreground/80">
           {status === 'success' ? (
             t.successBody

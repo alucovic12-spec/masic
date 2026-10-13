@@ -2,8 +2,7 @@ import type { ImageAsset } from './types'
 
 /**
  * Central image registry. Files prefixed `masic-` are the restaurant's own
- * photos (credited "Foto: Restoran Mašić"); the rest are stand-ins to replace
- * with real photos when available.
+ * photos (credited "Foto: Restoran Mašić"). No generated or stock imagery is used.
  */
 export const images = {
   hero: {
@@ -85,42 +84,6 @@ export const images = {
     alt: {
       hr: 'Domaći sok od nara u bokalu, uz jesenske tikve i lišće',
       en: 'Homemade pomegranate juice in a carafe with autumn squash and leaves',
-    },
-  },
-  cevapi: {
-    src: '/images/dish-cevapi.webp',
-    width: 1024,
-    height: 1024,
-    alt: {
-      hr: 'Ćevapi u somunu s kajmakom i nasjeckanim lukom',
-      en: 'Ćevapi in somun flatbread with kajmak and chopped onion',
-    },
-  },
-  peka: {
-    src: '/images/dish-peka.webp',
-    width: 928,
-    height: 1152,
-    alt: {
-      hr: 'Domaća teletina i krumpir ispod peke, uz žar',
-      en: 'Local veal and potatoes slow-roasted under the peka bell',
-    },
-  },
-  dessert: {
-    src: '/images/dessert.webp',
-    width: 1024,
-    height: 1024,
-    alt: {
-      hr: 'Domaća krem karamel i šalica kave',
-      en: 'Homemade crème caramel and a cup of coffee',
-    },
-  },
-  kitchen: {
-    src: '/images/kitchen.webp',
-    width: 1264,
-    height: 848,
-    alt: {
-      hr: 'Meso i povrće na roštilju na drveni ugljen',
-      en: 'Meat and vegetables on a charcoal grill',
     },
   },
 } satisfies Record<string, ImageAsset>

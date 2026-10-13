@@ -18,7 +18,7 @@ export function PageHeader({
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl animate-rise">
             <Eyebrow>{eyebrow}</Eyebrow>
-            <h1 className="mt-6 font-serif text-5xl leading-[1] tracking-tight md:text-7xl">{title}</h1>
+            <h1 className="mt-6 font-display text-5xl leading-[1] tracking-tight md:text-7xl">{title}</h1>
           </div>
           {lead && <p className="max-w-md text-lg leading-relaxed text-ivory/75">{lead}</p>}
         </div>

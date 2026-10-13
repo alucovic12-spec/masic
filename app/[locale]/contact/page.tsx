@@ -36,7 +36,7 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
 
       <div className="shell grid gap-16 py-20 md:py-28 lg:grid-cols-12 lg:gap-8">
         <section id="rezervacija" aria-labelledby="form-title" className="scroll-mt-28 lg:col-span-7">
-          <h2 id="form-title" className="font-serif text-4xl md:text-5xl">
+          <h2 id="form-title" className="font-display text-4xl md:text-5xl">
             {t.form.title}
           </h2>
           <p className="mt-4 max-w-lg leading-relaxed text-muted-foreground">{t.form.intro}</p>

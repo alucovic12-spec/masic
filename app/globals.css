@@ -37,8 +37,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 
   --color-ivory: var(--ivory);
   --color-ivory-deep: var(--ivory-deep);
@@ -102,6 +102,11 @@
 }
 
 @layer base {
+  .font-display {
+    font-weight: 650;
+    letter-spacing: -0.03em;
+  }
+
   * {
     @apply border-border outline-ring/60;
   }
@@ -111,7 +116,6 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-feature-settings: 'ss01', 'cv11';
   }
   /* Subtle film grain for an editorial, tactile feel */
   body::after {

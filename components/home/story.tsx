@@ -13,7 +13,7 @@ export function Story({ locale }: { locale: Locale }) {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-6">
             <Eyebrow>{story.eyebrow[locale]}</Eyebrow>
-            <h2 id="story-title" className="mt-6 font-serif text-4xl leading-[1.05] tracking-tight md:text-6xl">
+            <h2 id="story-title" className="mt-6 font-display text-4xl leading-[1.05] tracking-tight md:text-6xl">
               {story.title[locale]}
             </h2>
           </div>
@@ -34,7 +34,7 @@ export function Story({ locale }: { locale: Locale }) {
               className="flex flex-col gap-2 border-b border-border py-8 sm:border-b-0 sm:px-8 sm:first:pl-0 sm:[&:not(:first-child)]:border-l"
             >
               <dt className="order-2 text-sm text-muted-foreground">{fact.label[locale]}</dt>
-              <dd className="order-1 flex items-baseline gap-3 font-serif text-3xl md:text-4xl">
+              <dd className="order-1 flex items-baseline gap-3 font-display text-3xl md:text-4xl">
                 <span className="font-sans text-xs tracking-[0.2em] text-terracotta">{String(i + 1).padStart(2, '0')}</span>
                 {fact.value[locale]}
               </dd>

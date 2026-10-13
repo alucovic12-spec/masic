@@ -79,24 +79,6 @@ export interface SiteSettings {
   defaultImage: ImageAsset
 }
 
-export type AllergenCode =
-  | 'gluten'
-  | 'crustaceans'
-  | 'eggs'
-  | 'fish'
-  | 'peanuts'
-  | 'soy'
-  | 'milk'
-  | 'nuts'
-  | 'celery'
-  | 'mustard'
-  | 'sesame'
-  | 'sulphites'
-  | 'lupin'
-  | 'molluscs'
-
-export type DietaryTag = 'vegetarian' | 'vegan' | 'glutenFree' | 'spicy'
-
 /** Sanity: `menuItem` document (referenced by categories). */
 export interface MenuItem {
   id: string
@@ -106,8 +88,6 @@ export interface MenuItem {
   price: number
   /** Optional qualifier, e.g. "for two" or "per kg". */
   unit?: Localized
-  allergens: AllergenCode[]
-  dietary: DietaryTag[]
   signature?: boolean
 }
 
@@ -155,7 +135,7 @@ export interface HomeContent {
     facts: { value: Localized; label: Localized }[]
   }
   signature: SectionIntro & {
-    dishes: { menuItemId: string; image: ImageAsset }[]
+    dishes: { menuItemId: string; image?: ImageAsset }[]
   }
   menuPreview: SectionIntro & {
     menuItemIds: string[]
