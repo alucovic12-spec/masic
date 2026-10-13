@@ -28,6 +28,8 @@ function loadGrapes() {
 export function EditorShell() {
   const editorRef = useRef<any>(null)
   const fileRef = useRef<HTMLInputElement>(null)
+  const moveCleanupRef = useRef<null | (() => void)>(null)
+  const [moveMode, setMoveMode] = useState(false)
   const [locale, setLocale] = useState<'hr' | 'en'>('hr')
   const [dirty, setDirty] = useState(false)
   const [status, setStatus] = useState('Učitavanje editora…')
@@ -72,8 +74,78 @@ export function EditorShell() {
       editorRef.current = editor
     }
     start().catch((error) => setStatus(error instanceof Error ? error.message : 'Greška pri učitavanju.'))
-    return () => { active = false; editorRef.current?.destroy(); editorRef.current = null }
+    return () => { active = false; moveCleanupRef.current?.(); moveCleanupRef.current = null; editorRef.current?.destroy(); editorRef.current = null }
   }, [locale])
+
+  function toggleFreeMove() {
+    if (moveCleanupRef.current) {
+      moveCleanupRef.current()
+      moveCleanupRef.current = null
+      setMoveMode(false)
+      setStatus('Slobodno pomicanje isključeno.')
+      return
+    }
+    const editor = editorRef.current
+    const component = editor?.getSelected()
+    const element = component?.getEl?.() as HTMLElement | undefined
+    const parent = component?.parent?.()
+    const parentElement = parent?.getEl?.() as HTMLElement | undefined
+    const document = editor?.Canvas?.getDocument?.() as Document | undefined
+    if (!component || !element || !parent || !parentElement || !document) {
+      setStatus('Prvo klikni tekst, sliku ili gumb koji želiš pomicati.')
+      return
+    }
+    const rect = element.getBoundingClientRect()
+    const parentRect = parentElement.getBoundingClientRect()
+    const parentStyle = getComputedStyle(parentElement)
+    if (parentStyle.position === 'static') parent.addStyle({ position: 'relative' })
+    component.addStyle({
+      position: 'absolute',
+      left: Math.round(rect.left - parentRect.left + parentElement.scrollLeft) + 'px',
+      top: Math.round(rect.top - parentRect.top + parentElement.scrollTop) + 'px',
+      width: Math.round(rect.width) + 'px',
+      margin: '0',
+      'z-index': '20',
+      cursor: 'move',
+    })
+    let move: ((event: PointerEvent) => void) | null = null
+    let up: (() => void) | null = null
+    const down = (event: PointerEvent) => {
+      if (event.button !== 0) return
+      event.preventDefault()
+      event.stopPropagation()
+      const style = component.getStyle()
+      const startLeft = Number.parseFloat(style.left || '0')
+      const startTop = Number.parseFloat(style.top || '0')
+      const startX = event.clientX
+      const startY = event.clientY
+      element.style.cursor = 'grabbing'
+      move = (next: PointerEvent) => {
+        component.addStyle({
+          left: Math.round(startLeft + next.clientX - startX) + 'px',
+          top: Math.round(startTop + next.clientY - startY) + 'px',
+        })
+      }
+      up = () => {
+        element.style.cursor = 'move'
+        if (move) document.removeEventListener('pointermove', move)
+        if (up) document.removeEventListener('pointerup', up)
+        move = null
+        up = null
+      }
+      document.addEventListener('pointermove', move)
+      document.addEventListener('pointerup', up, { once: true })
+    }
+    element.addEventListener('pointerdown', down, true)
+    moveCleanupRef.current = () => {
+      element.removeEventListener('pointerdown', down, true)
+      if (move) document.removeEventListener('pointermove', move)
+      if (up) document.removeEventListener('pointerup', up)
+      component.addStyle({ cursor: 'default' })
+    }
+    setMoveMode(true)
+    setStatus('Slobodno pomicanje uključeno — povuci odabrani element na platnu.')
+  }
 
   async function save() {
     const editor = editorRef.current
@@ -87,17 +159,37 @@ export function EditorShell() {
   }
   async function upload(event: ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0]
-    if (!file || !editorRef.current) return
-    setBusy(true); setStatus('Učitavanje slike…')
-    const form = new FormData(); form.append('file', file)
+    const editor = editorRef.current
+    if (!file || !editor) return
+    setBusy(true)
+    setStatus('Učitavanje slike…')
+    const previewUrl = URL.createObjectURL(file)
+    const component = editor.addComponents({ type: 'image', src: previewUrl, style: { width: '100%', height: 'auto', display: 'block' } })[0]
+    const form = new FormData()
+    form.append('file', file)
     const response = await fetch('/api/admin/assets', { method: 'POST', body: form })
     const result = await response.json().catch(() => ({}))
-    setBusy(false); event.target.value = ''
-    if (!response.ok) { setStatus(result.error || 'Slika nije učitana.'); return }
-    const editor = editorRef.current
+    event.target.value = ''
+    if (!response.ok) {
+      component.remove()
+      URL.revokeObjectURL(previewUrl)
+      setBusy(false)
+      setStatus(result.error || 'Slika nije učitana.')
+      return
+    }
+    setStatus('Slika je spremljena. Čekam novu verziju stranice…')
+    let available = false
+    for (let attempt = 0; attempt < 30; attempt += 1) {
+      await new Promise((resolve) => window.setTimeout(resolve, 3000))
+      const check = await fetch(result.src + '?ready=' + Date.now(), { cache: 'no-store' }).catch(() => null)
+      if (check?.ok) { available = true; break }
+    }
+    component.addAttributes({ src: result.src, alt: file.name.replace(/\.[^.]+$/, '') })
     editor.AssetManager.add({ src: result.src, name: file.name })
-    editor.addComponents({ type: 'image', src: result.src, style: { width: '100%', height: 'auto' } })
-    setStatus('Slika je dodana na platno.')
+    URL.revokeObjectURL(previewUrl)
+    setBusy(false)
+    setDirty(true)
+    setStatus(available ? 'Slika je dodana i spremna.' : 'Slika je spremljena; pojavit će se nakon osvježavanja.')
   }
   function switchLocale(next: 'hr' | 'en') {
     if (next === locale) return
@@ -114,6 +206,7 @@ export function EditorShell() {
         <button onClick={() => editorRef.current?.UndoManager.undo()} className="rounded px-3 py-2 text-xs hover:bg-white/10">↶ Undo</button>
         <button onClick={() => editorRef.current?.UndoManager.redo()} className="rounded px-3 py-2 text-xs hover:bg-white/10">↷ Redo</button>
         <div className="hidden gap-1 lg:flex"><button onClick={() => editorRef.current?.DeviceManager.select('desktop')} className="rounded px-3 py-2 text-xs hover:bg-white/10">Desktop</button><button onClick={() => editorRef.current?.DeviceManager.select('tablet')} className="rounded px-3 py-2 text-xs hover:bg-white/10">Tablet</button><button onClick={() => editorRef.current?.DeviceManager.select('mobile')} className="rounded px-3 py-2 text-xs hover:bg-white/10">Mobitel</button></div>
+        <button onClick={toggleFreeMove} className={'rounded px-3 py-2 text-xs ' + (moveMode ? 'bg-amber-500 text-black' : 'hover:bg-white/10')} title="Odaberi element pa uključi slobodno pomicanje">✥ Pomakni</button>
         <input ref={fileRef} type="file" accept="image/jpeg,image/png,image/webp,image/gif" onChange={upload} className="hidden" />
         <button onClick={() => fileRef.current?.click()} className="ml-auto rounded px-3 py-2 text-xs hover:bg-white/10">+ Slika</button>
         <button onClick={() => editorRef.current?.runCommand('core:preview')} className="rounded px-3 py-2 text-xs hover:bg-white/10">Pregled</button>
