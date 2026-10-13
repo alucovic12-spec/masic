@@ -37,8 +37,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
 
   --color-ivory: var(--ivory);
   --color-ivory-deep: var(--ivory-deep);
