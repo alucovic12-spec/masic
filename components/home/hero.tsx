@@ -16,8 +16,8 @@ export function Hero({ locale }: { locale: Locale }) {
       aria-labelledby="hero-title"
       className="relative isolate min-h-[100svh] overflow-hidden bg-charcoal text-ivory"
     >
-      <div className="grid min-h-[100svh] lg:grid-cols-[minmax(0,0.94fr)_minmax(30rem,1.06fr)]">
-        <div className="relative z-10 flex min-h-[100svh] flex-col px-5 pb-6 pt-28 sm:px-8 lg:px-12 lg:pb-8 lg:pt-32 xl:px-[max(4rem,calc((100vw-84rem)/2+3rem))]">
+      <div className="grid min-h-[100svh] lg:grid-cols-[minmax(0,0.9fr)_minmax(32rem,1.1fr)]">
+        <div className="relative z-10 flex min-h-[100svh] flex-col px-5 pb-6 pt-28 sm:px-8 lg:px-12 lg:pb-8 lg:pt-32 xl:pl-[max(4rem,calc((100vw-84rem)/2+3rem))] xl:pr-14">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -left-32 top-1/3 size-[32rem] rounded-full border border-ivory/10"
@@ -27,14 +27,14 @@ export function Hero({ locale }: { locale: Locale }) {
             className="pointer-events-none absolute -left-20 top-[38%] size-[20rem] rounded-full border border-ivory/10"
           />
 
-          <div className="my-auto max-w-2xl py-12">
+          <div className="my-auto max-w-[44rem] py-10">
             <Eyebrow className="animate-rise text-ivory/65">{hero.eyebrow[locale]}</Eyebrow>
             <h1
               id="hero-title"
-              className="mt-7 font-display text-[clamp(3.25rem,6.2vw,7.4rem)] font-semibold leading-[0.88] tracking-[-0.065em]"
+              className="mt-7 font-display text-[clamp(3.6rem,4.6vw,5.7rem)] font-semibold leading-[0.91] tracking-[-0.06em]"
             >
               <span className="block animate-rise [animation-delay:100ms]">{hero.titleLine1[locale]}</span>
-              <span className="mt-2 block animate-rise text-ivory/68 [animation-delay:220ms]">
+              <span className="mt-2 block max-w-[10ch] animate-rise text-ivory/68 [animation-delay:220ms]">
                 {hero.titleLine2[locale]}
               </span>
             </h1>
@@ -81,11 +81,11 @@ export function Hero({ locale }: { locale: Locale }) {
             priority
             fetchPriority="high"
             sizes="(min-width: 1024px) 53vw, 100vw"
-            className="object-cover object-center lg:scale-[1.02]"
+            className="object-cover object-[48%_center] lg:scale-[1.01]"
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-charcoal/75 lg:bg-gradient-to-r lg:from-charcoal/28 lg:via-transparent lg:to-transparent"
+            className="absolute inset-0 bg-charcoal/68 lg:bg-gradient-to-r lg:from-charcoal/18 lg:via-transparent lg:to-transparent"
           />
           <figcaption className="absolute bottom-8 right-8 hidden border border-white/25 bg-black/20 px-4 py-3 text-[0.65rem] uppercase tracking-[0.22em] text-white/75 backdrop-blur-md xl:block">
             {site.cuisines[locale].join(' · ')}
