@@ -71,7 +71,8 @@ export function SiteHeader({
   const isActive = (href: string) =>
     href === localePath(locale) ? pathname === href : pathname?.startsWith(href)
 
-  const isHome = pathname === localePath(locale)\n  const solid = (scrolled || isHome) && !open
+  const isHome = pathname === localePath(locale)
+  const solid = (scrolled || isHome) && !open
 
   return (
     <header
