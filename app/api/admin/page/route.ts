@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { isAdminRequest } from '@/lib/admin-auth'
+import hrDocument from '@/content/editor/home.hr.json'
+import enDocument from '@/content/editor/home.en.json'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -26,12 +28,8 @@ async function currentFile(locale: string) {
 }
 export async function GET(request: NextRequest) {
   if (!(await isAdminRequest())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  try {
-    const file = await currentFile(localeFrom(request))
-    return new NextResponse(file.content, { headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } })
-  } catch (error) {
-    return NextResponse.json({ error: error instanceof Error ? error.message : 'Read failed' }, { status: 500 })
-  }
+  const document = localeFrom(request) === 'en' ? enDocument : hrDocument
+  return NextResponse.json(document, { headers: { 'cache-control': 'no-store' } })
 }
 export async function PUT(request: NextRequest) {
   if (!(await isAdminRequest())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
