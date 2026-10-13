@@ -42,8 +42,9 @@ export function EditorShell() {
       editorRef.current = null
       await loadGrapes()
       const response = await fetch('/api/admin/page?locale=' + locale, { cache: 'no-store' })
-      if (!response.ok) throw new Error('Sadržaj se ne može učitati.')
-      const data = await response.json()
+      const data = await response.json().catch(() => ({}))
+      if (!response.ok) throw new Error(data.error || 'Sadržaj se ne može učitati.')
+
       if (!active || !window.grapesjs) return
       const editor = window.grapesjs.init({
         container: '#gjs', height: 'calc(100vh - 64px)', width: 'auto', storageManager: false, noticeOnUnload: false,
