@@ -73,11 +73,11 @@ export const privacyPolicy: LegalDocument = {
       body: {
         hr: [
           'Imate pravo na pristup, ispravak i brisanje podataka, ograničenje obrade, prenosivost podataka te pravo na prigovor.',
-          'Ako smatrate da su vaša prava povrijeđena, možete podnijeti pritužbu Agenciji za zaštitu osobnih podataka (AZOP).',
+          'Ako smatrate da su vaša prava povrijeđena, možete podnijeti pritužbu Agenciji za zaštitu osobnih podataka u Bosni i Hercegovini.',
         ],
         en: [
           'You have the right to access, rectify and erase your data, to restrict processing, to data portability and to object.',
-          'If you believe your rights have been violated, you can lodge a complaint with the Croatian Personal Data Protection Agency (AZOP).',
+          'If you believe your rights have been violated, you can lodge a complaint with the Personal Data Protection Agency of Bosnia and Herzegovina.',
         ],
       },
     },

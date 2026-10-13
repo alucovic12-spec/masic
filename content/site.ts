@@ -12,9 +12,8 @@ export const routes: Record<RouteKey, string> = {
 }
 
 /**
- * Global settings. Fields marked as placeholders (phone, email, address, hours)
- * must be replaced with verified data before launch — search the codebase for
- * `isPlaceholder` to find every place that surfaces them.
+ * Global settings. Phone and location are verified (restaurant sign and press);
+ * email and opening hours still need confirmation — see `isPlaceholder`.
  */
 export const site: SiteSettings = {
   name: 'Restoran Mašić',
@@ -24,50 +23,44 @@ export const site: SiteSettings = {
     en: 'Welcome. Make yourself at home.',
   },
   description: {
-    hr: 'Obiteljski restoran u Hrvatskoj: roštilj sa žara, riba s Jadrana i domaća jela koja se kuhaju polako.',
-    en: 'A family restaurant in Croatia: fire-grilled classics, Adriatic fish and slow-cooked home cooking.',
+    hr: 'Obiteljski restoran i pekarna na Rakitnu, na putu za Blidinje: domaća hercegovačka jela, peka, roštilj sa žara i kruh ispod peke.',
+    en: 'A family restaurant and bakery in Rakitno, on the road to Blidinje: home-style Herzegovinian food, peka, charcoal grill and bread baked under the bell.',
   },
-  siteUrl: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://restoran-masic.hr').replace(/\/$/, ''),
+  siteUrl: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://restoran-masic.com').replace(/\/$/, ''),
   instagram: {
     handle: '@restaurant_masic',
     url: 'https://www.instagram.com/restaurant_masic',
   },
-  priceRange: '€€',
+  priceRange: '$$',
   cuisines: {
-    hr: ['Hrvatska kuhinja', 'Roštilj', 'Riba i plodovi mora'],
-    en: ['Croatian', 'Grill', 'Seafood'],
+    hr: ['Hercegovačka kuhinja', 'Roštilj', 'Peka', 'Domaća kuhinja'],
+    en: ['Herzegovinian', 'Grill', 'Peka', 'Home cooking'],
   },
   contact: {
-    phone: { display: '+385 00 000 0000', href: 'tel:+385000000000' },
-    email: 'info@restoran-masic.hr',
+    phone: { display: '+387 39 692 482', href: 'tel:+38739692482' },
+    email: 'info@restoran-masic.com',
     address: {
-      street: { hr: 'Adresa restorana (potvrditi)', en: 'Restaurant address (to be confirmed)' },
-      postalCode: '00000',
-      city: { hr: 'Hrvatska', en: 'Croatia' },
-      country: { hr: 'Hrvatska', en: 'Croatia' },
-      countryCode: 'HR',
+      street: { hr: 'Poklečani, Rakitno', en: 'Poklečani, Rakitno' },
+      postalCode: '88240',
+      city: { hr: 'Posušje', en: 'Posušje' },
+      country: { hr: 'Bosna i Hercegovina', en: 'Bosnia and Herzegovina' },
+      countryCode: 'BA',
     },
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Restoran+Ma%C5%A1i%C4%87',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Restoran+Ma%C5%A1i%C4%87+Rakitno',
     isPlaceholder: true,
   },
   openingHours: [
     {
-      days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-      label: { hr: 'Ponedjeljak – Četvrtak', en: 'Monday – Thursday' },
-      opens: '11:00',
+      days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      label: { hr: 'Ponedjeljak – Petak', en: 'Monday – Friday' },
+      opens: '08:00',
       closes: '23:00',
     },
     {
-      days: ['Friday', 'Saturday'],
-      label: { hr: 'Petak – Subota', en: 'Friday – Saturday' },
-      opens: '11:00',
+      days: ['Saturday', 'Sunday'],
+      label: { hr: 'Subota – Nedjelja', en: 'Saturday – Sunday' },
+      opens: '08:00',
       closes: '24:00',
-    },
-    {
-      days: ['Sunday'],
-      label: { hr: 'Nedjelja', en: 'Sunday' },
-      opens: '12:00',
-      closes: '22:00',
     },
   ],
   openingHoursIsPlaceholder: true,
@@ -91,25 +84,25 @@ export const pageSeo: Record<'menu' | 'gallery' | 'contact', SeoFields> = {
   menu: {
     title: { hr: 'Jelovnik', en: 'Menu' },
     description: {
-      hr: 'Jelovnik Restorana Mašić: ćevapi i roštilj sa žara, riba s gradele, crni rižot, peka i domaći deserti — s oznakama alergena i cijenama.',
-      en: 'The Restoran Mašić menu: ćevapi and fire-grilled meats, grilled fish, black risotto, peka and homemade desserts — with allergens and prices.',
+      hr: 'Jelovnik Restorana Mašić: hercegovačka plata, uštipci, ćevapi i roštilj sa žara, teletina ispod peke, pite i domaći kruh — s alergenima i cijenama.',
+      en: 'The Restoran Mašić menu: Herzegovinian platter, uštipci, ćevapi and charcoal grill, veal under the peka, pies and homemade bread — with allergens and prices.',
     },
-    image: images.cevapi,
+    image: images.plata,
   },
   gallery: {
     title: { hr: 'Galerija', en: 'Gallery' },
     description: {
-      hr: 'Pogledajte jela, blagovaonicu i terasu Restorana Mašić.',
-      en: 'See the dishes, dining room and terrace at Restoran Mašić.',
+      hr: 'Pogledajte jela, blagovaonicu i terasu Restorana Mašić na Rakitnu.',
+      en: 'See the dishes, dining room and terrace at Restoran Mašić in Rakitno.',
     },
-    image: images.interior,
+    image: images.stol,
   },
   contact: {
     title: { hr: 'Kontakt i rezervacije', en: 'Contact & reservations' },
     description: {
-      hr: 'Rezervirajte stol u Restoranu Mašić. Radno vrijeme, kontakt i upute za dolazak.',
-      en: 'Reserve a table at Restoran Mašić. Opening hours, contact details and directions.',
+      hr: 'Rezervirajte stol u Restoranu Mašić na Rakitnu. Nazovite +387 39 692 482. Radno vrijeme i upute za dolazak.',
+      en: 'Reserve a table at Restoran Mašić in Rakitno. Call +387 39 692 482. Opening hours and directions.',
     },
-    image: images.terrace,
+    image: images.vanjski,
   },
 }

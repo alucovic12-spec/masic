@@ -57,7 +57,7 @@ const hr = {
     allergenTitle: 'Alergeni (EU 1169/2011)',
     signature: 'Preporuka kuće',
     priceNote:
-      'Cijene su izražene u eurima (EUR) i uključuju PDV. Prikazane cijene su okvirne i bit će potvrđene.',
+      'Cijene su izražene u konvertibilnim markama (KM) i uključuju PDV. Prikazane cijene su okvirne i bit će potvrđene.',
     allergyNote:
       'Imate li alergiju ili posebne prehrambene potrebe, obratite se našem osoblju — rado ćemo pomoći.',
   },
@@ -197,7 +197,7 @@ const en: UiStrings = {
     dietaryTitle: 'Dietary symbols',
     allergenTitle: 'Allergens (EU 1169/2011)',
     signature: 'House favourite',
-    priceNote: 'Prices are in euros (EUR) and include VAT. Prices shown are indicative and will be confirmed.',
+    priceNote: 'Prices are in convertible marks (KM) and include VAT. Prices shown are indicative and will be confirmed.',
     allergyNote: 'If you have an allergy or special dietary needs, please ask our team — we’re happy to help.',
   },
   gallery: {

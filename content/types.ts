@@ -56,7 +56,7 @@ export interface ContactInfo {
     postalCode: string
     city: Localized
     country: Localized
-    countryCode: 'HR'
+    countryCode: string
   }
   mapUrl: string
   /** True while phone, email and address are unverified placeholders. */
@@ -102,7 +102,7 @@ export interface MenuItem {
   id: string
   name: Localized
   description: Localized
-  /** Price in EUR. */
+  /** Price in KM (BAM). */
   price: number
   /** Optional qualifier, e.g. "for two" or "per kg". */
   unit?: Localized

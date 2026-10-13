@@ -3,19 +3,54 @@ import type { GalleryImage } from './types'
 
 export const galleryImages: GalleryImage[] = [
   {
-    id: 'interior',
-    image: images.interior,
-    caption: { hr: 'Blagovaonica u večernjem svjetlu', en: 'The dining room in evening light' },
+    id: 'steak',
+    image: images.steak,
+    caption: { hr: 'Ramstek s gradele', en: 'Grilled rump steak' },
+  },
+  {
+    id: 'plata',
+    image: images.plata,
+    caption: { hr: 'Hercegovačka plata s uštipcima', en: 'Herzegovinian platter with uštipci' },
+  },
+  {
+    id: 'stol',
+    image: images.stol,
+    caption: { hr: 'Stol spreman za proslavu', en: 'A table ready for a celebration' },
+  },
+  {
+    id: 'terasa',
+    image: images.terasa,
+    caption: { hr: 'Ostakljena terasa u sumrak', en: 'The glass terrace at dusk' },
+  },
+  {
+    id: 'peka',
+    image: images.peka,
+    caption: { hr: 'Domaća teletina ispod peke', en: 'Local veal under the peka' },
+  },
+  {
+    id: 'vanjski',
+    image: images.vanjski,
+    caption: { hr: 'Dobro došli u Mašić', en: 'Welcome to Mašić' },
+  },
+  {
+    id: 'koktel',
+    image: images.koktel,
+    caption: { hr: 'Osvježenje na terasi', en: 'Refreshments on the terrace' },
   },
   {
     id: 'cevapi',
     image: images.cevapi,
-    caption: { hr: 'Ćevapi u somunu — jelo kuće', en: 'Ćevapi in somun — our signature' },
+    caption: { hr: 'Ćevapi u somunu', en: 'Ćevapi in somun' },
   },
   {
-    id: 'terrace',
-    image: images.terrace,
-    caption: { hr: 'Terasa u zlatnom satu', en: 'The terrace at golden hour' },
+    id: 'zima',
+    image: images.zima,
+    caption: { hr: 'Rakitno pod snijegom', en: 'Rakitno under snow' },
+  },
+  {
+    id: 'sok',
+    image: images.sok,
+    caption: { hr: 'Domaći sok od nara', en: 'Homemade pomegranate juice' },
   },
   {
     id: 'kitchen',
@@ -23,34 +58,9 @@ export const galleryImages: GalleryImage[] = [
     caption: { hr: 'Pravi žar, svaki dan', en: 'Real charcoal, every day' },
   },
   {
-    id: 'risotto',
-    image: images.risotto,
-    caption: { hr: 'Crni rižot od sipe', en: 'Black cuttlefish risotto' },
-  },
-  {
-    id: 'fish',
-    image: images.fish,
-    caption: { hr: 'Riba s gradele i blitva', en: 'Grilled fish with Swiss chard' },
-  },
-  {
-    id: 'peka',
-    image: images.peka,
-    caption: { hr: 'Teletina ispod peke', en: 'Veal under the peka' },
-  },
-  {
-    id: 'ingredients',
-    image: images.ingredients,
-    caption: { hr: 'Domaće namirnice i maslinovo ulje', en: 'Local produce and olive oil' },
-  },
-  {
-    id: 'hero',
-    image: images.hero,
-    caption: { hr: 'Večera uz svijeće', en: 'Dinner by candlelight' },
-  },
-  {
     id: 'dessert',
     image: images.dessert,
-    caption: { hr: 'Rožata i espresso', en: 'Rožata and espresso' },
+    caption: { hr: 'Domaći desert i kava', en: 'Homemade dessert and coffee' },
   },
 ]
 

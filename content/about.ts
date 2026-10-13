@@ -5,99 +5,99 @@ export const about: AboutContent = {
   seo: {
     title: { hr: 'O nama', en: 'About us' },
     description: {
-      hr: 'Priča Restorana Mašić: obiteljsko gostoprimstvo, kuhanje na žaru, lokalne namirnice i jela koja se kuhaju polako.',
-      en: 'The story of Restoran Mašić: family hospitality, charcoal cooking, local ingredients and slow-cooked dishes.',
+      hr: 'Priča Restorana Mašić s Rakitna: obitelj Mašić, domaće meso iz kraja, peka, roštilj i vlastita pekarna od 2014. godine.',
+      en: 'The story of Restoran Mašić in Rakitno: the Mašić family, local meat, peka, charcoal grill and their own bakery since 2014.',
     },
-    image: images.interior,
+    image: images.stol,
   },
   eyebrow: { hr: 'O nama', en: 'About us' },
   title: {
-    hr: 'Gostoprimstvo koje se ne uči napamet.',
-    en: 'Hospitality you can’t learn by heart.',
+    hr: 'Ovdje smo sebi napravili dom.',
+    en: 'We built our home right here.',
   },
   lead: {
-    hr: 'Mašić je obiteljska kuća u kojoj su hrana, ljudi i vrijeme za stolom jednako važni.',
-    en: 'Mašić is a family house where food, people and time at the table matter equally.',
+    hr: 'Mašić je obiteljska kuća na Rakitnu, u hercegovačkim Alpama, gdje su domaća hrana, ljudi i vrijeme za stolom jednako važni.',
+    en: 'Mašić is a family house in Rakitno, in the Herzegovinian Alps, where home-style food, people and time at the table matter equally.',
   },
   sections: [
     {
       id: 'prica',
       eyebrow: { hr: 'Priča', en: 'Story' },
-      title: { hr: 'Počelo je za obiteljskim stolom.', en: 'It started at the family table.' },
+      title: { hr: 'Sve je počelo 2014.', en: 'It all began in 2014.' },
       body: {
         hr: [
-          'Ideja o restoranu nastala je tamo gdje nastaju najbolje stvari — za velikim stolom, uz roštilj, razgovor i ljude koji se ne žure kući.',
-          'Taj osjećaj željeli smo podijeliti sa svima. Zato je Mašić mjesto gdje se gosti pozdravljaju po imenu, a jela poslužuju onako kako bismo ih poslužili vlastitoj obitelji.',
+          'Ante i Kristina vjenčali su se 2014. i odlučili — šta god bilo — otvoriti restoran. Umjesto odlaska u inozemstvo, ostali su na Rakitnu i ovdje sebi napravili život.',
+          'Mali grill uz cestu za Blidinje prerastao je u uređen restoran s pekarnom. Danas imamo pet zaposlenih i goste koji dolaze ciljano, a ne samo usput.',
         ],
         en: [
-          'The idea for the restaurant was born where the best things are — around a big table, with the grill going, good conversation and people in no hurry to go home.',
-          'We wanted to share that feeling with everyone. That’s why Mašić is a place where guests are greeted by name and dishes are served the way we would serve our own family.',
+          'Ante and Kristina married in 2014 and decided — come what may — to open a restaurant. Instead of leaving to work abroad, they stayed in Rakitno and built their life here.',
+          'A small grill on the road to Blidinje grew into a proper restaurant with its own bakery. Today we have five staff and guests who come here on purpose, not just in passing.',
         ],
       },
-      image: images.interior,
+      image: images.vanjski,
     },
     {
-      id: 'filozofija',
-      eyebrow: { hr: 'Filozofija', en: 'Philosophy' },
-      title: { hr: 'Manje, ali bolje.', en: 'Less, but better.' },
+      id: 'kuhinja',
+      eyebrow: { hr: 'Kuhinja', en: 'Kitchen' },
+      title: { hr: 'Hercegovački, bez prečaca.', en: 'Herzegovinian, no shortcuts.' },
       body: {
         hr: [
-          'Ne vjerujemo u beskrajne jelovnike. Kuhamo ono što znamo dobro — roštilj na drvenom ugljenu, ribu s gradele i domaća jela koja traže vremena.',
-          'Svako jelo mora proći jednostavan test: bismo li ga s ponosom stavili na vlastiti stol?',
+          'Kuhamo ono što ovaj kraj zna najbolje — peku s domaćom teletinom i svinjetinom, roštilj na drvenom ugljenu, uštipke, pite i kuhana jela dana.',
+          'Kruh pečemo u vlastitoj pekarni, a onaj najbolji — ispod peke. Uz jelo nudimo domaće crno i bijelo vino iz Čitluka.',
         ],
         en: [
-          'We don’t believe in endless menus. We cook what we know well — charcoal grilling, fish from the grill and home-style dishes that need time.',
-          'Every dish has to pass one simple test: would we proudly put it on our own table?',
+          'We cook what this region knows best — peka with local veal and pork, charcoal grill, uštipci, pies and a cooked dish of the day.',
+          'We bake bread in our own bakery, and the best of it under the peka. With your meal, we pour house red and white wine from Čitluk.',
         ],
       },
-      image: images.kitchen,
+      image: images.steak,
     },
     {
       id: 'namirnice',
       eyebrow: { hr: 'Namirnice', en: 'Ingredients' },
-      title: { hr: 'Iz blizine, prema sezoni.', en: 'From nearby, by the season.' },
+      title: { hr: 'Meso iz cijelog Rakitna.', en: 'Meat from all over Rakitno.' },
       body: {
         hr: [
-          'Meso nabavljamo od provjerenih lokalnih dobavljača, ribu prema dnevnom ulovu, a povrće i začinsko bilje od malih proizvođača iz okolice.',
-          'Kruh, umake, ajvar i deserte pripremamo sami. Kad nešto nije u sezoni, jednostavno ga nema na jelovniku.',
+          'Rakitno je oduvijek kraj stočara. Teletinu i svinjetinu kupujemo od domaćih ljudi po cijelom mjestu — i upravo to goste vraća k nama.',
+          'Pršut, sir, kajmak i povrće dolaze iz okolice. Dobra, fina, svježa i obilna porcija — to je cijela tajna.',
         ],
         en: [
-          'Our meat comes from trusted local suppliers, our fish from the daily catch, and our vegetables and herbs from small growers nearby.',
-          'We make our own bread, sauces, ajvar and desserts. When something is out of season, it simply isn’t on the menu.',
+          'Rakitno has always been cattle country. We buy our veal and pork from local farmers all over the village — and that is exactly what brings guests back.',
+          'Prosciutto, cheese, kajmak and vegetables come from nearby. A good, tasty, fresh and generous portion — that is the whole secret.',
         ],
       },
-      image: images.ingredients,
+      image: images.plata,
     },
     {
       id: 'gostoprimstvo',
       eyebrow: { hr: 'Gostoprimstvo', en: 'Hospitality' },
-      title: { hr: 'Kod nas se ne žuri.', en: 'There’s no rush here.' },
+      title: { hr: 'Za dvoje ili za pedeset.', en: 'For two or for fifty.' },
       body: {
         hr: [
-          'Stol je vaš koliko god želite. Rado ćemo preporučiti vino, prilagoditi jelo ili pripremiti nešto posebno za djecu.',
-          'Bilo da dolazite prvi put ili ste stalni gosti — dobro došli. Osjećajte se kao kod kuće.',
+          'Svijetla blagovaonica prima više od stotinu gostiju, a ostakljena terasa grije i zimi. Jednako je ugodno doći u dvoje ili proslaviti krizmu i krštenje s cijelom obitelji.',
+          'Bilo da ste na putu za Blidinje ili dolazite baš k nama — dobro došli. Osjećajte se kao kod kuće.',
         ],
         en: [
-          'The table is yours for as long as you like. We’re happy to recommend a wine, adapt a dish or prepare something special for the kids.',
-          'Whether it’s your first visit or you’re a regular — welcome. Make yourself at home.',
+          'The bright dining room seats more than a hundred guests, and the glass-enclosed terrace stays warm even in winter. It is just as cosy to come as a couple as it is to celebrate a christening with the whole family.',
+          'Whether you are on your way to Blidinje or coming especially to see us — welcome. Make yourself at home.',
         ],
       },
-      image: images.terrace,
+      image: images.terasa,
     },
   ],
   values: [
     {
-      title: { hr: 'Pravi žar', en: 'Real fire' },
+      title: { hr: 'Domaće meso', en: 'Local meat' },
       body: {
-        hr: 'Roštilj na drvenom ugljenu, bez prečaca.',
-        en: 'Charcoal grilling, with no shortcuts.',
+        hr: 'Teletina i svinjetina s Rakitna.',
+        en: 'Veal and pork from Rakitno farms.',
       },
     },
     {
-      title: { hr: 'Domaće ruke', en: 'Made by hand' },
+      title: { hr: 'Vlastita pekarna', en: 'Our own bakery' },
       body: {
-        hr: 'Kruh, umaci i deserti iz naše kuhinje.',
-        en: 'Bread, sauces and desserts from our own kitchen.',
+        hr: 'Kruh, pite i kolači iz naše pećnice.',
+        en: 'Bread, pies and cakes from our own oven.',
       },
     },
     {

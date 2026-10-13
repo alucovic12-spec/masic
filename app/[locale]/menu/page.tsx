@@ -17,10 +17,10 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/menu'>):
 
 const intro = {
   eyebrow: { hr: 'Jelovnik', en: 'Menu' },
-  title: { hr: 'Sa žara, iz mora i iz lonca.', en: 'From the fire, the sea and the pot.' },
+  title: { hr: 'Sa žara, ispod peke i iz lonca.', en: 'From the grill, the peka and the pot.' },
   lead: {
-    hr: 'Jela se mijenjaju s godišnjim dobom i ulovom. Pitajte konobara što je danas najbolje.',
-    en: 'Dishes change with the season and the catch. Ask your server what’s best today.',
+    hr: 'Domaće meso s Rakitna, kruh iz naše pekarne i jelo dana iz lonca. Za peku nazovite dan ranije.',
+    en: 'Local Rakitno meat, bread from our own bakery and a cooked dish of the day. For peka, call a day ahead.',
   },
 }
 

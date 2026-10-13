@@ -4,55 +4,55 @@ import type { HomeContent } from './types'
 export const home: HomeContent = {
   seo: {
     title: {
-      hr: 'Restoran Mašić — Dobro došli. Osjećajte se kao kod kuće.',
-      en: 'Restoran Mašić — Welcome. Make yourself at home.',
+      hr: 'Restoran Mašić, Rakitno — domaća hercegovačka kuhinja',
+      en: 'Restoran Mašić, Rakitno — home-style Herzegovinian food',
     },
     description: {
-      hr: 'Obiteljski restoran Mašić: ćevapi i roštilj sa žara, riba s Jadrana, peka i domaći deserti. Rezervirajte stol.',
-      en: 'Restoran Mašić, a family restaurant in Croatia: ćevapi and fire-grilled meats, Adriatic fish, peka and homemade desserts. Reserve a table.',
+      hr: 'Obiteljski restoran i pekarna na Rakitnu, na putu za Blidinje: peka s domaćom teletinom, roštilj sa žara, uštipci, pite i domaće vino. Rezervirajte stol.',
+      en: 'A family restaurant and bakery in Rakitno, on the road to Blidinje: local veal under the peka, charcoal grill, uštipci, pies and house wine. Reserve a table.',
     },
     image: images.hero,
   },
   hero: {
-    eyebrow: { hr: 'Obiteljski restoran · Hrvatska', en: 'Family restaurant · Croatia' },
+    eyebrow: { hr: 'Restoran i pekarna · Rakitno, Hercegovina', en: 'Restaurant & bakery · Rakitno, Herzegovina' },
     titleLine1: { hr: 'Dobro došli.', en: 'Welcome.' },
     titleLine2: { hr: 'Osjećajte se kao kod kuće.', en: 'Make yourself at home.' },
     lead: {
-      hr: 'Roštilj s pravog žara, riba s Jadrana i jela koja se kuhaju polako — poslužena toplo, iskreno i bez žurbe.',
-      en: 'Charcoal-grilled classics, fish from the Adriatic and slow-cooked dishes — served warmly, honestly and never in a hurry.',
+      hr: 'Domaće meso s Rakitna, peka, roštilj sa žara i kruh iz vlastite pekarne — obilno, svježe i od srca, u hercegovačkim Alpama.',
+      en: 'Local Rakitno meat, peka, charcoal grill and bread from our own bakery — generous, fresh and from the heart, in the Herzegovinian Alps.',
     },
     image: images.hero,
   },
   story: {
     eyebrow: { hr: 'Naša priča', en: 'Our story' },
     title: {
-      hr: 'Kuhinja koja okuplja ljude za stolom.',
-      en: 'A kitchen that brings people to the table.',
+      hr: 'Od malog grilla do obiteljskog restorana.',
+      en: 'From a small grill to a family restaurant.',
     },
     body: {
       hr: [
-        'Mašić je obiteljski restoran u kojem se kuha polako, poslužuje iskreno i svakoga dočekuje kao dragog gosta. Za našim stolom susreću se okusi roštilja, Jadrana i domaće kuhinje.',
-        'Ne trudimo se biti najglasniji. Trudimo se da se vratite — zbog ćevapa sa žara, zbog ribe koja je jutros bila u moru i zbog osjećaja da vas ovdje netko čeka.',
+        'Ante i Kristina Mašić 2014. godine odlučili su ostati na Rakitnu i stvoriti nešto svoje. Ono što je počelo kao grill uz cestu za Blidinje, danas je uređen obiteljski restoran s pekarnom, u kojem stane i više od stotinu gostiju.',
+        'Rakitno je kraj stočara, a mi meso kupujemo od domaćih ljudi po cijelom mjestu. Zato su nam porcije obilne, a okusi pravi — dobra, fina i svježa domaća hrana.',
       ],
       en: [
-        'Mašić is a family restaurant where food is cooked slowly, served honestly and every guest is welcomed like an old friend. Our table brings together the flavours of the grill, the Adriatic and home cooking.',
-        'We don’t try to be the loudest. We try to make you come back — for the charcoal-grilled ćevapi, for fish that was in the sea this morning, and for the feeling that someone here is expecting you.',
+        'In 2014, Ante and Kristina Mašić decided to stay in Rakitno and build something of their own. What began as a roadside grill on the way to Blidinje is now a family restaurant with its own bakery, seating more than a hundred guests.',
+        'Rakitno is cattle country, and we buy our meat from local farmers all around the village. That is why our portions are generous and the flavours honest — good, fresh, home-style food.',
       ],
     },
     cta: { hr: 'Upoznajte nas', en: 'Get to know us' },
-    image: images.interior,
+    image: images.stol,
     facts: [
       {
-        value: { hr: 'Domaće', en: 'Homemade' },
-        label: { hr: 'kruh, umaci i deserti', en: 'bread, sauces and desserts' },
+        value: { hr: 'Od 2014.', en: 'Since 2014' },
+        label: { hr: 'obiteljski, iz Rakitna', en: 'family-run, in Rakitno' },
       },
       {
-        value: { hr: 'Lokalno', en: 'Local' },
-        label: { hr: 'meso, povrće i riba', en: 'meat, produce and fish' },
+        value: { hr: '100+', en: '100+' },
+        label: { hr: 'mjesta za proslave', en: 'seats for celebrations' },
       },
       {
-        value: { hr: 'Polako', en: 'Slow' },
-        label: { hr: 'peka i jela iz lonca', en: 'peka and one-pot dishes' },
+        value: { hr: 'Domaće', en: 'Local' },
+        label: { hr: 'teletina, svinjetina i kruh', en: 'veal, pork and bread' },
       },
     ],
   },
@@ -60,35 +60,35 @@ export const home: HomeContent = {
     eyebrow: { hr: 'Jela kuće', en: 'Signature dishes' },
     title: { hr: 'Ono po čemu nas pamte.', en: 'What our guests remember.' },
     intro: {
-      hr: 'Četiri jela koja najbolje pričaju našu priču — od žara do mora.',
-      en: 'Four dishes that tell our story best — from the grill to the sea.',
+      hr: 'Četiri jela koja najbolje pričaju priču Hercegovine — od plate do peke.',
+      en: 'Four dishes that tell the story of Herzegovina best — from the platter to the peka.',
     },
     dishes: [
+      { menuItemId: 'hercegovacka-plata', image: images.plata },
+      { menuItemId: 'ramstek', image: images.steak },
+      { menuItemId: 'teletina-peka', image: images.peka },
       { menuItemId: 'cevapi', image: images.cevapi },
-      { menuItemId: 'orada', image: images.fish },
-      { menuItemId: 'crni-rizot', image: images.risotto },
-      { menuItemId: 'peka', image: images.peka },
     ],
   },
   menuPreview: {
     eyebrow: { hr: 'Iz jelovnika', en: 'From the menu' },
-    title: { hr: 'Jednostavno, sezonski, iskreno.', en: 'Simple, seasonal, honest.' },
+    title: { hr: 'Domaće, obilno, iskreno.', en: 'Homemade, generous, honest.' },
     intro: {
-      hr: 'Jelovnik pratimo prema godišnjem dobu i dnevnom ulovu. Ovo je tek kratak odabir.',
-      en: 'Our menu follows the seasons and the daily catch. Here is a short selection.',
+      hr: 'Hercegovačka jela, roštilj i kuhana jela dana. Ovo je tek kratak odabir.',
+      en: 'Herzegovinian dishes, grill and daily cooked meals. Here is a short selection.',
     },
-    menuItemIds: ['plata-delicija', 'salata-hobotnica', 'mijesano-meso', 'lignje', 'gulas', 'rozata'],
+    menuItemIds: ['ustipci', 'mijesano-meso', 'svinjetina-peka', 'becki-odrezak', 'pite', 'blatina'],
     cta: { hr: 'Cijeli jelovnik', en: 'Full menu' },
-    image: images.ingredients,
+    image: images.plata,
   },
   atmosphere: {
     eyebrow: { hr: 'Atmosfera', en: 'Atmosphere' },
     title: { hr: 'Topao kutak za svaku priliku.', en: 'A warm corner for every occasion.' },
     intro: {
-      hr: 'Ručak s obitelji, večera u dvoje ili proslava s prijateljima — u blagovaonici ili na terasi.',
-      en: 'Family lunch, dinner for two or a celebration with friends — in the dining room or out on the terrace.',
+      hr: 'Ručak na putu za Blidinje, večera u dvoje ili krizma, krštenje i proslava za 50 gostiju — u svijetloj blagovaonici ili na ostakljenoj terasi.',
+      en: 'Lunch on the way to Blidinje, dinner for two, or a christening or family celebration for 50 — in the bright dining room or on the glass-enclosed terrace.',
     },
-    galleryImageIds: ['interior', 'terrace', 'kitchen'],
+    galleryImageIds: ['stol', 'terasa', 'vanjski'],
     cta: { hr: 'Pogledaj galeriju', en: 'View the gallery' },
   },
   reviews: {
@@ -98,27 +98,27 @@ export const home: HomeContent = {
     items: [
       {
         quote: {
-          hr: 'Osjećali smo se kao na nedjeljnom ručku kod prijatelja. Ćevapi su bili savršeni, a usluga nenametljivo topla.',
-          en: 'It felt like Sunday lunch at a friend’s house. The ćevapi were perfect and the service quietly warm.',
+          hr: 'Obilne porcije, domaće meso i ljubazno osoblje. Svaki put kad idemo na Blidinje, stajemo kod Mašića.',
+          en: 'Generous portions, local meat and friendly staff. Every time we head to Blidinje, we stop at Mašić.',
+        },
+        author: { hr: 'Gost restorana', en: 'Restaurant guest' },
+        context: { hr: 'Usput prema Blidinju', en: 'On the way to Blidinje' },
+      },
+      {
+        quote: {
+          hr: 'Teletina ispod peke kakvu se rijetko gdje jede. Naručili smo dan ranije i isplatilo se.',
+          en: 'Veal under the peka like you rarely find anywhere. We ordered a day ahead and it was worth it.',
         },
         author: { hr: 'Gost restorana', en: 'Restaurant guest' },
         context: { hr: 'Obiteljski ručak', en: 'Family lunch' },
       },
       {
         quote: {
-          hr: 'Orada s gradele i blitva — jednostavno i besprijekorno. Vratit ćemo se čim opet budemo u blizini.',
-          en: 'Grilled sea bream with chard — simple and flawless. We will be back as soon as we are nearby again.',
+          hr: 'Krštenje za pedeset ljudi — sve je bilo besprijekorno, od plate do kolača. Domaćini znaju ugostiti.',
+          en: 'A christening for fifty people — everything was flawless, from the platter to the cake. The hosts know hospitality.',
         },
         author: { hr: 'Gost restorana', en: 'Restaurant guest' },
-        context: { hr: 'Večera u dvoje', en: 'Dinner for two' },
-      },
-      {
-        quote: {
-          hr: 'Naručili smo peku dan ranije i isplatilo se. Topla atmosfera i domaćini koji znaju ugostiti.',
-          en: 'We ordered the peka a day ahead and it was worth it. A warm atmosphere and hosts who know hospitality.',
-        },
-        author: { hr: 'Gost restorana', en: 'Restaurant guest' },
-        context: { hr: 'Proslava s prijateljima', en: 'Celebration with friends' },
+        context: { hr: 'Obiteljska proslava', en: 'Family celebration' },
       },
     ],
   },
@@ -126,25 +126,25 @@ export const home: HomeContent = {
     eyebrow: { hr: 'Posjetite nas', en: 'Visit us' },
     title: { hr: 'Stol je postavljen.', en: 'The table is set.' },
     intro: {
-      hr: 'Svratite na ručak ili večeru. Za veće skupine i peku preporučujemo rezervaciju unaprijed.',
-      en: 'Drop by for lunch or dinner. For larger groups and peka, we recommend booking ahead.',
+      hr: 'Nalazimo se tik uz cestu za Blidinje, s velikim parkiralištem — oko sat vremena vožnje od Makarske. Za peku i veće skupine nazovite unaprijed.',
+      en: 'We are right on the road to Blidinje, with ample parking — about an hour’s drive from Makarska. For peka and larger groups, please call ahead.',
     },
   },
   reservation: {
     eyebrow: { hr: 'Rezervacije', en: 'Reservations' },
     title: { hr: 'Vaš stol vas čeka.', en: 'Your table is waiting.' },
     body: {
-      hr: 'Rezervirajte online ili nas nazovite — rado ćemo vam pripremiti mjesto i preporučiti jelo dana.',
-      en: 'Book online or give us a call — we’ll gladly save you a seat and recommend the dish of the day.',
+      hr: 'Rezervirajte online ili nas nazovite na 039 692 482 — rado ćemo pripremiti stol, peku ili cijelu proslavu.',
+      en: 'Book online or call us on +387 39 692 482 — we’ll gladly prepare a table, a peka or a whole celebration.',
     },
   },
   instagram: {
     eyebrow: { hr: 'Instagram', en: 'Instagram' },
     title: { hr: 'Iz naše kuhinje, svaki dan.', en: 'From our kitchen, every day.' },
     intro: {
-      hr: 'Jela dana, sezonske novosti i trenuci iza kulisa.',
-      en: 'Dishes of the day, seasonal news and moments behind the scenes.',
+      hr: 'Jela dana, sezonske novosti i Rakitno kroz godišnja doba.',
+      en: 'Dishes of the day, seasonal news and Rakitno through the seasons.',
     },
-    galleryImageIds: ['cevapi', 'kitchen', 'risotto', 'dessert'],
+    galleryImageIds: ['plata', 'koktel', 'zima', 'sok'],
   },
 }
