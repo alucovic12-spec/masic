@@ -6,7 +6,9 @@ const REPO = 'alucovic12-spec/masic'
 const ALLOWED = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif'])
 
 function branch() {
-  return process.env.CMS_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || 'main'
+  if (process.env.CMS_BRANCH) return process.env.CMS_BRANCH
+  if (process.env.VERCEL_ENV === 'production') return 'main'
+  return process.env.VERCEL_GIT_COMMIT_REF || 'codex/visual-editor'
 }
 function githubHeaders() {
   return { Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + process.env.CMS_GITHUB_TOKEN, 'X-GitHub-Api-Version': '2022-11-28', 'Content-Type': 'application/json' }
