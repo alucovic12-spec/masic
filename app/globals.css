@@ -38,7 +38,7 @@
 
 @theme inline {
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-newsreader), ui-serif, Georgia, serif;
 
   --color-ivory: var(--ivory);
   --color-ivory-deep: var(--ivory-deep);

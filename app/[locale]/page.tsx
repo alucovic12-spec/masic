@@ -1,15 +1,7 @@
 import type { Metadata } from 'next'
 import { PlasmicComponent } from '@plasmicapp/loader-nextjs'
 import { notFound } from 'next/navigation'
-import { Atmosphere } from '@/components/home/atmosphere'
-import { Hero } from '@/components/home/hero'
-import { Instagram } from '@/components/home/instagram'
-import { MenuPreview } from '@/components/home/menu-preview'
-import { ReservationCta } from '@/components/home/reservation-cta'
-import { Reviews } from '@/components/home/reviews'
-import { SignatureDishes } from '@/components/home/signature-dishes'
-import { Story } from '@/components/home/story'
-import { Visit } from '@/components/home/visit'
+import { EditorialHome } from '@/components/home/editorial-home'
 import { ClientPlasmicRootProvider } from '@/plasmic-init-client'
 import { PLASMIC, isPlasmicConfigured } from '@/plasmic-init'
 import { home } from '@/content/home'
@@ -48,17 +40,5 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
     }
   }
 
-  return (
-    <>
-      <Hero locale={locale} />
-      <Story locale={locale} />
-      <SignatureDishes locale={locale} />
-      <MenuPreview locale={locale} />
-      <Atmosphere locale={locale} />
-      <Reviews locale={locale} />
-      <Visit locale={locale} />
-      <ReservationCta locale={locale} />
-      <Instagram locale={locale} />
-    </>
-  )
+  return <EditorialHome locale={locale} />
 }
