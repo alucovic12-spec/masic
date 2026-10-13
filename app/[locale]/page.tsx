@@ -48,17 +48,4 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
     }
   }
 
-  return (
-    <>
-      <Hero locale={locale} />
-      <Story locale={locale} />
-      <SignatureDishes locale={locale} />
-      <MenuPreview locale={locale} />
-      <Atmosphere locale={locale} />
-      <Reviews locale={locale} />
-      <Visit locale={locale} />
-      <ReservationCta locale={locale} />
-      <Instagram locale={locale} />
-    </>
-  )
-}
+  return <EditorialHome locale={locale} />\n}
