@@ -1,4 +1,4 @@
-import { Manrope } from 'next/font/google'
+import { Manrope, Newsreader } from 'next/font/google'
 
 export const manrope = Manrope({
   subsets: ['latin', 'latin-ext'],
@@ -6,4 +6,10 @@ export const manrope = Manrope({
   display: 'swap',
 })
 
-export const fontVariables = manrope.variable
+export const newsreader = Newsreader({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-newsreader',
+  display: 'swap',
+})
+
+export const fontVariables = `${manrope.variable} ${newsreader.variable}`
