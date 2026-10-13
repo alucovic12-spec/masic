@@ -12,52 +12,85 @@ export function Hero({ locale }: { locale: Locale }) {
   const { hero } = home
 
   return (
-    <section aria-labelledby="hero-title" className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-charcoal text-ivory">
-      <Image
-        src={hero.image.src}
-        alt={hero.image.alt[locale]}
-        fill
-        priority
-        fetchPriority="high"
-        sizes="100vw"
-        className="-z-20 object-cover"
-      />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-charcoal/50" />
-      <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 h-3/4 bg-gradient-to-t from-charcoal via-charcoal/70 to-transparent" />
+    <section
+      aria-labelledby="hero-title"
+      className="relative isolate min-h-[100svh] overflow-hidden bg-charcoal text-ivory"
+    >
+      <div className="grid min-h-[100svh] lg:grid-cols-[minmax(0,0.9fr)_minmax(32rem,1.1fr)]">
+        <div className="relative z-10 flex min-h-[100svh] flex-col px-5 pb-6 pt-28 sm:px-8 lg:px-12 lg:pb-8 lg:pt-32 xl:pl-[max(4rem,calc((100vw-84rem)/2+3rem))] xl:pr-14">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-32 top-1/3 size-[32rem] rounded-full border border-ivory/10"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-20 top-[38%] size-[20rem] rounded-full border border-ivory/10"
+          />
 
-      <div className="shell flex flex-1 flex-col justify-end pb-12 pt-32 lg:pb-16">
-        <div className="max-w-5xl">
-          <Eyebrow className="animate-rise text-ivory/80">{hero.eyebrow[locale]}</Eyebrow>
-          <h1
-            id="hero-title"
-            className="mt-8 font-display text-[clamp(2.75rem,7vw,6.5rem)] leading-[0.98] tracking-[-0.04em]"
-          >
-            <span className="block animate-rise font-extrabold [animation-delay:120ms]">{hero.titleLine1[locale]}</span>
-            <span className="block animate-rise font-light text-ivory/85 [animation-delay:240ms]">{hero.titleLine2[locale]}</span>
-          </h1>
-          <p className="mt-8 max-w-xl animate-rise text-lg leading-relaxed text-ivory/80 [animation-delay:360ms] md:text-xl">
-            {hero.lead[locale]}
-          </p>
-          <div className="mt-10 flex animate-rise flex-col gap-3 [animation-delay:480ms] sm:flex-row">
-            <ActionLink href={`${localePath(locale, routes.contact)}#rezervacija`}>{t.reserve}</ActionLink>
-            <ActionLink href={localePath(locale, routes.menu)} variant="outline-light">
-              {t.viewMenu}
-            </ActionLink>
+          <div className="my-auto max-w-[44rem] py-10">
+            <Eyebrow className="animate-rise text-ivory/65">{hero.eyebrow[locale]}</Eyebrow>
+            <h1
+              id="hero-title"
+              className="mt-7 font-display text-[clamp(3.6rem,4.6vw,5.7rem)] font-semibold leading-[0.91] tracking-[-0.06em]"
+            >
+              <span className="block animate-rise [animation-delay:100ms]">{hero.titleLine1[locale]}</span>
+              <span className="mt-2 block max-w-[10ch] animate-rise text-ivory/68 [animation-delay:220ms]">
+                {hero.titleLine2[locale]}
+              </span>
+            </h1>
+            <p className="mt-8 max-w-xl animate-rise text-base leading-relaxed text-ivory/70 [animation-delay:340ms] sm:text-lg">
+              {hero.lead[locale]}
+            </p>
+            <div className="mt-9 flex animate-rise flex-col gap-3 [animation-delay:460ms] sm:flex-row">
+              <ActionLink
+                href={`${localePath(locale, routes.contact)}#rezervacija`}
+                className="min-w-44 rounded-full"
+              >
+                {t.reserve}
+              </ActionLink>
+              <ActionLink
+                href={localePath(locale, routes.menu)}
+                variant="outline-light"
+                className="min-w-40 rounded-full"
+              >
+                {t.viewMenu}
+              </ActionLink>
+            </div>
+          </div>
+
+          <div className="flex items-end justify-between gap-6 border-t border-ivory/15 pt-5 text-sm">
+            <OpenStatus hours={site.openingHours} labels={t.status} days={t.days} />
+            <a
+              href="#prica"
+              aria-label={t.scrollCueLabel}
+              className="hidden items-center gap-3 text-[0.65rem] uppercase tracking-[0.24em] text-ivory/55 transition-colors hover:text-ivory sm:flex"
+            >
+              <span>{t.scrollCue}</span>
+              <span aria-hidden="true" className="relative block h-8 w-px overflow-hidden bg-ivory/20">
+                <span className="absolute inset-0 animate-scroll-line bg-ivory" />
+              </span>
+            </a>
           </div>
         </div>
-      </div>
 
-      <div className="shell">
-        <div className="flex items-center justify-between gap-6 border-t border-ivory/20 py-5 text-sm">
-          <OpenStatus hours={site.openingHours} labels={t.status} days={t.days} />
-          <p className="hidden text-ivory/70 md:block">{site.cuisines[locale].join(' · ')}</p>
-          <a href="#prica" aria-label={t.scrollCueLabel} className="flex items-center gap-3 text-xs uppercase tracking-[0.24em] text-ivory/70 transition-colors hover:text-ivory">
-            <span className="hidden sm:inline">{t.scrollCue}</span>
-            <span aria-hidden="true" className="relative block h-8 w-px overflow-hidden bg-ivory/20">
-              <span className="absolute inset-0 animate-scroll-line bg-ivory" />
-            </span>
-          </a>
-        </div>
+        <figure className="absolute inset-0 -z-10 lg:relative lg:z-0">
+          <Image
+            src={hero.image.src}
+            alt={hero.image.alt[locale]}
+            fill
+            priority
+            fetchPriority="high"
+            sizes="(min-width: 1024px) 53vw, 100vw"
+            className="object-cover object-[48%_center] lg:scale-[1.01]"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-charcoal/68 lg:bg-gradient-to-r lg:from-charcoal/18 lg:via-transparent lg:to-transparent"
+          />
+          <figcaption className="absolute bottom-8 right-8 hidden border border-white/25 bg-black/20 px-4 py-3 text-[0.65rem] uppercase tracking-[0.22em] text-white/75 backdrop-blur-md xl:block">
+            {site.cuisines[locale].join(' · ')}
+          </figcaption>
+        </figure>
       </div>
     </section>
   )

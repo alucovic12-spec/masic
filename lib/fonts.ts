@@ -1,9 +1,15 @@
-import { Manrope } from 'next/font/google'
+import { DM_Sans, Urbanist } from 'next/font/google'
 
-export const manrope = Manrope({
+export const dmSans = DM_Sans({
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-manrope',
+  variable: '--font-dm-sans',
   display: 'swap',
 })
 
-export const fontVariables = manrope.variable
+export const urbanist = Urbanist({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-urbanist',
+  display: 'swap',
+})
+
+export const fontVariables = `${dmSans.variable} ${urbanist.variable}`
