@@ -24,7 +24,7 @@ export default async function ReservationsPage({ params }: Props) {
         <p className="interior-eyebrow">{r.eyebrow}</p>
         <h1 className="interior-title">{m.pages.reservations.title}</h1>
         <p className="interior-intro">{r.intro}</p>
-        <p className="mt-3 text-sm font-medium text-primary">{r.notice}</p>
+        <p className="mt-3 text-sm font-medium text-brand-green">{r.notice}</p>
         {site.showPlaceholders ? (
           <p className="mt-5 inline-block max-w-xl rounded-2xl border border-dashed border-foreground/30 px-4 py-2 text-xs text-muted-foreground">
             {r.temporaryNotice}

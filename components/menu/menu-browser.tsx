@@ -60,7 +60,7 @@ export function MenuBrowser({ locale, labels, categories, items }: Props) {
 
   return (
     <div>
-      <div className="sticky top-16 z-30 border-b border-brand-cream/10 bg-[#111411]/94 backdrop-blur-xl">
+      <div className="sticky top-16 z-30 border-b border-border bg-background/92 backdrop-blur-xl">
         <div className="mx-auto max-w-5xl px-4 py-3 sm:px-6 lg:px-8">
           <div className="relative">
             <label htmlFor="menu-search" className="sr-only">
@@ -74,7 +74,7 @@ export function MenuBrowser({ locale, labels, categories, items }: Props) {
               onChange={(event) => setQuery(event.target.value)}
               placeholder={labels.searchPlaceholder}
               autoComplete="off"
-              className="h-12 w-full rounded-full border border-brand-cream/12 bg-brand-cream/[0.05] pl-11 pr-12 text-base text-brand-cream placeholder:text-brand-cream/35 focus-visible:border-brand-sun/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-sun/15 [&::-webkit-search-cancel-button]:hidden"
+              className="h-12 w-full rounded-full border border-input bg-card pl-11 pr-12 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25 [&::-webkit-search-cancel-button]:hidden"
             />
             {query ? (
               <button
@@ -101,8 +101,8 @@ export function MenuBrowser({ locale, labels, categories, items }: Props) {
                       className={cn(
                         'flex min-h-11 items-center rounded-full border px-4 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                         selected
-                          ? 'border-brand-cream bg-brand-cream text-brand-ink'
-                          : 'border-brand-cream/12 bg-brand-cream/[0.04] text-brand-cream/65 hover:border-brand-sun/40 hover:text-brand-cream',
+                          ? 'border-foreground bg-foreground text-background'
+                          : 'border-border bg-card text-foreground/70 hover:border-foreground/40 hover:bg-accent hover:text-foreground',
                       )}
                     >
                       {category.name}
@@ -134,7 +134,7 @@ export function MenuBrowser({ locale, labels, categories, items }: Props) {
           <div className="mt-6 space-y-14">
             {groups.map(({ category, items: groupItems }) => (
               <section key={category.id} aria-labelledby={`menu-${category.id}`} className="scroll-mt-44">
-                <h2 id={`menu-${category.id}`} className="font-display text-3xl font-medium tracking-[-0.035em] text-brand-cream sm:text-4xl">
+                <h2 id={`menu-${category.id}`} className="font-display text-3xl font-normal tracking-[-0.035em] text-foreground sm:text-4xl">
                   {category.name}
                 </h2>
                 <ul className="mt-5 grid gap-3 md:grid-cols-2">

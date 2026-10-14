@@ -13,11 +13,11 @@ export function LinkButton({ variant = 'default', className, children, ...props 
     <Link
       className={cn(
         buttonVariants({ variant }),
-        'group h-12 min-w-11 gap-2 rounded-full px-6 text-sm font-semibold tracking-[0.01em] motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:-translate-y-1',
+        'group h-12 min-w-11 gap-2 rounded-full px-6 text-sm font-medium tracking-[0.01em] motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:-translate-y-0.5',
         variant === 'default' &&
-          'bg-brand-cream text-brand-ink [a]:hover:bg-[#fffaf1] hover:shadow-[0_14px_42px_-12px_rgb(255_246_232_/_55%)]',
+          'bg-primary text-primary-foreground hover:bg-primary/85 [a]:hover:bg-primary/85',
         variant === 'outline' &&
-          'border border-brand-cream/25 bg-brand-cream/[0.04] text-brand-cream backdrop-blur hover:border-brand-cream/60 hover:bg-brand-cream hover:text-brand-ink dark:border-brand-cream/25 dark:hover:bg-brand-cream dark:hover:text-brand-ink',
+          'border border-foreground/30 bg-transparent text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground dark:border-foreground/30 dark:bg-transparent dark:hover:bg-primary',
         variant === 'ghost' &&
           'text-foreground hover:bg-foreground/10 hover:text-foreground dark:hover:bg-foreground/10',
         className,

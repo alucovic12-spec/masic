@@ -23,7 +23,7 @@ import { cn } from '@/lib/utils'
 type Props = { locale: Locale; labels: Messages['reservations'] }
 
 const fieldClass =
-  'mt-2 block w-full rounded-xl border border-brand-cream/12 bg-brand-cream/[0.05] px-4 py-3 text-base text-brand-cream placeholder:text-brand-cream/35 focus-visible:border-brand-sun/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-sun/15 aria-[invalid=true]:border-destructive'
+  'mt-2 block w-full rounded-xl border border-input bg-card px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/25 aria-[invalid=true]:border-destructive'
 
 function zagrebToday() {
   return new Intl.DateTimeFormat('en-CA', {

@@ -7,7 +7,7 @@ import type { Messages } from '@/lib/i18n/messages'
 import { site } from '@/lib/site'
 
 const iconBox =
-  'mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-full border border-brand-cream/15 bg-brand-cream/[0.04] text-brand-sun transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brand-sun/40 group-hover:bg-brand-sun/10'
+  'mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-full border border-foreground/15 bg-background/60 text-eyebrow transition-colors duration-300 group-hover:border-brand-green group-hover:bg-brand-green'
 
 export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
   const v = m.home.visit
@@ -21,13 +21,13 @@ export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
   ]
 
   return (
-    <Section labelledBy="visit-title" tone="night">
+    <Section labelledBy="visit-title" tone="sand">
       <div className="grid gap-14 lg:grid-cols-2">
         <Reveal>
           <SectionHeading id="visit-title" eyebrow={v.eyebrow} title={v.title} />
           <dl className="mt-12 grid gap-3 sm:grid-cols-2">
             {rows.map(({ icon: Icon, label, value, pending }) => (
-              <div key={label} className="group flex min-h-28 gap-4 rounded-2xl border border-brand-cream/10 bg-brand-cream/[0.035] p-5 backdrop-blur transition-all duration-300 hover:border-brand-sun/25 hover:bg-brand-cream/[0.06]">
+              <div key={label} className="group flex min-h-28 gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/30">
                 <span className={iconBox}>
                   <Icon aria-hidden className="size-4" />
                 </span>
@@ -35,7 +35,7 @@ export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
                   <dt className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{label}</dt>
                   <dd className={value ? 'mt-1 text-lg' : 'mt-1 text-lg text-muted-foreground'}>
                     {value && Icon === Mail ? (
-                      <a href={`mailto:${value}`} className="inline-flex min-h-11 items-center hover:text-primary">
+                      <a href={`mailto:${value}`} className="inline-flex min-h-11 items-center underline-offset-4 hover:underline">
                         {value}
                       </a>
                     ) : (
@@ -45,7 +45,7 @@ export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
                 </div>
               </div>
             ))}
-            <div className="group flex min-h-28 gap-4 rounded-2xl border border-brand-cream/10 bg-brand-cream/[0.035] p-5 backdrop-blur transition-all duration-300 hover:border-brand-sun/25 hover:bg-brand-cream/[0.06]">
+            <div className="group flex min-h-28 gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/30">
               <span className={iconBox}>
                 <Share2 aria-hidden className="size-4" />
               </span>
@@ -56,7 +56,7 @@ export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
                     <ul className="flex flex-wrap gap-x-5">
                       {socials.map(([name, url]) => (
                         <li key={name}>
-                          <a href={url} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center capitalize hover:text-primary">
+                          <a href={url} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center capitalize underline-offset-4 hover:underline">
                             {name}
                           </a>
                         </li>
@@ -82,13 +82,13 @@ export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
           <div
             role="img"
             aria-label={v.addressPending}
-            className="tone-ink glow-card group relative flex aspect-[4/3] h-full min-h-72 w-full items-center justify-center overflow-hidden rounded-[2.5rem] border border-brand-cream/12 bg-brand-anthracite"
+            className="tone-ink glow-card group relative flex aspect-[4/3] h-full min-h-72 w-full items-center justify-center overflow-hidden rounded-[2.5rem] border border-border bg-brand-anthracite"
           >
             <div
               aria-hidden
-              className="absolute inset-0 bg-[radial-gradient(circle_at_center,color-mix(in_oklab,var(--brand-gold)_22%,transparent),transparent_65%)] opacity-60 transition-opacity duration-500 group-hover:opacity-100"
+              className="absolute inset-0 bg-[radial-gradient(circle_at_center,color-mix(in_oklab,var(--brand-green)_16%,transparent),transparent_65%)] opacity-70 transition-opacity duration-500 group-hover:opacity-100"
             />
-            <span className="relative flex size-20 items-center justify-center rounded-full border border-brand-cream/20 bg-brand-cream text-brand-ink shadow-[0_16px_40px_-24px_rgb(0_0_0_/_80%)] motion-safe:transition-all motion-safe:duration-500 group-hover:-translate-y-2 group-hover:scale-105">
+            <span className="relative flex size-20 items-center justify-center rounded-full bg-brand-green text-brand-ink motion-safe:transition-transform motion-safe:duration-500 group-hover:-translate-y-1">
               <MapPin aria-hidden className="size-9" />
             </span>
           </div>

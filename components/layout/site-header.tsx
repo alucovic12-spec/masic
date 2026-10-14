@@ -48,7 +48,7 @@ export function SiteHeader({ locale, m, items }: SiteHeaderProps) {
             />
             <Link
               href={reservationsHref}
-              className="group/cta relative hidden h-11 items-center gap-3 overflow-hidden rounded-full border border-brand-sun/40 bg-brand-sun shadow-none pl-5 pr-1.5 xl:pl-5 2xl:pl-7 font-display text-[0.68rem] font-medium uppercase tracking-[0.16em] text-brand-ink transition-[background-color,box-shadow,transform] duration-300 hover:bg-brand-cream hover:shadow-[0_10px_30px_-8px_rgba(255,224,163,0.7)] motion-safe:hover:-translate-y-0.5 sm:inline-flex 2xl:h-12 2xl:pl-7 2xl:text-[0.74rem]"
+              className="group/cta relative hidden h-11 items-center gap-3 overflow-hidden rounded-full border border-brand-sun/40 bg-brand-sun shadow-none pl-5 pr-1.5 xl:pl-5 2xl:pl-7 font-display text-[0.68rem] font-medium uppercase tracking-[0.16em] text-brand-ink transition-[background-color,box-shadow,transform] duration-300 hover:bg-brand-cream hover:shadow-[0_10px_30px_-14px_rgba(0,0,0,0.55)] motion-safe:hover:-translate-y-0.5 sm:inline-flex 2xl:h-12 2xl:pl-7 2xl:text-[0.74rem]"
             >
               <span
                 aria-hidden

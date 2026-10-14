@@ -15,21 +15,21 @@ export function NextEvent({ locale, m, event }: Props) {
   const showNote = site.showPlaceholders && (event ? event.placeholder : true)
 
   return (
-    <Section labelledBy="next-event-title" tone="night" className="py-16 sm:py-20">
+    <Section labelledBy="next-event-title" tone="base" className="py-16 sm:py-20">
       <Reveal>
-        <div className="tone-ink glow-card group grid overflow-hidden rounded-[2rem] border border-brand-cream/12 bg-brand-anthracite md:grid-cols-[1.2fr_1fr]">
+        <div className="tone-ink glow-card group grid overflow-hidden rounded-[2rem] border border-border bg-brand-anthracite md:grid-cols-[1.2fr_1fr]">
           <div className="image-reveal relative min-h-72 overflow-hidden md:min-h-full">
             <Image
               src="/images/live-music.png"
               alt=""
               fill
               sizes="(min-width: 768px) 40vw, 100vw"
-              className="object-cover motion-safe:transition-transform motion-safe:duration-700 group-hover:scale-110"
+              className="object-cover motion-safe:transition-transform motion-safe:duration-1000 group-hover:scale-105"
             />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-brand-ink/70 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-brand-ink/80" />
             <span
               aria-hidden
-              className="absolute left-5 top-5 flex size-14 items-center justify-center rounded-2xl border border-brand-cream/20 bg-brand-ink/70 text-brand-sun shadow-none backdrop-blur-md motion-safe:transition-all motion-safe:duration-500 group-hover:scale-110 group-hover:rotate-3"
+              className="absolute left-5 top-5 flex size-14 items-center justify-center rounded-2xl border border-brand-cream/20 bg-brand-ink/70 text-brand-green backdrop-blur-md"
             >
               <CalendarDays className="size-6" />
             </span>
@@ -37,11 +37,11 @@ export function NextEvent({ locale, m, event }: Props) {
 
           <div className="flex flex-col justify-between gap-10 p-6 sm:p-12">
             <div>
-              <p className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.26em] text-primary">
-                <span aria-hidden className="h-px w-10 bg-primary" />
+              <p className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.26em] text-eyebrow">
+                <span aria-hidden className="h-px w-10 bg-current opacity-60" />
                 {n.eyebrow}
               </p>
-              <h2 id="next-event-title" className="mt-5 text-balance font-display text-5xl font-semibold leading-[0.96] tracking-[-0.045em] sm:text-7xl">
+              <h2 id="next-event-title" className="mt-5 text-balance font-display text-4xl font-normal leading-[1.02] tracking-[-0.04em] sm:text-6xl">
                 {event ? event.title : n.title}
               </h2>
               {event ? (

@@ -2,10 +2,11 @@ import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 const tones = {
-  base: 'bg-background',
-  raised: 'bg-muted',
+  base: 'tone-base',
+  raised: 'tone-sand',
+  sand: 'tone-sand',
   green: 'tone-green',
-  sun: 'tone-sun',
+  sun: 'tone-sand',
   ink: 'tone-ink',
   night: 'tone-night',
   dusk: 'tone-dusk',
@@ -43,14 +44,14 @@ type SectionHeadingProps = {
 export function SectionHeading({ id, eyebrow, title, intro, className }: SectionHeadingProps) {
   return (
     <div className={cn('max-w-3xl', className)}>
-      <p className="font-accent inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-brand-sun">
-        <span aria-hidden className="h-px w-10 bg-brand-sun/70" />
+      <p className="font-accent inline-flex items-center gap-3 text-[0.68rem] font-medium uppercase tracking-[0.28em] text-eyebrow">
+        <span aria-hidden className="h-px w-10 bg-current opacity-60" />
         {eyebrow}
       </p>
-      <h2 id={id} className="mt-5 max-w-[14ch] text-balance font-display text-5xl font-semibold leading-[0.96] tracking-[-0.045em] text-brand-cream sm:text-7xl lg:text-8xl">
+      <h2 id={id} className="mt-5 max-w-[16ch] text-balance font-display text-4xl font-normal leading-[1.02] tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
         {title}
       </h2>
-      {intro ? <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed font-light text-brand-cream/65 sm:text-lg">{intro}</p> : null}
+      {intro ? <p className="mt-6 max-w-2xl text-pretty text-base font-light leading-relaxed text-muted-foreground sm:text-lg">{intro}</p> : null}
     </div>
   )
 }

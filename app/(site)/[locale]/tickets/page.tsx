@@ -38,7 +38,7 @@ export default async function TicketsPage({ params }: Props) {
         </div>
       </header>
 
-      <section aria-labelledby="tickets-how" className="border-b border-brand-cream/10 bg-brand-cream/[0.035] py-16 sm:py-20">
+      <section aria-labelledby="tickets-how" className="border-y border-border bg-brand-sand/50 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 id="tickets-how" className="font-display text-3xl sm:text-4xl">
             {m.tickets.howTitle}

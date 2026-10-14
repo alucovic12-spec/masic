@@ -52,14 +52,14 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
       <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-brand-ink/50 to-transparent" />
 
       <div className="pointer-events-none mx-auto w-full max-w-[90rem] px-4 pb-12 pt-[38svh] sm:px-6 sm:pb-16 lg:px-8 lg:pb-12 lg:pt-14 [&>*]:pointer-events-auto">
-        <p className="font-accent fade-up inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-brand-gold">
+        <p className="font-accent fade-up inline-flex items-center gap-3 text-[0.68rem] font-medium uppercase tracking-[0.32em] text-brand-green">
           <span aria-hidden className="h-px w-10 bg-brand-gold" />
           {h.eyebrow}
         </p>
         <h1
           id="hero-title"
           style={{ animationDelay: '100ms' }}
-          className="warm-title fade-up mt-5 max-w-5xl text-balance font-display text-6xl font-semibold leading-[0.92] tracking-[-0.05em] sm:text-8xl xl:text-[7.5rem]"
+          className="warm-title fade-up mt-5 max-w-5xl text-balance font-display text-5xl font-normal leading-[0.98] tracking-[-0.045em] sm:text-7xl xl:text-[6.5rem]"
         >
           <span className="block">{firstLine}</span>
           {secondLine ? (
@@ -93,7 +93,7 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
           {h.moments.map((moment) => (
             <li
               key={moment}
-              className="rounded-full border border-brand-cream/20 bg-white/[0.06] px-3.5 py-1.5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-sun/55 hover:bg-brand-cream/[0.09] hover:text-brand-cream"
+              className="rounded-full border border-brand-cream/20 bg-white/[0.06] px-3.5 py-1.5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-green/70 hover:bg-brand-green/15 hover:text-brand-cream"
             >
               {moment}
             </li>

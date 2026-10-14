@@ -5,8 +5,8 @@ import { cn } from '@/lib/utils'
 const tones = {
   sand: 'bg-card text-foreground',
   sun: 'bg-brand-sun text-brand-ink',
-  coral: 'bg-brand-green text-brand-cream',
-  green: 'bg-brand-green text-brand-cream',
+  coral: 'bg-brand-green text-brand-ink',
+  green: 'bg-brand-green text-brand-ink',
 } as const
 
 export type PhotoTone = keyof typeof tones

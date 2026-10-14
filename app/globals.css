@@ -23,18 +23,19 @@
   --card-foreground: var(--brand-ink);
   --popover: #faf6ef;
   --popover-foreground: var(--brand-ink);
-  --primary: var(--brand-glow);
-  --primary-foreground: var(--brand-ink);
+  --primary: var(--brand-ink);
+  --primary-foreground: var(--brand-cream);
   --secondary: var(--brand-green);
   --secondary-foreground: var(--brand-ink);
   --muted: var(--brand-sand);
-  --muted-foreground: #666b66;
+  --muted-foreground: #5f655f;
   --accent: #dce9e1;
   --accent-foreground: var(--brand-ink);
   --destructive: #b42318;
   --border: color-mix(in oklab, var(--brand-ink) 14%, transparent);
-  --input: color-mix(in oklab, var(--brand-ink) 45%, transparent);
-  --ring: var(--brand-glow);
+  --input: color-mix(in oklab, var(--brand-ink) 40%, transparent);
+  --ring: #4f6a5a;
+  --eyebrow: #4f6a5a;
   --radius: 1.15rem;
 }
 
@@ -49,6 +50,7 @@
   --color-brand-pulse: var(--brand-pulse);
   --color-brand-blue: var(--brand-blue);
   --color-brand-gold: var(--brand-gold);
+  --color-eyebrow: var(--eyebrow);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -100,9 +102,9 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 600;
-    letter-spacing: -0.035em;
-    line-height: 0.98;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
     text-wrap: balance;
   }
 
@@ -128,80 +130,82 @@
     Surface tones. Each one re-maps the semantic tokens for everything inside it,
     so buttons, eyebrows and muted text stay readable without per-component colour logic.
   */
+  /* Light surfaces: warm off-white (root), beige and pastel mint. */
+  .tone-base {
+    background-color: var(--brand-cream);
+    color: var(--brand-ink);
+  }
+
+  .tone-sand {
+    background-color: #e9e0d0;
+    color: var(--brand-ink);
+    --foreground: var(--brand-ink);
+    --card: #f5f0e6;
+    --card-foreground: var(--brand-ink);
+    --muted: #ddd2bf;
+    --muted-foreground: #5a5f5a;
+    --border: color-mix(in oklab, var(--brand-ink) 15%, transparent);
+    --eyebrow: #4f6a5a;
+  }
+
   .tone-green {
     background-color: var(--brand-green);
     color: var(--brand-ink);
     --foreground: var(--brand-ink);
-    --card: #c9e1d3;
+    --card: #d4e8dc;
     --card-foreground: var(--brand-ink);
     --muted: #a8cbb7;
-    --muted-foreground: color-mix(in oklab, var(--brand-ink) 68%, transparent);
+    --muted-foreground: #3f4a43;
     --primary: var(--brand-ink);
     --primary-foreground: var(--brand-cream);
-    --border: color-mix(in oklab, var(--brand-ink) 16%, transparent);
-    --input: color-mix(in oklab, var(--brand-ink) 32%, transparent);
+    --border: color-mix(in oklab, var(--brand-ink) 18%, transparent);
+    --input: color-mix(in oklab, var(--brand-ink) 35%, transparent);
     --ring: var(--brand-ink);
+    --eyebrow: #2f4a3a;
   }
 
+  /* Dark surfaces: anthracite in three depths. Buttons turn warm white, accents turn mint. */
+  .tone-ink,
+  .tone-night,
+  .tone-dusk,
   .tone-glow {
-    background-color: #343b36;
-    color: var(--brand-cream);
-    --foreground: var(--brand-cream);
-    --primary: var(--brand-sun);
-    --primary-foreground: var(--brand-ink);
-    --muted-foreground: color-mix(in oklab, var(--brand-cream) 70%, transparent);
-    --border: color-mix(in oklab, var(--brand-cream) 16%, transparent);
-    --ring: var(--brand-sun);
-  }
-
-  .tone-sun {
-    background-color: var(--brand-sun);
-    color: var(--brand-ink);
-    --primary: var(--brand-ink);
-    --primary-foreground: var(--brand-cream);
-    --muted-foreground: color-mix(in oklab, var(--brand-ink) 80%, transparent);
-    --border: color-mix(in oklab, var(--brand-ink) 28%, transparent);
-    --ring: var(--brand-ink);
-  }
-
-  .tone-night {
-    background-color: #252825;
-    color: var(--brand-cream);
-    --foreground: var(--brand-cream);
-    --muted-foreground: color-mix(in oklab, var(--brand-cream) 62%, transparent);
-    --border: rgb(255 246 232 / 12%);
-  }
-
-  .tone-dusk {
-    background-color: #303832;
-    color: var(--brand-cream);
-    --foreground: var(--brand-cream);
-    --muted-foreground: color-mix(in oklab, var(--brand-cream) 62%, transparent);
-    --border: rgb(255 246 232 / 12%);
-  }
-
-  .tone-ink {
-    background-color: var(--brand-ink);
     color: var(--brand-cream);
     --foreground: var(--brand-cream);
     --card: var(--brand-anthracite);
     --card-foreground: var(--brand-cream);
+    --muted: #3a3e3a;
     --muted-foreground: color-mix(in oklab, var(--brand-cream) 72%, transparent);
-    --primary: var(--brand-sun);
+    --primary: var(--brand-cream);
     --primary-foreground: var(--brand-ink);
-    --border: color-mix(in oklab, var(--brand-cream) 18%, transparent);
-    --ring: var(--brand-sun);
+    --border: color-mix(in oklab, var(--brand-cream) 16%, transparent);
+    --input: color-mix(in oklab, var(--brand-cream) 28%, transparent);
+    --ring: var(--brand-green);
+    --eyebrow: var(--brand-green);
   }
 
-  /* Same token remap as tone-ink, but transparent so a photo behind it stays visible. */
+  .tone-ink {
+    background-color: var(--brand-ink);
+  }
+
+  .tone-night {
+    background-color: #272a27;
+  }
+
+  .tone-dusk,
+  .tone-glow {
+    background-color: #2e322e;
+  }
+
+  /* Same token remap as the dark tones, but transparent so a photo behind it stays visible. */
   .tone-photo {
     color: var(--brand-cream);
     --foreground: var(--brand-cream);
     --muted-foreground: color-mix(in oklab, var(--brand-cream) 85%, transparent);
-    --primary: var(--brand-sun);
+    --primary: var(--brand-cream);
     --primary-foreground: var(--brand-ink);
     --border: color-mix(in oklab, var(--brand-cream) 55%, transparent);
-    --ring: var(--brand-sun);
+    --ring: var(--brand-green);
+    --eyebrow: var(--brand-green);
   }
 
   /* Highlighter-pen underline for one emphasised line in a headline. */
@@ -244,33 +248,31 @@
 
   .interior-page {
     min-height: 100svh;
-    background-color: #252825;
-    color: var(--brand-cream);
-    --foreground: var(--brand-cream);
-    --muted-foreground: rgb(255 246 232 / 58%);
-    --border: rgb(255 246 232 / 12%);
-    --input: rgb(255 246 232 / 16%);
-    --card: rgb(255 246 232 / 5%);
-    --card-foreground: var(--brand-cream);
+    background-color: var(--brand-cream);
+    color: var(--brand-ink);
   }
 
   .interior-hero {
     position: relative;
     overflow: hidden;
     max-width: none;
-    padding-block: clamp(5rem, 9vw, 8rem);
-    border-bottom: 1px solid rgb(255 246 232 / 9%);
+    padding-block: clamp(4.5rem, 8vw, 7rem);
+    background-color: #2e322e;
+    color: var(--brand-cream);
+    --foreground: var(--brand-cream);
+    --muted-foreground: color-mix(in oklab, var(--brand-cream) 72%, transparent);
+    --eyebrow: var(--brand-green);
   }
 
   .interior-hero::before {
     content: '';
     position: absolute;
     right: 0;
-    top: 0;
+    bottom: 0;
     width: min(38vw, 34rem);
     height: 1px;
-    background: var(--brand-sun);
-    opacity: 0.55;
+    background: var(--brand-green);
+    opacity: 0.6;
     pointer-events: none;
   }
 
@@ -286,10 +288,10 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    color: var(--brand-sun);
+    color: var(--eyebrow);
     font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.28em;
+    font-weight: 500;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
   }
 
@@ -297,37 +299,38 @@
     content: '';
     width: 2.5rem;
     height: 1px;
-    background: var(--brand-sun);
+    background: currentColor;
+    opacity: 0.7;
   }
 
   .interior-title {
     margin-top: 1rem;
-    max-width: 13ch;
+    max-width: 14ch;
     color: var(--brand-cream);
     font-family: var(--font-poppins), sans-serif;
-    font-size: clamp(2.75rem, 7vw, 6.75rem);
-    font-weight: 600;
-    letter-spacing: -0.045em;
-    line-height: 0.97;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    line-height: 1;
     text-wrap: balance;
   }
 
   .interior-intro {
     margin-top: 1.5rem;
     max-width: 42rem;
-    color: rgb(255 246 232 / 62%);
-    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: var(--muted-foreground);
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
     font-weight: 300;
     line-height: 1.75;
     text-wrap: pretty;
   }
 
   .interior-panel {
-    border: 1px solid rgb(244 240 232 / 13%);
-    background: linear-gradient(145deg, rgb(244 240 232 / 6%), rgb(185 216 198 / 3%));
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--card-foreground);
     border-radius: 1.5rem;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 20px 50px -42px rgb(0 0 0 / 70%);
+    box-shadow: 0 18px 44px -38px color-mix(in oklab, var(--brand-ink) 55%, transparent);
   }
 
   @media (min-width: 640px) {
@@ -338,45 +341,25 @@
     .interior-hero-inner { padding-inline: 2rem; }
   }
 
-  .section-atmosphere {
-    border-top: 1px solid rgb(255 246 232 / 7%);
-  }
-
   .section-atmosphere::before {
     content: '';
     position: absolute;
     inset: 0 auto 0 6%;
     width: 1px;
     pointer-events: none;
-    background: rgb(245 240 231 / 5%);
+    background: color-mix(in oklab, currentColor 7%, transparent);
   }
 
   .glow-card {
     position: relative;
-    box-shadow: 0 18px 48px -38px rgb(0 0 0 / 65%);
-    transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 350ms ease, border-color 350ms ease, background-color 350ms ease;
+    box-shadow: 0 18px 44px -36px color-mix(in oklab, var(--brand-ink) 55%, transparent);
+    transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 400ms ease, border-color 400ms ease;
   }
 
   .glow-card:hover {
-    transform: translateY(-5px);
-    border-color: rgb(185 216 198 / 38%);
-    box-shadow: 0 26px 58px -38px rgb(0 0 0 / 72%);
-  }
-
-  .glow-card::after {
-    content: '';
-    position: absolute;
-    inset: 0 auto 0 0;
-    width: 2px;
-    border-radius: inherit;
-    background: var(--brand-green);
-    opacity: 0;
-    transition: opacity 350ms ease;
-    pointer-events: none;
-  }
-
-  .glow-card:hover::after {
-    opacity: 0.72;
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, currentColor 28%, transparent);
+    box-shadow: 0 28px 54px -34px color-mix(in oklab, var(--brand-ink) 60%, transparent);
   }
 
   .warm-title {

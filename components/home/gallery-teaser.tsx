@@ -18,7 +18,7 @@ export function GalleryTeaser({ locale, m }: { locale: Locale; m: Messages }) {
   const g = m.home.gallery
 
   return (
-    <Section labelledBy="gallery-title" tone="night">
+    <Section labelledBy="gallery-title" tone="base">
       <Reveal className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
         <SectionHeading id="gallery-title" eyebrow={g.eyebrow} title={g.title} />
         <LinkButton href={localizedPath(locale, 'gallery')} variant="outline" className="self-start sm:self-auto">
@@ -31,7 +31,7 @@ export function GalleryTeaser({ locale, m }: { locale: Locale; m: Messages }) {
           <li
             key={label}
             className={cn(
-              'glow-card image-reveal group relative overflow-hidden rounded-[1.75rem] border border-brand-cream/12 bg-brand-ink motion-safe:transition-all motion-safe:duration-700 lg:group-hover/list:opacity-55 lg:group-hover/list:scale-[0.98] lg:hover:!scale-[1.02] lg:hover:!opacity-100',
+              'glow-card image-reveal group relative overflow-hidden rounded-[1.75rem] border border-border bg-brand-ink motion-safe:transition-all motion-safe:duration-700 lg:group-hover/list:opacity-70 lg:hover:!opacity-100',
               tiles[index].position,
             )}
           >
@@ -40,13 +40,13 @@ export function GalleryTeaser({ locale, m }: { locale: Locale; m: Messages }) {
               alt=""
               fill
               sizes="(min-width: 1024px) 30vw, 50vw"
-              className="object-cover motion-safe:transition-transform motion-safe:duration-1000 group-hover:scale-110"
+              className="object-cover motion-safe:transition-transform motion-safe:duration-1000 group-hover:scale-105"
             />
             <div
               aria-hidden
               className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-brand-ink/90 to-transparent"
             />
-            <p className="font-accent absolute bottom-4 left-4 rounded-full border border-white/20 bg-brand-ink/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-cream backdrop-blur-xl motion-safe:transition-all motion-safe:duration-500 group-hover:-translate-y-1 group-hover:border-brand-sun/45 group-hover:bg-brand-ink/75">
+            <p className="font-accent absolute bottom-4 left-4 rounded-full border border-white/20 bg-brand-ink/55 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-brand-cream backdrop-blur-xl motion-safe:transition-all motion-safe:duration-500 group-hover:-translate-y-0.5 group-hover:border-brand-green/60 group-hover:bg-brand-ink/75">
               {label}
             </p>
           </li>

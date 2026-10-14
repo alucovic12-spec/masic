@@ -20,7 +20,7 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
   const o = m.home.offer
 
   return (
-    <Section labelledBy="offer-title" tone="ink">
+    <Section labelledBy="offer-title" tone="sand">
       <Reveal>
         <SectionHeading id="offer-title" eyebrow={o.eyebrow} title={o.title} intro={o.intro} />
       </Reveal>
@@ -31,7 +31,7 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
           return (
             <li
               key={item.title}
-              className="glow-card group flex flex-col overflow-hidden rounded-[1.75rem] border border-brand-cream/10 bg-brand-anthracite lg:col-span-4 lg:[&:nth-child(1)]:col-span-7 lg:[&:nth-child(2)]:col-span-5 lg:[&:nth-child(5)]:col-span-5 lg:[&:nth-child(6)]:col-span-7"
+              className="glow-card group flex flex-col overflow-hidden rounded-[1.75rem] border border-border bg-card text-card-foreground lg:col-span-4 lg:[&:nth-child(1)]:col-span-7 lg:[&:nth-child(2)]:col-span-5 lg:[&:nth-child(5)]:col-span-5 lg:[&:nth-child(6)]:col-span-7"
             >
               <div className="image-reveal relative aspect-[4/3] overflow-hidden">
                 {photo ? (
@@ -40,23 +40,23 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
-                    className="object-cover saturate-[0.85] motion-safe:transition-all motion-safe:duration-1000 group-hover:scale-[1.07] group-hover:saturate-125"
+                    className="object-cover saturate-[0.9] motion-safe:transition-all motion-safe:duration-1000 group-hover:scale-[1.04] group-hover:saturate-100"
                   />
                 ) : (
-                  <div className="flex size-full items-center justify-center bg-brand-green text-brand-cream">
+                  <div className="flex size-full items-center justify-center bg-brand-green text-brand-ink">
                     <Wine aria-hidden className="size-16" strokeWidth={1.5} />
                   </div>
                 )}
                 <span
                   aria-hidden
-                  className="absolute left-4 top-4 flex size-12 items-center justify-center rounded-full border border-brand-cream/20 bg-brand-ink/55 font-display text-sm font-semibold text-brand-cream backdrop-blur-xl motion-safe:transition-all group-hover:border-brand-sun/45 group-hover:bg-brand-sun/10"
+                  className="absolute left-4 top-4 flex size-12 items-center justify-center rounded-full border border-brand-cream/20 bg-brand-ink/55 font-display text-sm font-medium text-brand-cream backdrop-blur-xl motion-safe:transition-colors group-hover:border-brand-green/60 group-hover:bg-brand-ink/70"
                 >
                   {String(index + 1).padStart(2, '0')}
                 </span>
               </div>
               <div className="p-6 sm:p-7">
-                <h3 className="max-w-[12ch] font-display text-3xl font-medium leading-[1.04] tracking-[-0.03em] text-brand-cream transition-colors group-hover:text-[#fffaf1] sm:text-4xl">{item.title}</h3>
-                <p className="mt-3 text-base leading-relaxed font-light text-brand-cream/58 transition-colors group-hover:text-brand-cream/78">
+                <h3 className="max-w-[14ch] font-display text-2xl font-normal leading-[1.08] tracking-[-0.03em] text-foreground sm:text-3xl">{item.title}</h3>
+                <p className="mt-3 text-base font-light leading-relaxed text-muted-foreground">
                   {item.text}
                 </p>
               </div>

@@ -21,8 +21,8 @@ export function MemberCard({
   }).format(new Date(member.created_at))
 
   return (
-    <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-[2rem] border border-brand-sun/25 bg-brand-anthracite p-6 text-brand-cream shadow-[0_28px_60px_-42px_rgb(0_0_0_/_85%)]">
-      <div aria-hidden className="absolute -right-10 -top-10 size-40 rounded-full border border-brand-sun/15" />
+    <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-[2rem] border border-brand-ink/20 bg-brand-anthracite p-6 text-brand-cream shadow-[0_28px_60px_-42px_rgb(0_0_0_/_55%)]">
+      <div aria-hidden className="absolute -right-10 -top-10 size-40 rounded-full border border-brand-green/25" />
       <p className="text-sm tracking-[0.3em]">PARLAMENT</p>
       <p className="mt-1 text-[0.625rem] uppercase tracking-[0.4em] text-muted-foreground">People’s Bar</p>
 

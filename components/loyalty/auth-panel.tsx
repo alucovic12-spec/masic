@@ -14,7 +14,7 @@ type Tab = 'register' | 'login'
 const initialState: MemberAuthState = { status: 'idle' }
 
 const inputClass =
-  'h-11 w-full rounded-xl border border-brand-cream/12 bg-brand-cream/[0.05] px-4 text-base text-brand-cream outline-none transition-colors placeholder:text-brand-cream/35 focus-visible:border-brand-sun/55 focus-visible:ring-2 focus-visible:ring-brand-sun/15 aria-[invalid=true]:border-destructive'
+  'h-11 w-full rounded-xl border border-input bg-card px-4 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/25 aria-[invalid=true]:border-destructive'
 
 function errorText(labels: Labels, code: string | undefined) {
   if (!code) return undefined
@@ -116,7 +116,7 @@ export function AuthPanel({
         </p>
       ) : null}
 
-      <div role="tablist" aria-label={labels.eyebrow} className="mb-6 grid grid-cols-2 gap-1 rounded-full border border-brand-cream/10 bg-brand-cream/[0.04] p-1">
+      <div role="tablist" aria-label={labels.eyebrow} className="mb-6 grid grid-cols-2 gap-1 rounded-full border border-border bg-muted/50 p-1">
         {tabs.map((item) => (
           <button
             key={item.id}
@@ -128,7 +128,7 @@ export function AuthPanel({
             onClick={() => setTab(item.id)}
             className={cn(
               'h-10 rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
-              tab === item.id ? 'bg-brand-cream text-brand-ink' : 'text-brand-cream/50 hover:text-brand-cream',
+              tab === item.id ? 'bg-foreground text-background' : 'text-foreground/60 hover:text-foreground',
             )}
           >
             {item.label}

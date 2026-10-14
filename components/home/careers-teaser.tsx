@@ -7,10 +7,10 @@ export function CareersTeaser({ locale, m }: { locale: Locale; m: Messages }) {
   const c = m.home.careers
 
   return (
-    <section aria-labelledby="careers-title" className="tone-glow group relative isolate overflow-hidden border-y border-brand-cream/10 py-28 sm:py-40">
+    <section aria-labelledby="careers-title" className="tone-glow group relative isolate overflow-hidden py-24 sm:py-36">
       <div
         aria-hidden
-        className="absolute right-0 top-0 -z-10 h-px w-1/3 bg-brand-sun/50"
+        className="absolute right-0 top-0 -z-10 h-px w-1/3 bg-brand-green/50"
       />
       <div
         aria-hidden
@@ -18,19 +18,17 @@ export function CareersTeaser({ locale, m }: { locale: Locale; m: Messages }) {
       />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.26em]">
-            <span aria-hidden className="h-px w-10 bg-brand-sun/70" />
+          <p className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.26em] text-eyebrow">
+            <span aria-hidden className="h-px w-10 bg-current opacity-60" />
             {c.eyebrow}
           </p>
-          <h2 id="careers-title" className="mt-6 max-w-5xl text-balance font-display text-6xl font-semibold leading-[0.94] tracking-[-0.05em] text-brand-cream sm:text-8xl lg:text-[7rem]">
+          <h2 id="careers-title" className="mt-6 max-w-4xl text-balance font-display text-5xl font-normal leading-[1] tracking-[-0.045em] text-foreground sm:text-7xl lg:text-[6rem]">
             {c.title}
           </h2>
-          <p className="mt-7 max-w-xl text-pretty text-lg font-light leading-relaxed text-brand-cream/68">{c.text}</p>
+          <p className="mt-7 max-w-xl text-pretty text-lg font-light leading-relaxed text-muted-foreground">{c.text}</p>
           <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-            <LinkButton href={localizedPath(locale, 'careers')} className="bg-brand-cream text-brand-ink hover:bg-[#fffaf1]">
-              {c.cta}
-            </LinkButton>
-            <span className="rounded-full border border-brand-cream/20 bg-brand-cream/[0.05] px-4 py-2 text-sm text-brand-cream/70 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-brand-sun/40 hover:bg-brand-cream/[0.08] hover:text-brand-cream">
+            <LinkButton href={localizedPath(locale, 'careers')}>{c.cta}</LinkButton>
+            <span className="rounded-full border border-foreground/20 bg-foreground/[0.05] px-4 py-2 text-sm text-foreground/75 transition-all hover:-translate-y-0.5 hover:border-brand-green/60 hover:bg-brand-green/15 hover:text-foreground">
               {c.quick}
             </span>
           </div>

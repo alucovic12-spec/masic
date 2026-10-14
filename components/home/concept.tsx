@@ -12,12 +12,12 @@ export function Concept({ m }: { m: Messages }) {
       <div className="grid items-center gap-16 lg:grid-cols-[0.92fr_1.08fr] lg:gap-28">
         <Reveal>
           <SectionHeading id="concept-title" eyebrow={c.eyebrow} title={c.title} intro={c.text} />
-          <h3 className="mt-12 text-xs font-semibold uppercase tracking-[0.26em] text-brand-sun">{c.materialsLabel}</h3>
+          <h3 className="mt-12 text-xs font-medium uppercase tracking-[0.26em] text-eyebrow">{c.materialsLabel}</h3>
           <ul className="mt-5 flex flex-wrap gap-2">
             {c.materials.map((material) => (
               <li
                 key={material}
-                className="cursor-default rounded-full border border-brand-cream/12 bg-brand-cream/[0.05] px-4 py-2 text-sm font-medium text-brand-cream/75 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-sun/40 hover:bg-brand-cream/[0.08] hover:text-brand-cream"
+                className="cursor-default rounded-full border border-foreground/15 bg-foreground/[0.04] px-4 py-2 text-sm text-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-green/60 hover:bg-brand-green/15 hover:text-foreground"
               >
                 {material}
               </li>
