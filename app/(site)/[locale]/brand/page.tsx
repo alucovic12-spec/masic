@@ -13,7 +13,7 @@ const tiles: Tile[] = [
   { label: 'Vertikalni znak, zlatna na crnoj', variant: 'stacked', tone: 'gold', surface: 'bg-brand-ink', size: 'text-5xl' },
   { label: 'Vertikalni znak, crna na slonovači', variant: 'stacked', tone: 'ink', surface: 'bg-brand-cream', size: 'text-5xl' },
   { label: 'Horizontalni potpis, zlatna na antracitu', variant: 'horizontal', tone: 'gold', surface: 'bg-brand-anthracite', size: 'text-3xl' },
-  { label: 'Horizontalni potpis, slonovača na zelenoj', variant: 'horizontal', tone: 'cream', surface: 'bg-brand-green', size: 'text-3xl' },
+  { label: 'Horizontalni potpis, slonovača na crnoj', variant: 'horizontal', tone: 'cream', surface: 'bg-brand-ink', size: 'text-3xl' },
   { label: 'Samo natpis, zlatna na crnoj', variant: 'wordmark', tone: 'gold', surface: 'bg-brand-ink', size: 'text-5xl' },
   { label: 'Samo natpis, crna na zlatnoj', variant: 'wordmark', tone: 'ink', surface: 'bg-brand-gold', size: 'text-5xl' },
   { label: 'Samo hram, zlatna na crnoj', variant: 'mark', tone: 'gold', surface: 'bg-brand-ink', size: 'text-7xl' },
@@ -21,12 +21,12 @@ const tiles: Tile[] = [
 ]
 
 const palette = [
-  { name: 'Ponoćno plava', hex: '#0D1321', swatch: 'bg-brand-ink', light: false },
-  { name: 'Noćni indigo', hex: '#172139', swatch: 'bg-brand-anthracite', light: false },
-  { name: 'Topla bijela 3000K', hex: '#FFE0A3', swatch: 'bg-brand-gold', light: true },
-  { name: 'Puderasto jutro', hex: '#F8EFF2', swatch: 'bg-brand-cream', light: true },
-  { name: 'Petrol', hex: '#236C72', swatch: 'bg-brand-green', light: false },
-  { name: 'Prigušeno zlato', hex: '#C9AE7C', swatch: 'bg-brand-glow', light: true },
+  { name: 'Crna', hex: '#0D0D0D', swatch: 'bg-brand-ink', light: false },
+  { name: 'Antracit', hex: '#1B1A19', swatch: 'bg-brand-anthracite', light: false },
+  { name: 'Topla bijela', hex: '#F3EFE7', swatch: 'bg-brand-cream', light: true },
+  { name: 'Šampanj bež', hex: '#D6C6A8', swatch: 'bg-brand-green', light: true },
+  { name: 'Pijesak', hex: '#D9D0C1', swatch: 'bg-brand-sand', light: true },
+  { name: 'Prigušeno zlato', hex: '#C9B794', swatch: 'bg-brand-glow', light: true },
 ]
 
 const rules = [

@@ -60,7 +60,7 @@ export function MenuBrowser({ locale, labels, categories, items }: Props) {
 
   return (
     <div>
-      <div className="sticky top-16 z-30 border-b border-border bg-background/92 backdrop-blur-xl">
+      <div className="sticky top-16 z-20 sm:top-[4.5rem] xl:top-24 border-b border-border bg-background/92 backdrop-blur-xl">
         <div className="mx-auto max-w-5xl px-4 py-3 sm:px-6 lg:px-8">
           <div className="relative">
             <label htmlFor="menu-search" className="sr-only">
@@ -133,8 +133,8 @@ export function MenuBrowser({ locale, labels, categories, items }: Props) {
         ) : (
           <div className="mt-6 space-y-14">
             {groups.map(({ category, items: groupItems }) => (
-              <section key={category.id} aria-labelledby={`menu-${category.id}`} className="scroll-mt-44">
-                <h2 id={`menu-${category.id}`} className="font-display text-3xl font-normal tracking-[-0.035em] text-foreground sm:text-4xl">
+              <section key={category.id} aria-labelledby={`menu-${category.id}`} >
+                <h2 id={`menu-${category.id}`} className="scroll-mt-52 font-display text-3xl font-normal tracking-[-0.035em] text-foreground sm:text-4xl xl:scroll-mt-60">
                   {category.name}
                 </h2>
                 <ul className="mt-5 grid gap-3 md:grid-cols-2">

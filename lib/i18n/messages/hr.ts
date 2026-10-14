@@ -270,6 +270,7 @@ export const hr = {
         { title: 'Kokteli', text: 'Klasici i autorska pića. Amandmani dobrodošli.' },
         { title: 'Hrana i mali zalogaji', text: 'Nešto za stol i za podijeliti.' },
       ],
+      cardCta: 'Pogledaj u meniju',
       cta: 'Otvori cijeli meni',
     },
     concept: {

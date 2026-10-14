@@ -33,7 +33,7 @@ export default async function MenuPage({ params }: Props) {
 
       <MenuBrowser locale={locale} labels={m.menu} categories={categories} items={items} />
 
-      <section aria-labelledby="menu-reserve" className="border-t border-border bg-brand-green/35 py-20 sm:py-24">
+      <section aria-labelledby="menu-reserve" className="border-t border-border bg-card py-20 sm:py-24">
         <div className="mx-auto flex max-w-5xl flex-col items-start gap-6 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
           <div>
             <h2 id="menu-reserve" className="font-display text-4xl">

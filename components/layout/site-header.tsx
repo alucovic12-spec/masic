@@ -55,7 +55,7 @@ export function SiteHeader({ locale, m, items }: SiteHeaderProps) {
                 className="pointer-events-none absolute inset-0 bg-white/0 transition-colors duration-300 group-hover/cta:bg-white/10"
               />
               <span className="relative">{m.nav.reservations}</span>
-              <span className="relative grid size-8 place-items-center rounded-full bg-brand-ink text-brand-gold transition-colors duration-300 group-hover/cta:bg-brand-green group-hover/cta:text-brand-sun 2xl:size-9">
+              <span className="relative grid size-8 place-items-center rounded-full bg-brand-ink text-brand-gold transition-colors duration-300 group-hover/cta:text-brand-cream 2xl:size-9">
                 <ArrowUpRight
                   aria-hidden
                   className="size-4 transition-transform duration-300 motion-safe:group-hover/cta:-translate-y-0.5 motion-safe:group-hover/cta:translate-x-0.5"

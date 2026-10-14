@@ -268,6 +268,7 @@ export const en: Messages = {
         { title: 'Cocktails', text: 'Classics and house creations. Amendments welcome.' },
         { title: 'Food and small bites', text: 'Something for the table, made to share.' },
       ],
+      cardCta: 'See it on the menu',
       cta: 'Open the full menu',
     },
     concept: {
