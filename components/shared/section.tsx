@@ -18,15 +18,16 @@ type SectionProps = {
   tone?: keyof typeof tones
   compact?: boolean
   className?: string
+  sectionClassName?: string
   children: ReactNode
 }
 
-export function Section({ id, labelledBy, tone = 'base', compact = false, className, children }: SectionProps) {
+export function Section({ id, labelledBy, tone = 'base', compact = false, className, sectionClassName, children }: SectionProps) {
   return (
     <section
       id={id}
       aria-labelledby={labelledBy}
-      className={cn(tones[tone], 'section-atmosphere relative overflow-x-clip', compact ? 'py-10 sm:py-14' : 'py-24 sm:py-32')}
+      className={cn(tones[tone], 'section-atmosphere relative overflow-x-clip', compact ? 'py-10 sm:py-14' : 'py-24 sm:py-32', sectionClassName)}
     >
       <div className={cn('relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8', className)}>{children}</div>
     </section>

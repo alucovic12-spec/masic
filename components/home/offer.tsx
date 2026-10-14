@@ -22,7 +22,7 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
   const menuPath = localizedPath(locale, 'menu')
 
   return (
-    <Section labelledBy="offer-title" tone="night">
+    <Section labelledBy="offer-title" tone="night" sectionClassName="!pt-[33px] !pb-[37px]">
       <Reveal>
         <SectionHeading id="offer-title" eyebrow={o.eyebrow} title={o.title} intro={o.intro} />
       </Reveal>

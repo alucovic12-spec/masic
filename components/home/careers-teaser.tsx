@@ -7,7 +7,7 @@ export function CareersTeaser({ locale, m }: { locale: Locale; m: Messages }) {
   const c = m.home.careers
 
   return (
-    <section aria-labelledby="careers-title" className="tone-glow group relative isolate overflow-hidden py-24 sm:py-36">
+    <section aria-labelledby="careers-title" className="tone-glow group relative isolate overflow-hidden py-[64px] sm:py-[70px]">
       <div
         aria-hidden
         className="absolute right-0 top-0 -z-10 h-px w-1/3 bg-brand-green/50"

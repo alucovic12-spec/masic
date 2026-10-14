@@ -18,7 +18,7 @@ export function GalleryTeaser({ locale, m }: { locale: Locale; m: Messages }) {
   const g = m.home.gallery
 
   return (
-    <Section labelledBy="gallery-title" tone="base">
+    <Section labelledBy="gallery-title" tone="base" sectionClassName="!pt-[59px] !pb-[52px]">
       <Reveal className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
         <SectionHeading id="gallery-title" eyebrow={g.eyebrow} title={g.title} />
         <LinkButton href={localizedPath(locale, 'gallery')} variant="outline" className="self-start sm:self-auto">
