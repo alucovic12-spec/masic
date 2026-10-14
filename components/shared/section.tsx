@@ -7,6 +7,8 @@ const tones = {
   green: 'tone-green',
   sun: 'tone-sun',
   ink: 'tone-ink',
+  night: 'tone-night',
+  dusk: 'tone-dusk',
 } as const
 
 type SectionProps = {
@@ -23,9 +25,9 @@ export function Section({ id, labelledBy, tone = 'base', compact = false, classN
     <section
       id={id}
       aria-labelledby={labelledBy}
-      className={cn(tones[tone], 'relative overflow-x-clip', compact ? 'py-10 sm:py-14' : 'py-20 sm:py-28')}
+      className={cn(tones[tone], 'section-atmosphere relative overflow-x-clip', compact ? 'py-10 sm:py-14' : 'py-24 sm:py-32')}
     >
-      <div className={cn('mx-auto max-w-7xl px-4 sm:px-6 lg:px-8', className)}>{children}</div>
+      <div className={cn('relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8', className)}>{children}</div>
     </section>
   )
 }
@@ -41,14 +43,14 @@ type SectionHeadingProps = {
 export function SectionHeading({ id, eyebrow, title, intro, className }: SectionHeadingProps) {
   return (
     <div className={cn('max-w-3xl', className)}>
-      <p className="font-accent inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-primary">
-        <span aria-hidden className="h-2 w-2 rotate-45 bg-primary" />
+      <p className="font-accent inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-brand-glow">
+        <span aria-hidden className="h-px w-10 bg-gradient-to-r from-brand-glow to-brand-blue" />
         {eyebrow}
       </p>
-      <h2 id={id} className="mt-5 text-balance font-display text-5xl leading-[0.94] sm:text-7xl lg:text-8xl">
+      <h2 id={id} className="mt-5 max-w-[14ch] text-balance font-display text-5xl font-extrabold leading-[0.9] tracking-[-0.065em] text-brand-cream sm:text-7xl lg:text-8xl">
         {title}
       </h2>
-      {intro ? <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">{intro}</p> : null}
+      {intro ? <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed font-light text-brand-cream/65 sm:text-lg">{intro}</p> : null}
     </div>
   )
 }

@@ -9,7 +9,7 @@ export function LoyaltyTeaser({ locale, m }: { locale: Locale; m: Messages }) {
   const l = m.home.loyalty
 
   return (
-    <Section labelledBy="loyalty-title" tone="green">
+    <Section labelledBy="loyalty-title" tone="dusk">
       <div className="grid items-center gap-16 lg:grid-cols-2">
         <Reveal>
           <SectionHeading id="loyalty-title" eyebrow={l.eyebrow} title={l.title} intro={l.text} />
@@ -27,13 +27,13 @@ export function LoyaltyTeaser({ locale, m }: { locale: Locale; m: Messages }) {
             <div
               role="img"
               aria-label={m.nav.loyalty}
-              className="tone-ink relative aspect-[1.586/1] w-full -rotate-3 overflow-hidden rounded-[3rem_1rem_3rem_1rem] border-2 border-brand-sun p-7 shadow-2xl shadow-black/30 motion-safe:transition-transform motion-safe:duration-500 group-hover:-rotate-1 group-hover:scale-[1.03]"
+              className="tone-ink relative aspect-[1.586/1] w-full overflow-hidden rounded-[2.25rem] border border-brand-cream/18 p-7 shadow-[0_30px_100px_-36px_rgb(102_140_255_/_70%)] motion-safe:transition-all motion-safe:duration-700 group-hover:-translate-y-2 group-hover:border-brand-glow/45 group-hover:shadow-[0_36px_120px_-30px_rgb(110_231_242_/_45%)]"
             >
               <div
                 aria-hidden
                 className="absolute -right-12 -top-12 size-48 rounded-full bg-brand-pulse/35 blur-2xl motion-safe:transition-transform motion-safe:duration-700 group-hover:scale-125"
               />
-              <p className="relative font-display text-2xl uppercase tracking-tight text-brand-gold">Parlament</p>
+              <p className="relative font-display text-2xl font-extrabold uppercase tracking-[-0.05em] text-brand-cream">Parlament</p>
               <p className="relative mt-1 text-[0.625rem] uppercase tracking-[0.34em] text-brand-cream/80">People’s Bar</p>
               <div className="absolute inset-x-7 bottom-7 flex items-end justify-between">
                 <div>

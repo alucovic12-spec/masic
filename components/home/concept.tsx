@@ -8,16 +8,16 @@ export function Concept({ m }: { m: Messages }) {
   const c = m.home.concept
 
   return (
-    <Section labelledBy="concept-title">
-      <div className="grid items-center gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+    <Section labelledBy="concept-title" tone="dusk">
+      <div className="grid items-center gap-16 lg:grid-cols-[0.92fr_1.08fr] lg:gap-28">
         <Reveal>
           <SectionHeading id="concept-title" eyebrow={c.eyebrow} title={c.title} intro={c.text} />
-          <h3 className="mt-12 text-xs uppercase tracking-[0.26em] text-primary">{c.materialsLabel}</h3>
+          <h3 className="mt-12 text-xs font-semibold uppercase tracking-[0.26em] text-brand-glow">{c.materialsLabel}</h3>
           <ul className="mt-5 flex flex-wrap gap-2">
             {c.materials.map((material) => (
               <li
                 key={material}
-                className="cursor-default rounded-full border border-foreground/15 bg-card/70 px-4 py-2 text-sm font-medium backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue hover:bg-brand-blue hover:text-white hover:shadow-[0_0_28px_-8px_var(--brand-blue)]"
+                className="cursor-default rounded-full border border-brand-cream/12 bg-brand-cream/[0.05] px-4 py-2 text-sm font-medium text-brand-cream/75 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-glow/45 hover:bg-brand-cream/[0.09] hover:text-brand-cream hover:shadow-[0_0_28px_-10px_var(--brand-glow)]"
               >
                 {material}
               </li>
@@ -39,7 +39,7 @@ export function Concept({ m }: { m: Messages }) {
               </div>
             </Parallax>
             <Parallax speed={-70} className="absolute -bottom-2 -left-2 w-[38%] sm:-left-8">
-              <div className="group relative aspect-square overflow-hidden rounded-2xl border-4 border-background shadow-xl shadow-black/30 motion-safe:transition-transform motion-safe:duration-500 hover:-rotate-3">
+              <div className="group relative aspect-square overflow-hidden rounded-2xl border-4 border-brand-cream/80 shadow-[0_22px_60px_-24px_rgb(0_0_0_/_80%)] motion-safe:transition-transform motion-safe:duration-500 hover:-translate-y-2 hover:scale-[1.03]">
                 <Image
                   src="/images/space/velvet-chair.png"
                   alt=""

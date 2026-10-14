@@ -167,6 +167,22 @@
     --ring: var(--brand-ink);
   }
 
+  .tone-night {
+    background: linear-gradient(180deg, #080b16 0%, #0d1222 100%);
+    color: var(--brand-cream);
+    --foreground: var(--brand-cream);
+    --muted-foreground: color-mix(in oklab, var(--brand-cream) 62%, transparent);
+    --border: rgb(255 246 232 / 12%);
+  }
+
+  .tone-dusk {
+    background: linear-gradient(145deg, #11172a 0%, #141126 54%, #0b1020 100%);
+    color: var(--brand-cream);
+    --foreground: var(--brand-cream);
+    --muted-foreground: color-mix(in oklab, var(--brand-cream) 62%, transparent);
+    --border: rgb(255 246 232 / 12%);
+  }
+
   .tone-ink {
     background-color: var(--brand-ink);
     color: var(--brand-cream);
@@ -229,6 +245,20 @@
     font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   }
 
+  .section-atmosphere {
+    border-top: 1px solid rgb(255 246 232 / 7%);
+  }
+
+  .section-atmosphere::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 4% 18%, rgb(110 231 242 / 7%), transparent 28rem),
+      radial-gradient(circle at 96% 74%, rgb(255 111 216 / 6%), transparent 30rem);
+  }
+
   .glow-card {
     position: relative;
     isolation: isolate;
@@ -258,13 +288,9 @@
     opacity: 0.72;
   }
 
-  .aurora-text {
-    background: linear-gradient(100deg, var(--brand-cream) 5%, var(--brand-glow) 42%, var(--brand-blue) 70%, var(--brand-pulse) 100%);
-    background-size: 180% auto;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: aurora-shift 7s ease-in-out infinite alternate;
+  .warm-title {
+    color: var(--brand-cream);
+    text-shadow: 0 12px 48px rgb(102 140 255 / 18%);
   }
 
   .ticket-edge {
@@ -296,11 +322,6 @@
   .image-reveal:hover::after {
     transform: translateX(130%);
   }
-}
-
-@keyframes aurora-shift {
-  from { background-position: 0% 50%; }
-  to { background-position: 100% 50%; }
 }
 
 @keyframes slow-zoom {

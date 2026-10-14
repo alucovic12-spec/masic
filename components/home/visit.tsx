@@ -7,7 +7,7 @@ import type { Messages } from '@/lib/i18n/messages'
 import { site } from '@/lib/site'
 
 const iconBox =
-  'mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-full border border-foreground/20 text-primary transition-colors group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground'
+  'mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-full border border-brand-cream/15 bg-brand-cream/[0.04] text-brand-glow transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brand-glow/50 group-hover:bg-brand-glow/10 group-hover:shadow-[0_0_24px_-8px_var(--brand-glow)]'
 
 export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
   const v = m.home.visit
@@ -21,13 +21,13 @@ export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
   ]
 
   return (
-    <Section labelledBy="visit-title">
+    <Section labelledBy="visit-title" tone="night">
       <div className="grid gap-14 lg:grid-cols-2">
         <Reveal>
           <SectionHeading id="visit-title" eyebrow={v.eyebrow} title={v.title} />
-          <dl className="mt-12 space-y-6">
+          <dl className="mt-12 grid gap-3 sm:grid-cols-2">
             {rows.map(({ icon: Icon, label, value, pending }) => (
-              <div key={label} className="group flex gap-4">
+              <div key={label} className="group flex min-h-28 gap-4 rounded-2xl border border-brand-cream/10 bg-brand-cream/[0.035] p-5 backdrop-blur transition-all duration-300 hover:border-brand-glow/25 hover:bg-brand-cream/[0.06]">
                 <span className={iconBox}>
                   <Icon aria-hidden className="size-4" />
                 </span>
@@ -45,7 +45,7 @@ export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
                 </div>
               </div>
             ))}
-            <div className="group flex gap-4">
+            <div className="group flex min-h-28 gap-4 rounded-2xl border border-brand-cream/10 bg-brand-cream/[0.035] p-5 backdrop-blur transition-all duration-300 hover:border-brand-glow/25 hover:bg-brand-cream/[0.06]">
               <span className={iconBox}>
                 <Share2 aria-hidden className="size-4" />
               </span>
@@ -88,7 +88,7 @@ export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
               aria-hidden
               className="absolute inset-0 bg-[radial-gradient(circle_at_center,color-mix(in_oklab,var(--brand-gold)_22%,transparent),transparent_65%)] opacity-60 transition-opacity duration-500 group-hover:opacity-100"
             />
-            <span className="relative flex size-20 items-center justify-center rounded-full bg-brand-gold text-brand-ink motion-safe:transition-transform motion-safe:duration-500 group-hover:-translate-y-2 group-hover:scale-110">
+            <span className="relative flex size-20 items-center justify-center rounded-full border border-brand-cream/20 bg-brand-cream text-brand-ink shadow-[0_0_60px_-12px_rgb(255_246_232_/_60%)] motion-safe:transition-all motion-safe:duration-500 group-hover:-translate-y-3 group-hover:scale-110 group-hover:shadow-[0_0_80px_-8px_rgb(110_231_242_/_55%)]">
               <MapPin aria-hidden className="size-9" />
             </span>
           </div>

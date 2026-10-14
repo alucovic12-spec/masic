@@ -60,11 +60,11 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
         <h1
           id="hero-title"
           style={{ animationDelay: '100ms' }}
-          className="aurora-text fade-up mt-5 max-w-5xl text-balance font-display text-6xl font-black leading-[0.84] tracking-[-0.07em] sm:text-8xl xl:text-[7.5rem]"
+          className="warm-title fade-up mt-5 max-w-5xl text-balance font-display text-6xl font-black leading-[0.84] tracking-[-0.07em] sm:text-8xl xl:text-[7.5rem]"
         >
           <span className="block">{firstLine}</span>
           {secondLine ? (
-            <span className="mt-2 block w-fit rounded-2xl border border-brand-glow/40 bg-brand-ink/50 px-4 py-2 text-brand-cream shadow-[0_0_45px_-8px_rgb(110_231_242_/_55%)] backdrop-blur-xl sm:px-6">
+            <span className="mt-2 block w-fit rounded-2xl border border-brand-cream/15 bg-brand-cream/[0.08] px-4 py-2 text-[#fffaf1] shadow-[0_0_45px_-12px_rgb(255_246_232_/_38%)] backdrop-blur-xl sm:px-6">
               {secondLine}
             </span>
           ) : null}

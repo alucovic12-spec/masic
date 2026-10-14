@@ -49,14 +49,14 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
                 )}
                 <span
                   aria-hidden
-                  className="absolute left-4 top-4 flex size-12 items-center justify-center rounded-[1rem_1rem_1rem_0.25rem] bg-brand-sun font-display text-base font-bold text-brand-ink backdrop-blur-sm motion-safe:transition-transform group-hover:rotate-6 group-hover:scale-110"
+                  className="absolute left-4 top-4 flex size-12 items-center justify-center rounded-full border border-brand-cream/20 bg-brand-ink/55 font-display text-sm font-semibold text-brand-cream backdrop-blur-xl motion-safe:transition-all group-hover:border-brand-glow/60 group-hover:bg-brand-glow/15 group-hover:shadow-[0_0_24px_-6px_var(--brand-glow)]"
                 >
                   {String(index + 1).padStart(2, '0')}
                 </span>
               </div>
               <div className="p-6 sm:p-7">
-                <h3 className="font-display text-4xl font-bold leading-[0.95] tracking-[-0.04em] transition-colors group-hover:text-brand-ink">{item.title}</h3>
-                <p className="mt-3 text-base leading-relaxed text-muted-foreground transition-colors group-hover:text-brand-ink/80">
+                <h3 className="max-w-[12ch] font-display text-3xl font-bold leading-[0.98] tracking-[-0.045em] text-brand-cream transition-colors group-hover:text-[#fffaf1] sm:text-4xl">{item.title}</h3>
+                <p className="mt-3 text-base leading-relaxed font-light text-brand-cream/58 transition-colors group-hover:text-brand-cream/78">
                   {item.text}
                 </p>
               </div>

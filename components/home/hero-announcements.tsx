@@ -59,7 +59,7 @@ export function HeroAnnouncements({ locale, m, events }: Props) {
 
                 <span className="flex min-w-0 flex-1 flex-col justify-between gap-3 p-4 sm:p-5">
                   <span className="flex items-start justify-between gap-3">
-                    <time dateTime={event.start} className="font-display text-3xl leading-none text-brand-gold sm:text-4xl">
+                    <time dateTime={event.start} className="font-display text-3xl leading-none text-brand-cream sm:text-4xl">
                       {day}.{month}.
                     </time>
                     <span className="rounded-full border border-brand-glow/40 bg-brand-glow/10 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-brand-glow">
@@ -68,7 +68,7 @@ export function HeroAnnouncements({ locale, m, events }: Props) {
                   </span>
 
                   <span className="block">
-                    <span className="block text-balance font-display text-lg leading-snug sm:text-xl">{event.title}</span>
+                    <span className="block max-w-[18ch] text-balance font-display text-lg font-semibold leading-snug tracking-[-0.035em] text-brand-cream sm:text-xl">{event.title}</span>
                     <span className="mt-2 flex items-center justify-between gap-2 text-xs uppercase tracking-wider text-brand-cream/70">
                       <span className="capitalize">
                         {event.weekday}, {event.timeLabel}
