@@ -21,12 +21,12 @@ const tiles: Tile[] = [
 ]
 
 const palette = [
-  { name: 'Parlament crna', hex: '#11110F', swatch: 'bg-brand-ink', light: false },
-  { name: 'Antracit', hex: '#1C1C19', swatch: 'bg-brand-anthracite', light: false },
+  { name: 'Ponoćno plava', hex: '#0D1321', swatch: 'bg-brand-ink', light: false },
+  { name: 'Noćni indigo', hex: '#172139', swatch: 'bg-brand-anthracite', light: false },
   { name: 'Topla bijela 3000K', hex: '#FFE0A3', swatch: 'bg-brand-gold', light: true },
-  { name: 'Slonovača', hex: '#F1E9D8', swatch: 'bg-brand-cream', light: true },
-  { name: 'Duboka zelena', hex: '#183C2F', swatch: 'bg-brand-green', light: false },
-  { name: 'Stara cigla', hex: '#713C2D', swatch: 'bg-brand-coral', light: false },
+  { name: 'Puderasto jutro', hex: '#F8EFF2', swatch: 'bg-brand-cream', light: true },
+  { name: 'Petrol', hex: '#236C72', swatch: 'bg-brand-green', light: false },
+  { name: 'Živi koral', hex: '#FF5A5F', swatch: 'bg-brand-coral', light: true },
 ]
 
 const rules = [

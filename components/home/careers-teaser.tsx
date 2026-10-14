@@ -7,10 +7,10 @@ export function CareersTeaser({ locale, m }: { locale: Locale; m: Messages }) {
   const c = m.home.careers
 
   return (
-    <section aria-labelledby="careers-title" className="tone-sun section-grid group relative isolate overflow-hidden py-24 sm:py-36">
+    <section aria-labelledby="careers-title" className="tone-coral soft-noise group relative isolate overflow-hidden py-24 sm:py-36">
       <div
         aria-hidden
-        className="absolute -right-16 -top-16 -z-10 size-72 rounded-full bg-brand-coral motion-safe:transition-transform motion-safe:duration-1000 group-hover:scale-125"
+        className="absolute -right-16 -top-16 -z-10 size-72 rounded-[35%_65%_48%_52%] bg-brand-sun motion-safe:transition-transform motion-safe:duration-1000 group-hover:rotate-12 group-hover:scale-125"
       />
       <div
         aria-hidden
@@ -22,7 +22,7 @@ export function CareersTeaser({ locale, m }: { locale: Locale; m: Messages }) {
             <span aria-hidden className="h-px w-10 bg-brand-ink" />
             {c.eyebrow}
           </p>
-          <h2 id="careers-title" className="mt-6 max-w-5xl text-balance font-display text-6xl uppercase leading-[0.9] sm:text-8xl lg:text-[7rem]">
+          <h2 id="careers-title" className="mt-6 max-w-5xl text-balance font-display text-6xl font-extrabold leading-[0.86] tracking-[-0.06em] sm:text-8xl lg:text-[7rem]">
             {c.title}
           </h2>
           <p className="mt-7 max-w-xl text-pretty text-lg">{c.text}</p>

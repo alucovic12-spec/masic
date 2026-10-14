@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Anton, Montserrat, Poppins } from 'next/font/google'
+import { Bricolage_Grotesque, DM_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import { MobileNav } from '@/components/layout/mobile-nav'
@@ -12,24 +12,17 @@ import { getNavItems, splitMobileNav } from '@/lib/navigation'
 import { getSiteUrl, site } from '@/lib/site'
 import '../../globals.css'
 
-const display = Anton({
-  subsets: ['latin'],
-  weight: '400',
+const display = Bricolage_Grotesque({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-heading',
   display: 'swap',
 })
 
-const body = Poppins({
+const body = DM_Sans({
   subsets: ['latin', 'latin-ext'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-body',
-  display: 'swap',
-})
-
-const logoFont = Montserrat({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-logo',
   display: 'swap',
 })
 
@@ -52,7 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export const viewport: Viewport = {
-  themeColor: '#F1E9D8',
+  themeColor: '#0D1321',
   colorScheme: 'light',
   width: 'device-width',
   initialScale: 1,
@@ -74,7 +67,7 @@ export default async function LocaleLayout({
   const { primary, more } = splitMobileNav(items)
 
   return (
-    <html lang={locale} className={`${display.variable} ${body.variable} ${logoFont.variable}`}>
+    <html lang={locale} className={`${display.variable} ${body.variable}`}>
       <body className="pb-[calc(4rem+env(safe-area-inset-bottom))] xl:pb-0">
         <a
           href="#main"

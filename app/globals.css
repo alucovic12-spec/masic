@@ -2,45 +2,38 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
-/*
-  PARLAMENT design tokens, taken from Brand Book 01.
-  Parlament crna #11110F, antracit #1C1C19, topla bijela 3000K #FFE0A3,
-  slonovača #F1E9D8, duboka zelena #183C2F, stara cigla #713C2D.
-  The token names are kept from the first build: ink = crna, cream = slonovača,
-  sun = zlatna (highlights), coral = stara cigla (main accent).
-  Every other token is derived from the --brand-* variables below.
-*/
+/* PARLAMENT 02: playful night culture, warm hospitality and crisp editorial contrast. */
 :root {
   color-scheme: light;
 
-  --brand-ink: #11110f;
-  --brand-anthracite: #1c1c19;
-  --brand-cream: #f1e9d8;
-  --brand-sand: #e6dcc3;
-  --brand-green: #183c2f;
+  --brand-ink: #0d1321;
+  --brand-anthracite: #172139;
+  --brand-cream: #f8eff2;
+  --brand-sand: #dbe9e8;
+  --brand-green: #236c72;
   --brand-sun: #ffe0a3;
-  --brand-coral: #713c2d;
+  --brand-coral: #ff5a5f;
   --brand-gold: #ffe0a3;
 
   --background: var(--brand-cream);
   --foreground: var(--brand-ink);
-  --card: #f7f1e3;
+  --card: #fff9f1;
   --card-foreground: var(--brand-ink);
-  --popover: #f7f1e3;
+  --popover: #fff9f1;
   --popover-foreground: var(--brand-ink);
   --primary: var(--brand-coral);
-  --primary-foreground: #fff8ec;
+  --primary-foreground: var(--brand-ink);
   --secondary: var(--brand-green);
-  --secondary-foreground: var(--brand-cream);
+  --secondary-foreground: #fff9f1;
   --muted: var(--brand-sand);
-  --muted-foreground: #5a5346;
-  --accent: #e3d6b6;
+  --muted-foreground: #526070;
+  --accent: #b8deda;
   --accent-foreground: var(--brand-ink);
   --destructive: #b42318;
   --border: color-mix(in oklab, var(--brand-ink) 14%, transparent);
   --input: color-mix(in oklab, var(--brand-ink) 45%, transparent);
   --ring: var(--brand-coral);
-  --radius: 0.75rem;
+  --radius: 1.15rem;
 }
 
 @theme inline {
@@ -79,8 +72,8 @@
   --radius-2xl: calc(var(--radius) * 1.8);
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-heading), Impact, sans-serif;
-  --font-accent: var(--font-logo), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  --font-accent: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -103,10 +96,9 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: 0.005em;
-    line-height: 0.96;
-    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 0.94;
     text-wrap: balance;
   }
 
@@ -136,15 +128,26 @@
     background-color: var(--brand-green);
     color: var(--brand-cream);
     --foreground: var(--brand-cream);
-    --card: #20493a;
-    --card-foreground: var(--brand-cream);
-    --muted: #20493a;
+    --card: #2d7d82;
+    --card-foreground: #fff9f1;
+    --muted: #2d7d82;
     --muted-foreground: color-mix(in oklab, var(--brand-cream) 78%, transparent);
     --primary: var(--brand-sun);
     --primary-foreground: var(--brand-ink);
     --border: color-mix(in oklab, var(--brand-cream) 24%, transparent);
     --input: color-mix(in oklab, var(--brand-cream) 45%, transparent);
     --ring: var(--brand-sun);
+  }
+
+  .tone-coral {
+    background-color: var(--brand-coral);
+    color: var(--brand-ink);
+    --foreground: var(--brand-ink);
+    --primary: var(--brand-ink);
+    --primary-foreground: var(--brand-sun);
+    --muted-foreground: color-mix(in oklab, var(--brand-ink) 76%, transparent);
+    --border: color-mix(in oklab, var(--brand-ink) 25%, transparent);
+    --ring: var(--brand-ink);
   }
 
   .tone-sun {
@@ -216,7 +219,16 @@
   }
 
   .font-accent {
-    font-family: var(--font-logo), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .ticket-edge {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px));
+  }
+
+  .soft-noise {
+    background-image: radial-gradient(circle at 1px 1px, color-mix(in oklab, currentColor 14%, transparent) 1px, transparent 0);
+    background-size: 18px 18px;
   }
 
   .section-grid {

@@ -22,12 +22,12 @@ export function LoyaltyTeaser({ locale, m }: { locale: Locale; m: Messages }) {
           <div className="group relative isolate mx-auto w-full max-w-md py-6">
             <div
               aria-hidden
-              className="absolute inset-x-6 inset-y-0 -z-10 rotate-3 rounded-3xl bg-brand-sun motion-safe:transition-transform motion-safe:duration-500 group-hover:rotate-6"
+              className="absolute inset-x-6 inset-y-0 -z-10 rotate-3 rounded-[3rem_1rem_3rem_1rem] bg-brand-coral motion-safe:transition-transform motion-safe:duration-500 group-hover:rotate-6"
             />
             <div
               role="img"
               aria-label={m.nav.loyalty}
-              className="tone-ink relative aspect-[1.586/1] w-full -rotate-3 overflow-hidden rounded-3xl border border-brand-gold/60 p-7 shadow-2xl shadow-black/40 motion-safe:transition-transform motion-safe:duration-500 group-hover:-rotate-1 group-hover:scale-[1.03]"
+              className="tone-ink relative aspect-[1.586/1] w-full -rotate-3 overflow-hidden rounded-[3rem_1rem_3rem_1rem] border-2 border-brand-sun p-7 shadow-2xl shadow-black/30 motion-safe:transition-transform motion-safe:duration-500 group-hover:-rotate-1 group-hover:scale-[1.03]"
             >
               <div
                 aria-hidden

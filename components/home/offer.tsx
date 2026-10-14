@@ -31,7 +31,7 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
           return (
             <li
               key={item.title}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-foreground/15 bg-card motion-safe:transition-all motion-safe:duration-500 hover:border-brand-gold/80 hover:bg-brand-gold hover:text-brand-ink motion-safe:hover:-translate-y-2 hover:shadow-[0_24px_60px_-20px_rgb(0_0_0_/_55%)]"
+              className="group flex flex-col overflow-hidden rounded-[2.5rem_0.8rem_2.5rem_0.8rem] border-2 border-brand-cream/20 bg-card motion-safe:transition-all motion-safe:duration-500 odd:rotate-[-0.6deg] even:rotate-[0.6deg] hover:rotate-0 hover:border-brand-coral hover:bg-brand-coral hover:text-brand-ink motion-safe:hover:-translate-y-3 hover:shadow-[10px_10px_0_0_var(--brand-sun)]"
             >
               <div className="image-reveal relative aspect-[4/3] overflow-hidden">
                 {photo ? (
@@ -49,13 +49,13 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
                 )}
                 <span
                   aria-hidden
-                  className="absolute left-4 top-4 flex size-12 items-center justify-center rounded-full bg-brand-ink/80 font-display text-base text-brand-gold backdrop-blur-sm motion-safe:transition-colors group-hover:bg-brand-ink group-hover:text-brand-gold"
+                  className="absolute left-4 top-4 flex size-12 items-center justify-center rounded-[1rem_1rem_1rem_0.25rem] bg-brand-sun font-display text-base font-bold text-brand-ink backdrop-blur-sm motion-safe:transition-transform group-hover:rotate-6 group-hover:scale-110"
                 >
                   {String(index + 1).padStart(2, '0')}
                 </span>
               </div>
               <div className="p-6 sm:p-7">
-                <h3 className="font-display text-4xl uppercase leading-none transition-colors group-hover:text-brand-ink">{item.title}</h3>
+                <h3 className="font-display text-4xl font-bold leading-[0.95] tracking-[-0.04em] transition-colors group-hover:text-brand-ink">{item.title}</h3>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground transition-colors group-hover:text-brand-ink/80">
                   {item.text}
                 </p>

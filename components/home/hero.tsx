@@ -25,7 +25,7 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
   return (
     <section
       aria-labelledby="hero-title"
-      className="tone-photo relative isolate flex min-h-[min(48rem,calc(100svh-4.5rem))] flex-col justify-end overflow-hidden bg-brand-ink"
+      className="tone-photo relative isolate flex min-h-[min(52rem,calc(100svh-4.5rem))] flex-col justify-end overflow-hidden bg-brand-ink"
     >
       <div className="absolute inset-x-0 top-0 -z-20 h-[48svh] lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-[78%]">
         <HeroSlides slides={slides} labels={slideLabels} />
@@ -57,10 +57,14 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
         <h1
           id="hero-title"
           style={{ animationDelay: '100ms' }}
-          className="fade-up mt-5 max-w-5xl text-balance font-display text-6xl uppercase leading-[0.9] sm:text-8xl xl:text-[7.5rem]"
+          className="fade-up mt-5 max-w-5xl text-balance font-display text-6xl font-extrabold leading-[0.86] tracking-[-0.065em] text-brand-sun sm:text-8xl xl:text-[7.25rem]"
         >
           <span className="block">{firstLine}</span>
-          {secondLine ? <span className="mt-2 block text-brand-gold">{secondLine}</span> : null}
+          {secondLine ? (
+            <span className="mt-3 block w-fit -rotate-1 rounded-[1.25rem_1.25rem_1.25rem_0.3rem] bg-brand-coral px-4 py-1 text-brand-ink sm:px-6">
+              {secondLine}
+            </span>
+          ) : null}
         </h1>
         <p
           style={{ animationDelay: '220ms' }}
@@ -87,7 +91,7 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
           {h.moments.map((moment) => (
             <li
               key={moment}
-              className="rounded-full border border-brand-cream/30 bg-brand-ink/50 px-3.5 py-1.5 backdrop-blur-sm transition-colors hover:border-brand-gold hover:bg-brand-gold hover:text-brand-ink"
+              className="rounded-[0.9rem_0.9rem_0.9rem_0.2rem] border border-brand-cream/30 bg-brand-ink/55 px-3.5 py-1.5 backdrop-blur-sm transition-all hover:-rotate-1 hover:border-brand-sun hover:bg-brand-sun hover:text-brand-ink"
             >
               {moment}
             </li>
