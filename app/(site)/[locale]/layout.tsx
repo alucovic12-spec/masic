@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Manrope, Montserrat, Unbounded } from 'next/font/google'
+import { Anton, Montserrat, Poppins } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import { MobileNav } from '@/components/layout/mobile-nav'
@@ -12,21 +12,23 @@ import { getNavItems, splitMobileNav } from '@/lib/navigation'
 import { getSiteUrl, site } from '@/lib/site'
 import '../../globals.css'
 
-const display = Unbounded({
-  subsets: ['latin', 'latin-ext'],
+const display = Anton({
+  subsets: ['latin'],
+  weight: '400',
   variable: '--font-heading',
   display: 'swap',
 })
 
-const body = Manrope({
+const body = Poppins({
   subsets: ['latin', 'latin-ext'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-body',
   display: 'swap',
 })
 
 const logoFont = Montserrat({
   subsets: ['latin', 'latin-ext'],
-  weight: ['300', '400', '800'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-logo',
   display: 'swap',
 })

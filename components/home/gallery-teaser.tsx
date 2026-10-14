@@ -31,7 +31,7 @@ export function GalleryTeaser({ locale, m }: { locale: Locale; m: Messages }) {
           <li
             key={label}
             className={cn(
-              'group relative overflow-hidden rounded-3xl bg-brand-ink motion-safe:transition-all motion-safe:duration-500 lg:group-hover/list:opacity-60 lg:hover:!opacity-100',
+              'image-reveal group relative overflow-hidden rounded-2xl bg-brand-ink motion-safe:transition-all motion-safe:duration-500 lg:group-hover/list:opacity-45 lg:hover:!opacity-100 lg:hover:-translate-y-2',
               tiles[index].position,
             )}
           >
@@ -46,7 +46,7 @@ export function GalleryTeaser({ locale, m }: { locale: Locale; m: Messages }) {
               aria-hidden
               className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-brand-ink/90 to-transparent"
             />
-            <p className="absolute bottom-4 left-4 rounded-full bg-brand-sun px-4 py-1.5 font-display text-sm text-brand-ink motion-safe:transition-transform motion-safe:duration-500 group-hover:-translate-y-1 group-hover:bg-brand-cream">
+            <p className="font-accent absolute bottom-4 left-4 bg-brand-sun px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-ink motion-safe:transition-all motion-safe:duration-500 group-hover:-translate-y-1 group-hover:bg-brand-cream">
               {label}
             </p>
           </li>

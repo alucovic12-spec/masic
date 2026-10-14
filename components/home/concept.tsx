@@ -9,7 +9,7 @@ export function Concept({ m }: { m: Messages }) {
 
   return (
     <Section labelledBy="concept-title">
-      <div className="grid items-center gap-16 lg:grid-cols-2">
+      <div className="grid items-center gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
         <Reveal>
           <SectionHeading id="concept-title" eyebrow={c.eyebrow} title={c.title} intro={c.text} />
           <h3 className="mt-12 text-xs uppercase tracking-[0.26em] text-primary">{c.materialsLabel}</h3>
@@ -28,7 +28,7 @@ export function Concept({ m }: { m: Messages }) {
         <Reveal>
           <div className="relative mx-auto max-w-lg pb-14 pr-4 lg:max-w-none">
             <Parallax speed={50}>
-              <div className="group relative aspect-[5/4] overflow-hidden rounded-3xl shadow-[14px_14px_0_0_var(--brand-green)]">
+              <div className="image-reveal group relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-[18px_18px_0_0_var(--brand-green)]">
                 <Image
                   src="/images/space/hall-oak-tables.png"
                   alt=""

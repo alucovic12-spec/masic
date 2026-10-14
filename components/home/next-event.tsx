@@ -15,10 +15,10 @@ export function NextEvent({ locale, m, event }: Props) {
   const showNote = site.showPlaceholders && (event ? event.placeholder : true)
 
   return (
-    <Section labelledBy="next-event-title" className="py-6 sm:py-10">
+    <Section labelledBy="next-event-title" className="py-[35px] sm:py-[35px] sm:pb-[51px]">
       <Reveal>
-        <div className="tone-ink group grid overflow-hidden rounded-3xl border border-brand-gold/50 shadow-[0_0_0_0_var(--brand-gold)] motion-safe:transition-all motion-safe:duration-500 hover:border-brand-gold hover:shadow-[12px_12px_0_0_var(--brand-gold)] motion-safe:hover:-translate-x-1 motion-safe:hover:-translate-y-1 md:grid-cols-[2fr_3fr]">
-          <div className="relative min-h-64 overflow-hidden md:min-h-full">
+        <div className="tone-ink group grid overflow-hidden rounded-[2rem] border border-brand-gold/30 shadow-[0_24px_80px_-36px_rgb(17_17_15_/_60%)] motion-safe:transition-all motion-safe:duration-500 hover:border-brand-gold/80 hover:shadow-[0_30px_90px_-30px_rgb(17_17_15_/_75%)] motion-safe:hover:-translate-y-1 md:grid-cols-[1.05fr_1.45fr]">
+          <div className="image-reveal relative min-h-72 overflow-hidden md:min-h-full">
             <Image
               src="/images/live-music.png"
               alt=""
@@ -41,7 +41,7 @@ export function NextEvent({ locale, m, event }: Props) {
                 <span aria-hidden className="h-px w-10 bg-primary" />
                 {n.eyebrow}
               </p>
-              <h2 id="next-event-title" className="mt-5 text-balance font-display text-3xl sm:text-5xl">
+              <h2 id="next-event-title" className="mt-5 text-balance font-display text-5xl uppercase leading-[0.95] sm:text-7xl">
                 {event ? event.title : n.title}
               </h2>
               {event ? (

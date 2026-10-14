@@ -25,15 +25,15 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
         <SectionHeading id="offer-title" eyebrow={o.eyebrow} title={o.title} intro={o.intro} />
       </Reveal>
 
-      <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {o.items.map((item, index) => {
           const photo = photos[index]
           return (
             <li
               key={item.title}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-foreground/15 bg-card motion-safe:transition-all motion-safe:duration-500 hover:border-brand-gold hover:bg-brand-gold hover:text-brand-ink motion-safe:hover:-translate-y-2"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-foreground/15 bg-card motion-safe:transition-all motion-safe:duration-500 hover:border-brand-gold/80 hover:bg-brand-gold hover:text-brand-ink motion-safe:hover:-translate-y-2 hover:shadow-[0_24px_60px_-20px_rgb(0_0_0_/_55%)]"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="image-reveal relative aspect-[4/3] overflow-hidden">
                 {photo ? (
                   <Image
                     src={photo}
@@ -55,7 +55,7 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
                 </span>
               </div>
               <div className="p-6 sm:p-7">
-                <h3 className="font-display text-2xl transition-colors group-hover:text-brand-ink">{item.title}</h3>
+                <h3 className="font-display text-4xl uppercase leading-none transition-colors group-hover:text-brand-ink">{item.title}</h3>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground transition-colors group-hover:text-brand-ink/80">
                   {item.text}
                 </p>

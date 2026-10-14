@@ -40,7 +40,7 @@
   --border: color-mix(in oklab, var(--brand-ink) 14%, transparent);
   --input: color-mix(in oklab, var(--brand-ink) 45%, transparent);
   --ring: var(--brand-coral);
-  --radius: 1rem;
+  --radius: 0.75rem;
 }
 
 @theme inline {
@@ -79,7 +79,8 @@
   --radius-2xl: calc(var(--radius) * 1.8);
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-heading), var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), Impact, sans-serif;
+  --font-accent: var(--font-logo), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -103,21 +104,16 @@
   h4 {
     font-family: var(--font-display);
     font-weight: 400;
-    letter-spacing: -0.03em;
-    line-height: 1.08;
+    letter-spacing: 0.005em;
+    line-height: 0.96;
+    text-transform: uppercase;
     text-wrap: balance;
-  }
-
-  /* Heavy weight is reserved for the big page headlines. */
-  h1,
-  h2 {
-    font-weight: 600;
   }
 
   b,
   strong,
   th {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   :focus-visible {
@@ -217,6 +213,31 @@
 
   .hero-slide-active {
     animation: slow-zoom 9s ease-out both;
+  }
+
+  .font-accent {
+    font-family: var(--font-logo), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .section-grid {
+    background-image:
+      linear-gradient(color-mix(in oklab, currentColor 5%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklab, currentColor 5%, transparent) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .image-reveal::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 35%, rgb(255 255 255 / 12%) 50%, transparent 65%);
+    transform: translateX(-130%);
+    transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .image-reveal:hover::after {
+    transform: translateX(130%);
   }
 }
 

@@ -50,21 +50,21 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
       />
 
       <div className="pointer-events-none mx-auto w-full max-w-[90rem] px-4 pb-12 pt-[38svh] sm:px-6 sm:pb-16 lg:px-8 lg:pb-12 lg:pt-14 [&>*]:pointer-events-auto">
-        <p className="fade-up inline-flex items-center gap-3 text-xs uppercase tracking-[0.28em] text-brand-gold">
+        <p className="font-accent fade-up inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-brand-gold">
           <span aria-hidden className="h-px w-10 bg-brand-gold" />
           {h.eyebrow}
         </p>
         <h1
           id="hero-title"
           style={{ animationDelay: '100ms' }}
-          className="fade-up mt-6 max-w-4xl text-balance font-display text-5xl font-semibold leading-[1.02] sm:text-6xl xl:text-7xl"
+          className="fade-up mt-5 max-w-5xl text-balance font-display text-6xl uppercase leading-[0.9] sm:text-8xl xl:text-[7.5rem]"
         >
           <span className="block">{firstLine}</span>
-          {secondLine ? <span className="mt-1 block text-brand-gold">{secondLine}</span> : null}
+          {secondLine ? <span className="mt-2 block text-brand-gold">{secondLine}</span> : null}
         </h1>
         <p
           style={{ animationDelay: '220ms' }}
-          className="fade-up mt-7 max-w-xl text-pretty text-lg leading-relaxed text-brand-cream/90"
+          className="fade-up mt-6 max-w-xl text-pretty text-base font-light leading-relaxed text-brand-cream/80 sm:text-lg"
         >
           {h.text}
         </p>

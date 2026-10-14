@@ -7,7 +7,7 @@ export function CareersTeaser({ locale, m }: { locale: Locale; m: Messages }) {
   const c = m.home.careers
 
   return (
-    <section aria-labelledby="careers-title" className="tone-sun group relative isolate overflow-hidden py-24 sm:py-32">
+    <section aria-labelledby="careers-title" className="tone-sun section-grid group relative isolate overflow-hidden py-24 sm:py-36">
       <div
         aria-hidden
         className="absolute -right-16 -top-16 -z-10 size-72 rounded-full bg-brand-coral motion-safe:transition-transform motion-safe:duration-1000 group-hover:scale-125"
@@ -22,7 +22,7 @@ export function CareersTeaser({ locale, m }: { locale: Locale; m: Messages }) {
             <span aria-hidden className="h-px w-10 bg-brand-ink" />
             {c.eyebrow}
           </p>
-          <h2 id="careers-title" className="mt-6 max-w-4xl text-balance font-display text-4xl font-semibold leading-[1.02] sm:text-7xl">
+          <h2 id="careers-title" className="mt-6 max-w-5xl text-balance font-display text-6xl uppercase leading-[0.9] sm:text-8xl lg:text-[7rem]">
             {c.title}
           </h2>
           <p className="mt-7 max-w-xl text-pretty text-lg">{c.text}</p>
