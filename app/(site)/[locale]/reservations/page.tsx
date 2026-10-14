@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { ReservationForm } from '@/components/reservations/reservation-form'
 import type { Locale } from '@/lib/i18n/config'
 import { getMessages } from '@/lib/i18n/messages'
-import { buildMetadata } from '@/lib/seo'
+import { JsonLd } from '@/components/shared/json-ld'
+import { breadcrumbJsonLd, buildMetadata } from '@/lib/seo'
 import { site } from '@/lib/site'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -19,6 +20,7 @@ export default async function ReservationsPage({ params }: Props) {
 
   return (
     <main className="interior-page">
+      <JsonLd data={breadcrumbJsonLd(locale, 'reservations')} />
       <header className="interior-hero">
         <div className="interior-hero-inner">
         <p className="interior-eyebrow">{r.eyebrow}</p>

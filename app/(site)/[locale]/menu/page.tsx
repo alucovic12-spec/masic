@@ -4,7 +4,8 @@ import { LinkButton } from '@/components/shared/link-button'
 import { localizedPath, type Locale } from '@/lib/i18n/config'
 import { getMessages } from '@/lib/i18n/messages'
 import { getMenu } from '@/lib/menu/get-menu'
-import { buildMetadata } from '@/lib/seo'
+import { JsonLd } from '@/components/shared/json-ld'
+import { breadcrumbJsonLd, buildMetadata } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -20,6 +21,7 @@ export default async function MenuPage({ params }: Props) {
 
   return (
     <main className="interior-page">
+      <JsonLd data={breadcrumbJsonLd(locale, 'menu')} />
       <header className="interior-hero">
         <div className="interior-hero-inner">
         <p className="interior-eyebrow">{m.menu.eyebrow}</p>

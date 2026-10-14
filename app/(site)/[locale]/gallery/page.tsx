@@ -3,7 +3,8 @@ import { GalleryBrowser } from '@/components/gallery/gallery-browser'
 import { getGallery } from '@/lib/gallery/get-gallery'
 import type { Locale } from '@/lib/i18n/config'
 import { getMessages } from '@/lib/i18n/messages'
-import { buildMetadata } from '@/lib/seo'
+import { JsonLd } from '@/components/shared/json-ld'
+import { breadcrumbJsonLd, buildMetadata } from '@/lib/seo'
 import { site } from '@/lib/site'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -20,6 +21,7 @@ export default async function GalleryPage({ params }: Props) {
 
   return (
     <main className="interior-page">
+      <JsonLd data={breadcrumbJsonLd(locale, 'gallery')} />
       <header className="interior-hero">
         <div className="interior-hero-inner">
           <p className="interior-eyebrow">{m.home.gallery.eyebrow}</p>

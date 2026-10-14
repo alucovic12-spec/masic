@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { CareersApplication } from '@/components/careers/careers-application'
 import type { Locale } from '@/lib/i18n/config'
 import { getMessages } from '@/lib/i18n/messages'
-import { buildMetadata } from '@/lib/seo'
+import { JsonLd } from '@/components/shared/json-ld'
+import { breadcrumbJsonLd, buildMetadata } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -54,6 +55,7 @@ export default async function CareersPage({ params }: Props) {
 
   return (
     <main className="interior-page">
+      <JsonLd data={breadcrumbJsonLd(locale, 'careers')} />
       <header className="interior-hero">
         <div className="interior-hero-inner">
           <p className="interior-eyebrow">{c.eyebrow}</p>

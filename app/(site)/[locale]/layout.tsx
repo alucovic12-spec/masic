@@ -6,9 +6,11 @@ import type { ReactNode } from 'react'
 import { MobileNav } from '@/components/layout/mobile-nav'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { SiteHeader } from '@/components/layout/site-header'
+import { JsonLd } from '@/components/shared/json-ld'
 import { isLocale, locales } from '@/lib/i18n/config'
 import { getMessages } from '@/lib/i18n/messages'
 import { getNavItems, splitMobileNav } from '@/lib/navigation'
+import { siteJsonLd } from '@/lib/seo'
 import { getSiteUrl, site } from '@/lib/site'
 import '../../globals.css'
 
@@ -33,6 +35,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     applicationName: site.shortName,
     title: { default: getMessages(locale).meta.defaultTitle, template: `%s | ${site.shortName}` },
     description: getMessages(locale).meta.defaultDescription,
+    authors: [{ name: site.shortName }],
+    creator: site.shortName,
+    publisher: site.shortName,
+    category: 'food and drink',
+    formatDetection: { telephone: false, email: false, address: false },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },
+    },
+    verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
     icons: { icon: '/icon.svg', apple: '/apple-icon.png' },
   }
 }
@@ -68,6 +81,7 @@ export default async function LocaleLayout({
         >
           {m.nav.skip}
         </a>
+        <JsonLd data={siteJsonLd(locale)} />
         <SiteHeader locale={locale} m={m} items={items} />
         <main id="main">{children}</main>
         <SiteFooter locale={locale} m={m} items={items} />
