@@ -19,21 +19,21 @@ export default async function MenuPage({ params }: Props) {
   const { categories, items } = getMenu(locale)
 
   return (
-    <>
-      <header className="mx-auto max-w-5xl px-4 pb-10 pt-14 sm:px-6 sm:pb-12 sm:pt-20 lg:px-8">
-        <p className="text-xs uppercase tracking-[0.28em] text-primary">{m.menu.eyebrow}</p>
-        <h1 className="mt-3 text-balance font-display text-3xl leading-tight sm:text-5xl">
-          {m.pages.menu.title}
-        </h1>
-        <p className="mt-4 max-w-xl text-pretty text-lg text-muted-foreground">{m.menu.intro}</p>
+    <main className="interior-page">
+      <header className="interior-hero">
+        <div className="interior-hero-inner">
+        <p className="interior-eyebrow">{m.menu.eyebrow}</p>
+        <h1 className="interior-title">{m.pages.menu.title}</h1>
+        <p className="interior-intro">{m.menu.intro}</p>
         <p className="mt-5 inline-block rounded-full border border-dashed border-foreground/30 px-4 py-2 text-xs text-muted-foreground">
           {m.menu.temporaryNotice}
         </p>
+        </div>
       </header>
 
       <MenuBrowser locale={locale} labels={m.menu} categories={categories} items={items} />
 
-      <section aria-labelledby="menu-reserve" className="bg-secondary py-16 sm:py-20">
+      <section aria-labelledby="menu-reserve" className="border-t border-brand-cream/10 bg-brand-cream/[0.035] py-20 sm:py-24">
         <div className="mx-auto flex max-w-5xl flex-col items-start gap-6 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
           <div>
             <h2 id="menu-reserve" className="font-display text-4xl">
@@ -44,6 +44,6 @@ export default async function MenuPage({ params }: Props) {
           <LinkButton href={localizedPath(locale, 'reservations')}>{m.menu.reserveCta}</LinkButton>
         </div>
       </section>
-    </>
+    </main>
   )
 }

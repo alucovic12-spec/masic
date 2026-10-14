@@ -24,13 +24,13 @@ export function EventCard({ event, locale, labels, headingLevel = 'h2' }: Props)
   return (
     <li
       className={cn(
-        'flex flex-col gap-5 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/40 sm:flex-row sm:items-center sm:gap-6 sm:p-6',
+        'glow-card flex flex-col gap-5 rounded-[1.75rem] border border-brand-cream/10 bg-brand-cream/[0.04] p-5 transition-all hover:border-brand-glow/35 sm:flex-row sm:items-center sm:gap-6 sm:p-6',
         inactive && 'opacity-75',
       )}
     >
       <div
         aria-hidden
-        className="flex size-20 shrink-0 flex-col items-center justify-center tone-green rounded-xl text-center"
+        className="flex size-20 shrink-0 flex-col items-center justify-center rounded-2xl border border-brand-glow/25 bg-brand-glow/[0.08] text-center text-brand-cream shadow-[0_0_35px_-16px_var(--brand-glow)]"
       >
         <span className="font-display text-4xl leading-none">{event.day}</span>
         <span className="mt-1 text-xs uppercase tracking-[0.2em] text-primary">{event.monthShort}</span>
@@ -38,7 +38,7 @@ export function EventCard({ event, locale, labels, headingLevel = 'h2' }: Props)
 
       <div className="min-w-0 flex-1">
         <EventBadges event={event} labels={labels} />
-        <Heading className="mt-3 font-display text-2xl leading-snug sm:text-3xl">
+        <Heading className="mt-3 font-display text-2xl font-bold leading-snug tracking-[-0.045em] text-brand-cream sm:text-3xl">
           <Link
             href={href}
             className="rounded-sm hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"

@@ -20,14 +20,16 @@ export function upcomingRoute(key: RouteKey) {
     const locale = (await params).locale as Locale
     const m = getMessages(locale)
     return (
-      <div className="mx-auto flex min-h-[60svh] max-w-3xl flex-col items-start justify-center px-4 py-24 sm:px-6">
-        <p className="text-xs uppercase tracking-[0.28em] text-primary">{m.upcoming.eyebrow}</p>
-        <h1 className="mt-3 text-balance font-display text-3xl leading-tight sm:text-5xl">{m.pages[key].title}</h1>
-        <p className="mt-5 max-w-xl text-lg text-muted-foreground">{m.upcoming.text}</p>
+      <main className="interior-page flex min-h-[75svh] items-center">
+        <div className="interior-hero-inner py-24">
+        <p className="interior-eyebrow">{m.upcoming.eyebrow}</p>
+        <h1 className="interior-title">{m.pages[key].title}</h1>
+        <p className="interior-intro">{m.upcoming.text}</p>
         <LinkButton href={localizedPath(locale, 'home')} variant="outline" className="mt-8">
           {m.upcoming.back}
         </LinkButton>
-      </div>
+        </div>
+      </main>
     )
   }
 

@@ -245,6 +245,106 @@
     font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   }
 
+  .interior-page {
+    min-height: 100svh;
+    background:
+      radial-gradient(circle at 8% 10%, rgb(110 231 242 / 8%), transparent 30rem),
+      radial-gradient(circle at 94% 34%, rgb(255 111 216 / 6%), transparent 34rem),
+      linear-gradient(180deg, #080b16 0%, #0d1222 46%, #090c17 100%);
+    color: var(--brand-cream);
+    --foreground: var(--brand-cream);
+    --muted-foreground: rgb(255 246 232 / 58%);
+    --border: rgb(255 246 232 / 12%);
+    --input: rgb(255 246 232 / 16%);
+    --card: rgb(255 246 232 / 5%);
+    --card-foreground: var(--brand-cream);
+  }
+
+  .interior-hero {
+    position: relative;
+    overflow: hidden;
+    max-width: none;
+    padding-block: clamp(5rem, 9vw, 8rem);
+    border-bottom: 1px solid rgb(255 246 232 / 9%);
+  }
+
+  .interior-hero::before {
+    content: '';
+    position: absolute;
+    width: 32rem;
+    height: 32rem;
+    right: -10rem;
+    top: -15rem;
+    border-radius: 999px;
+    background: rgb(102 140 255 / 16%);
+    filter: blur(90px);
+    pointer-events: none;
+  }
+
+  .interior-hero-inner {
+    position: relative;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 80rem;
+    padding-inline: 1rem;
+  }
+
+  .interior-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--brand-glow);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  .interior-eyebrow::before {
+    content: '';
+    width: 2.5rem;
+    height: 1px;
+    background: linear-gradient(90deg, var(--brand-glow), var(--brand-blue));
+  }
+
+  .interior-title {
+    margin-top: 1rem;
+    max-width: 13ch;
+    color: var(--brand-cream);
+    font-family: var(--font-poppins), sans-serif;
+    font-size: clamp(2.75rem, 7vw, 6.75rem);
+    font-weight: 800;
+    letter-spacing: -0.07em;
+    line-height: 0.9;
+    text-wrap: balance;
+  }
+
+  .interior-intro {
+    margin-top: 1.5rem;
+    max-width: 42rem;
+    color: rgb(255 246 232 / 62%);
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    font-weight: 300;
+    line-height: 1.75;
+    text-wrap: pretty;
+  }
+
+  .interior-panel {
+    border: 1px solid rgb(255 246 232 / 12%);
+    background: rgb(255 246 232 / 4%);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 28px 90px -50px rgb(102 140 255 / 55%);
+  }
+
+  @media (min-width: 640px) {
+    .interior-hero-inner { padding-inline: 1.5rem; }
+  }
+
+  @media (min-width: 1024px) {
+    .interior-hero-inner { padding-inline: 2rem; }
+  }
+
   .section-atmosphere {
     border-top: 1px solid rgb(255 246 232 / 7%);
   }

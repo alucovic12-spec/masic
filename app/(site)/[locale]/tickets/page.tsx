@@ -24,28 +24,28 @@ export default async function TicketsPage({ params }: Props) {
   )
 
   return (
-    <>
-      <header className="mx-auto max-w-5xl px-4 pb-10 pt-14 sm:px-6 sm:pb-12 sm:pt-20 lg:px-8">
-        <p className="text-xs uppercase tracking-[0.28em] text-primary">{m.tickets.eyebrow}</p>
-        <h1 className="mt-3 text-balance font-display text-3xl leading-tight sm:text-5xl">
-          {m.pages.tickets.title}
-        </h1>
-        <p className="mt-4 max-w-xl text-pretty text-lg text-muted-foreground">{m.tickets.intro}</p>
+    <main className="interior-page">
+      <header className="interior-hero">
+        <div className="interior-hero-inner">
+        <p className="interior-eyebrow">{m.tickets.eyebrow}</p>
+        <h1 className="interior-title">{m.pages.tickets.title}</h1>
+        <p className="interior-intro">{m.tickets.intro}</p>
         {site.showPlaceholders ? (
           <p className="mt-5 inline-block max-w-xl rounded-2xl border border-dashed border-foreground/30 px-4 py-2 text-xs text-muted-foreground">
             {m.tickets.temporaryNotice}
           </p>
         ) : null}
+        </div>
       </header>
 
-      <section aria-labelledby="tickets-how" className="bg-secondary py-14 sm:py-16">
+      <section aria-labelledby="tickets-how" className="border-b border-brand-cream/10 bg-brand-cream/[0.035] py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 id="tickets-how" className="font-display text-3xl sm:text-4xl">
             {m.tickets.howTitle}
           </h2>
           <ol className="mt-8 grid gap-4 md:grid-cols-3">
             {m.tickets.steps.map((step, index) => (
-              <li key={step.title} className="rounded-2xl border border-border bg-background/40 p-6">
+              <li key={step.title} className="interior-panel glow-card p-6">
                 <span aria-hidden className="font-display text-4xl text-primary">
                   {index + 1}
                 </span>
@@ -78,6 +78,6 @@ export default async function TicketsPage({ params }: Props) {
           </ul>
         )}
       </section>
-    </>
+    </main>
   )
 }

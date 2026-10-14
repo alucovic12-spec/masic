@@ -20,8 +20,8 @@ type ActiveType = 'all' | EventType
 
 const chip =
   'flex min-h-11 items-center rounded-full border px-4 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring'
-const chipOn = 'border-primary bg-primary text-primary-foreground'
-const chipOff = 'border-border bg-card text-foreground hover:border-primary/50'
+const chipOn = 'border-brand-cream bg-brand-cream text-brand-ink shadow-[0_0_30px_-12px_rgb(255_246_232_/_65%)]'
+const chipOff = 'border-brand-cream/12 bg-brand-cream/[0.04] text-brand-cream/65 hover:border-brand-glow/45 hover:text-brand-cream'
 
 export function EventBrowser({ locale, labels, upcoming, past }: Props) {
   const [tab, setTab] = useState<Tab>('upcoming')

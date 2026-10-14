@@ -55,7 +55,7 @@ export default async function LoyaltyPage({ params, searchParams }: Props) {
 
   if (user) {
     return (
-      <div className="mx-auto max-w-5xl px-4 pb-24 pt-14 sm:px-6 sm:pt-20 lg:px-8">
+      <main className="interior-page mx-auto max-w-none px-4 pb-24 pt-20 sm:px-6 sm:pt-28 lg:px-8">
         <p className="text-xs uppercase tracking-[0.28em] text-primary">{t.eyebrow}</p>
         <h1 className="mt-3 text-balance font-display text-3xl leading-tight sm:text-5xl">
           {member ? `${t.card.welcome}, ${member.full_name.split(' ')[0]}` : m.pages.loyalty.title}
@@ -77,22 +77,22 @@ export default async function LoyaltyPage({ params, searchParams }: Props) {
             <SignOutForm locale={locale} label={t.signOut} />
           </div>
         </div>
-      </div>
+      </main>
     )
   }
 
   return (
-    <>
-      <header className="mx-auto max-w-5xl px-4 pb-10 pt-14 sm:px-6 sm:pb-12 sm:pt-20 lg:px-8">
-        <p className="text-xs uppercase tracking-[0.28em] text-primary">{t.eyebrow}</p>
-        <h1 className="mt-3 text-balance font-display text-3xl leading-tight sm:text-5xl">
-          {m.pages.loyalty.title}
-        </h1>
-        <p className="mt-4 max-w-xl text-pretty text-lg text-muted-foreground">{t.intro}</p>
+    <main className="interior-page">
+      <header className="interior-hero">
+        <div className="interior-hero-inner">
+          <p className="interior-eyebrow">{t.eyebrow}</p>
+          <h1 className="interior-title">{m.pages.loyalty.title}</h1>
+          <p className="interior-intro">{t.intro}</p>
+        </div>
       </header>
 
       <div className="mx-auto grid max-w-5xl gap-8 px-4 pb-24 sm:px-6 lg:grid-cols-[1fr_26rem] lg:px-8">
-        <section aria-labelledby="member-benefits" className="h-fit rounded-2xl border border-border p-6">
+        <section aria-labelledby="member-benefits" className="interior-panel h-fit p-7">
           <h2 id="member-benefits" className="font-display text-2xl">
             {t.benefitsTitle}
           </h2>
@@ -113,6 +113,6 @@ export default async function LoyaltyPage({ params, searchParams }: Props) {
           initialNotice={auth === 'failed' ? t.errors.callback : undefined}
         />
       </div>
-    </>
+    </main>
   )
 }

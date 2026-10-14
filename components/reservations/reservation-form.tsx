@@ -23,7 +23,7 @@ import { cn } from '@/lib/utils'
 type Props = { locale: Locale; labels: Messages['reservations'] }
 
 const fieldClass =
-  'mt-2 block w-full rounded-xl border border-border bg-background/40 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary aria-[invalid=true]:border-destructive'
+  'mt-2 block w-full rounded-xl border border-brand-cream/12 bg-brand-cream/[0.05] px-4 py-3 text-base text-brand-cream placeholder:text-brand-cream/35 focus-visible:border-brand-glow/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-glow/15 aria-[invalid=true]:border-destructive'
 
 function zagrebToday() {
   return new Intl.DateTimeFormat('en-CA', {
@@ -122,7 +122,7 @@ function ReservationFormInner({ locale, labels, onReset }: Props & { onReset: ()
   }
 
   return (
-    <form action={formAction} noValidate className="tone-green rounded-3xl p-6 sm:p-8">
+    <form action={formAction} noValidate className="interior-panel p-6 sm:p-8">
       <h2 className="font-display text-3xl">{labels.formTitle}</h2>
 
       {formError ? (

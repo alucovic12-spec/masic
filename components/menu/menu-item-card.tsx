@@ -19,7 +19,7 @@ export function MenuItemCard({ item, labels, formatPrice }: Props) {
   return (
     <li
       className={cn(
-        'flex gap-4 rounded-2xl border border-border bg-card p-4 transition-colors hover:border-primary/40 sm:p-5',
+        'glow-card flex gap-4 rounded-2xl border border-brand-cream/10 bg-brand-cream/[0.04] p-4 transition-all hover:border-brand-glow/35 hover:bg-brand-cream/[0.065] sm:p-5',
         item.unavailable && 'opacity-60',
       )}
     >
@@ -31,7 +31,7 @@ export function MenuItemCard({ item, labels, formatPrice }: Props) {
 
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="font-display text-xl leading-snug sm:text-2xl">{item.name}</h3>
+          <h3 className="font-display text-xl font-semibold leading-snug tracking-[-0.035em] text-brand-cream sm:text-2xl">{item.name}</h3>
           <p className="shrink-0 pt-1 text-sm text-primary">
             {item.price === null ? (
               <span className="font-normal text-muted-foreground">{labels.pricePending}</span>

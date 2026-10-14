@@ -19,13 +19,13 @@ export default async function GalleryPage({ params }: Props) {
   const items = await getGallery(locale, m)
 
   return (
-    <>
-      <header className="mx-auto max-w-5xl px-4 pb-10 pt-14 sm:px-6 sm:pb-12 sm:pt-20 lg:px-8">
-        <p className="text-xs uppercase tracking-[0.28em] text-primary">{m.home.gallery.eyebrow}</p>
-        <h1 className="mt-3 text-balance font-display text-3xl leading-tight sm:text-5xl">
-          {m.pages.gallery.title}
-        </h1>
-        <p className="mt-4 max-w-xl text-pretty text-lg text-muted-foreground">{m.galleryPage.intro}</p>
+    <main className="interior-page">
+      <header className="interior-hero">
+        <div className="interior-hero-inner">
+          <p className="interior-eyebrow">{m.home.gallery.eyebrow}</p>
+          <h1 className="interior-title">{m.pages.gallery.title}</h1>
+          <p className="interior-intro">{m.galleryPage.intro}</p>
+        </div>
       </header>
 
       <div className="mx-auto max-w-5xl px-4 pb-24 sm:px-6 lg:px-8">
@@ -34,6 +34,6 @@ export default async function GalleryPage({ params }: Props) {
           <p className="mt-10 text-sm text-muted-foreground">{m.galleryPage.note}</p>
         ) : null}
       </div>
-    </>
+    </main>
   )
 }

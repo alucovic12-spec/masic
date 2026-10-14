@@ -17,7 +17,7 @@ export default async function CareersPage({ params }: Props) {
 
   const aside = (
     <div className="flex h-fit flex-col gap-6">
-      <section aria-labelledby="seeking-title" className="rounded-2xl border border-border p-6">
+      <section aria-labelledby="seeking-title" className="interior-panel p-6">
         <h2 id="seeking-title" className="font-display text-2xl">
           {c.seekingTitle}
         </h2>
@@ -31,7 +31,7 @@ export default async function CareersPage({ params }: Props) {
         </ul>
       </section>
 
-      <section aria-labelledby="how-title" className="rounded-2xl border border-border p-6">
+      <section aria-labelledby="how-title" className="interior-panel p-6">
         <h2 id="how-title" className="font-display text-2xl">
           {c.how.title}
         </h2>
@@ -53,18 +53,18 @@ export default async function CareersPage({ params }: Props) {
   )
 
   return (
-    <>
-      <header className="mx-auto max-w-5xl px-4 pb-10 pt-14 sm:px-6 sm:pb-12 sm:pt-20 lg:px-8">
-        <p className="text-xs uppercase tracking-[0.28em] text-primary">{c.eyebrow}</p>
-        <h1 className="mt-3 text-balance font-display text-3xl leading-tight sm:text-5xl">
-          {c.heading}
-        </h1>
-        <p className="mt-4 max-w-2xl text-pretty text-lg text-muted-foreground">{c.subtitle}</p>
+    <main className="interior-page">
+      <header className="interior-hero">
+        <div className="interior-hero-inner">
+          <p className="interior-eyebrow">{c.eyebrow}</p>
+          <h1 className="interior-title">{c.heading}</h1>
+          <p className="interior-intro">{c.subtitle}</p>
+        </div>
       </header>
 
       <div className="mx-auto max-w-5xl px-4 pb-20 sm:px-6 lg:px-8">
         <CareersApplication locale={locale} labels={c} aside={aside} />
       </div>
-    </>
+    </main>
   )
 }

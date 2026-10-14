@@ -21,7 +21,7 @@ export function MemberCard({
   }).format(new Date(member.created_at))
 
   return (
-    <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl tone-green border-2 border-brand-ink p-6 shadow-xl shadow-foreground/25">
+    <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-[2rem] border border-brand-glow/25 bg-[radial-gradient(circle_at_80%_0%,rgb(110_231_242_/_18%),transparent_35%),linear-gradient(145deg,#151d33,#0b0f1c)] p-6 text-brand-cream shadow-[0_35px_110px_-35px_rgb(102_140_255_/_70%)]">
       <div aria-hidden className="absolute -right-10 -top-10 size-40 rounded-full bg-primary/15 blur-2xl" />
       <p className="text-sm tracking-[0.3em]">PARLAMENT</p>
       <p className="mt-1 text-[0.625rem] uppercase tracking-[0.4em] text-muted-foreground">People’s Bar</p>

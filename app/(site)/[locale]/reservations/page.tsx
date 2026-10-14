@@ -18,25 +18,25 @@ export default async function ReservationsPage({ params }: Props) {
   const r = m.reservations
 
   return (
-    <>
-      <header className="mx-auto max-w-5xl px-4 pb-10 pt-14 sm:px-6 sm:pb-12 sm:pt-20 lg:px-8">
-        <p className="text-xs uppercase tracking-[0.28em] text-primary">{r.eyebrow}</p>
-        <h1 className="mt-3 text-balance font-display text-3xl leading-tight sm:text-5xl">
-          {m.pages.reservations.title}
-        </h1>
-        <p className="mt-4 max-w-xl text-pretty text-lg text-muted-foreground">{r.intro}</p>
+    <main className="interior-page">
+      <header className="interior-hero">
+        <div className="interior-hero-inner">
+        <p className="interior-eyebrow">{r.eyebrow}</p>
+        <h1 className="interior-title">{m.pages.reservations.title}</h1>
+        <p className="interior-intro">{r.intro}</p>
         <p className="mt-3 text-sm font-medium text-primary">{r.notice}</p>
         {site.showPlaceholders ? (
           <p className="mt-5 inline-block max-w-xl rounded-2xl border border-dashed border-foreground/30 px-4 py-2 text-xs text-muted-foreground">
             {r.temporaryNotice}
           </p>
         ) : null}
+        </div>
       </header>
 
       <div className="mx-auto grid max-w-5xl gap-8 px-4 pb-20 sm:px-6 lg:grid-cols-[1fr_20rem] lg:px-8">
         <ReservationForm locale={locale} labels={r} />
 
-        <aside aria-labelledby="reservation-info" className="h-fit rounded-2xl border border-border p-6">
+        <aside aria-labelledby="reservation-info" className="interior-panel h-fit p-6">
           <h2 id="reservation-info" className="font-display text-2xl">
             {r.infoTitle}
           </h2>
@@ -52,6 +52,6 @@ export default async function ReservationsPage({ params }: Props) {
           </ol>
         </aside>
       </div>
-    </>
+    </main>
   )
 }

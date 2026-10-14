@@ -54,8 +54,8 @@ export function GalleryBrowser({
             className={cn(
               'h-10 rounded-full border px-4 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
               filter === item.id
-                ? 'border-primary bg-primary text-primary-foreground'
-                : 'border-border text-muted-foreground hover:border-foreground/40 hover:text-foreground',
+                ? 'border-brand-cream bg-brand-cream text-brand-ink shadow-[0_0_30px_-12px_rgb(255_246_232_/_65%)]'
+                : 'border-brand-cream/12 bg-brand-cream/[0.04] text-brand-cream/60 hover:border-brand-glow/45 hover:text-brand-cream',
             )}
           >
             {item.label}
@@ -78,7 +78,7 @@ export function GalleryBrowser({
                 aria-label={`${labels.open}: ${item.caption}`}
                 onClick={() => setOpenIndex(index)}
                 className={cn(
-                  'group relative block w-full overflow-hidden rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+                  'glow-card group relative block w-full overflow-hidden rounded-[1.5rem] border border-brand-cream/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-glow focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ink',
                   tileShape[item.aspect],
                 )}
               >
@@ -88,7 +88,7 @@ export function GalleryBrowser({
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 30vw, 50vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.07]"
                   />
                 ) : (
                   <PhotoPlaceholder
