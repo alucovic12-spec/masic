@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { DM_Sans, Space_Grotesk } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import { MobileNav } from '@/components/layout/mobile-nav'
@@ -12,17 +12,10 @@ import { getNavItems, splitMobileNav } from '@/lib/navigation'
 import { getSiteUrl, site } from '@/lib/site'
 import '../../globals.css'
 
-const display = Space_Grotesk({
+const poppins = Poppins({
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-heading',
-  display: 'swap',
-})
-
-const body = DM_Sans({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-body',
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
   display: 'swap',
 })
 
@@ -67,7 +60,7 @@ export default async function LocaleLayout({
   const { primary, more } = splitMobileNav(items)
 
   return (
-    <html lang={locale} className={`${display.variable} ${body.variable}`}>
+    <html lang={locale} className={poppins.variable}>
       <body className="pb-[calc(4rem+env(safe-area-inset-bottom))] xl:pb-0">
         <a
           href="#main"

@@ -25,7 +25,7 @@ export function SiteHeader({ locale, m, items }: SiteHeaderProps) {
       >
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(40%_220%_at_12%_-40%,rgba(199,243,107,0.18),transparent_70%),radial-gradient(35%_220%_at_92%_140%,rgba(35,108,114,0.46),transparent_70%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(42%_220%_at_12%_-40%,rgba(110,231,242,0.18),transparent_70%),radial-gradient(35%_220%_at_92%_140%,rgba(255,111,216,0.16),transparent_70%)]"
         />
         <div className="relative mx-auto flex h-16 max-w-[90rem] items-center justify-between gap-4 px-4 2xl:gap-6 sm:h-[4.5rem] sm:px-6 lg:px-8 xl:h-24">
           <BrandWordmark
@@ -48,7 +48,7 @@ export function SiteHeader({ locale, m, items }: SiteHeaderProps) {
             />
             <Link
               href={reservationsHref}
-              className="group/cta relative hidden h-11 items-center gap-3 overflow-hidden rounded-[1rem_1rem_1rem_0.3rem] bg-brand-lime pl-5 pr-1.5 xl:pl-5 2xl:pl-7 font-display text-[0.68rem] font-medium uppercase tracking-[0.16em] text-brand-ink transition-[background-color,box-shadow,transform] duration-300 hover:bg-brand-cream hover:shadow-[0_10px_30px_-8px_rgba(255,224,163,0.7)] motion-safe:hover:-translate-y-0.5 sm:inline-flex 2xl:h-12 2xl:pl-7 2xl:text-[0.74rem]"
+              className="group/cta relative hidden h-11 items-center gap-3 overflow-hidden rounded-full border border-brand-glow/40 bg-[linear-gradient(110deg,var(--brand-glow),var(--brand-blue))] shadow-[0_0_32px_-10px_var(--brand-glow)] pl-5 pr-1.5 xl:pl-5 2xl:pl-7 font-display text-[0.68rem] font-medium uppercase tracking-[0.16em] text-brand-ink transition-[background-color,box-shadow,transform] duration-300 hover:bg-brand-cream hover:shadow-[0_10px_30px_-8px_rgba(255,224,163,0.7)] motion-safe:hover:-translate-y-0.5 sm:inline-flex 2xl:h-12 2xl:pl-7 2xl:text-[0.74rem]"
             >
               <span
                 aria-hidden

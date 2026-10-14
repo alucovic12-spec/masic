@@ -49,6 +49,9 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-28 bg-gradient-to-b from-brand-ink/80 to-transparent"
       />
 
+      <div aria-hidden className="pointer-events-none absolute -left-32 bottom-16 -z-10 size-[34rem] rounded-full bg-brand-blue/20 blur-[110px]" />
+      <div aria-hidden className="pointer-events-none absolute bottom-0 left-[38%] -z-10 size-80 rounded-full bg-brand-pulse/15 blur-[100px]" />
+
       <div className="pointer-events-none mx-auto w-full max-w-[90rem] px-4 pb-12 pt-[38svh] sm:px-6 sm:pb-16 lg:px-8 lg:pb-12 lg:pt-14 [&>*]:pointer-events-auto">
         <p className="font-accent fade-up inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-brand-gold">
           <span aria-hidden className="h-px w-10 bg-brand-gold" />
@@ -57,11 +60,11 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
         <h1
           id="hero-title"
           style={{ animationDelay: '100ms' }}
-          className="fade-up mt-5 max-w-5xl text-balance font-display text-6xl font-extrabold leading-[0.86] tracking-[-0.065em] text-brand-sun sm:text-8xl xl:text-[7.25rem]"
+          className="aurora-text fade-up mt-5 max-w-5xl text-balance font-display text-6xl font-black leading-[0.84] tracking-[-0.07em] sm:text-8xl xl:text-[7.5rem]"
         >
           <span className="block">{firstLine}</span>
           {secondLine ? (
-            <span className="mt-3 block w-fit -rotate-1 rounded-[1.25rem_1.25rem_1.25rem_0.3rem] bg-brand-lime px-4 py-1 text-brand-ink sm:px-6">
+            <span className="mt-2 block w-fit rounded-2xl border border-brand-glow/40 bg-brand-ink/50 px-4 py-2 text-brand-cream shadow-[0_0_45px_-8px_rgb(110_231_242_/_55%)] backdrop-blur-xl sm:px-6">
               {secondLine}
             </span>
           ) : null}
@@ -91,7 +94,7 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
           {h.moments.map((moment) => (
             <li
               key={moment}
-              className="rounded-[0.9rem_0.9rem_0.9rem_0.2rem] border border-brand-cream/30 bg-brand-ink/55 px-3.5 py-1.5 backdrop-blur-sm transition-all hover:-rotate-1 hover:border-brand-sun hover:bg-brand-sun hover:text-brand-ink"
+              className="rounded-full border border-brand-glow/20 bg-white/[0.06] px-3.5 py-1.5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-glow/70 hover:bg-brand-glow/10 hover:shadow-[0_0_24px_-6px_var(--brand-glow)]"
             >
               {moment}
             </li>

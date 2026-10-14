@@ -6,14 +6,16 @@
 :root {
   color-scheme: light;
 
-  --brand-ink: #0d1321;
-  --brand-anthracite: #172139;
-  --brand-cream: #f8eff2;
-  --brand-sand: #dbe9e8;
-  --brand-green: #236c72;
-  --brand-sun: #ffe0a3;
-  --brand-lime: #c7f36b;
-  --brand-gold: #ffe0a3;
+  --brand-ink: #080b16;
+  --brand-anthracite: #11172a;
+  --brand-cream: #fff6e8;
+  --brand-sand: #dfe6ef;
+  --brand-green: #123d50;
+  --brand-sun: #ffd9a3;
+  --brand-glow: #6ee7f2;
+  --brand-pulse: #ff6fd8;
+  --brand-blue: #668cff;
+  --brand-gold: #ffd9a3;
 
   --background: var(--brand-cream);
   --foreground: var(--brand-ink);
@@ -21,7 +23,7 @@
   --card-foreground: var(--brand-ink);
   --popover: #fff9f1;
   --popover-foreground: var(--brand-ink);
-  --primary: var(--brand-lime);
+  --primary: var(--brand-glow);
   --primary-foreground: var(--brand-ink);
   --secondary: var(--brand-green);
   --secondary-foreground: #fff9f1;
@@ -32,7 +34,7 @@
   --destructive: #b42318;
   --border: color-mix(in oklab, var(--brand-ink) 14%, transparent);
   --input: color-mix(in oklab, var(--brand-ink) 45%, transparent);
-  --ring: var(--brand-lime);
+  --ring: var(--brand-glow);
   --radius: 1.15rem;
 }
 
@@ -43,7 +45,9 @@
   --color-brand-sand: var(--brand-sand);
   --color-brand-green: var(--brand-green);
   --color-brand-sun: var(--brand-sun);
-  --color-brand-lime: var(--brand-lime);
+  --color-brand-glow: var(--brand-glow);
+  --color-brand-pulse: var(--brand-pulse);
+  --color-brand-blue: var(--brand-blue);
   --color-brand-gold: var(--brand-gold);
 
   --color-background: var(--background);
@@ -71,9 +75,9 @@
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
 
-  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
-  --font-accent: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-accent: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -96,9 +100,9 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: -0.055em;
-    line-height: 0.92;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
     text-wrap: balance;
   }
 
@@ -139,15 +143,18 @@
     --ring: var(--brand-sun);
   }
 
-  .tone-lime {
-    background-color: var(--brand-lime);
-    color: var(--brand-ink);
-    --foreground: var(--brand-ink);
-    --primary: var(--brand-ink);
-    --primary-foreground: var(--brand-sun);
-    --muted-foreground: color-mix(in oklab, var(--brand-ink) 76%, transparent);
-    --border: color-mix(in oklab, var(--brand-ink) 25%, transparent);
-    --ring: var(--brand-ink);
+  .tone-glow {
+    background:
+      radial-gradient(circle at 15% 20%, rgb(110 231 242 / 32%), transparent 34%),
+      radial-gradient(circle at 86% 18%, rgb(255 111 216 / 30%), transparent 31%),
+      linear-gradient(135deg, #101a35 0%, #080b16 58%, #1b1230 100%);
+    color: var(--brand-cream);
+    --foreground: var(--brand-cream);
+    --primary: var(--brand-glow);
+    --primary-foreground: var(--brand-ink);
+    --muted-foreground: color-mix(in oklab, var(--brand-cream) 72%, transparent);
+    --border: color-mix(in oklab, var(--brand-glow) 32%, transparent);
+    --ring: var(--brand-glow);
   }
 
   .tone-sun {
@@ -219,7 +226,45 @@
   }
 
   .font-accent {
-    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .glow-card {
+    position: relative;
+    isolation: isolate;
+    box-shadow: 0 24px 80px -36px rgb(36 115 255 / 45%);
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 500ms ease, border-color 500ms ease;
+  }
+
+  .glow-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(120deg, rgb(110 231 242 / 70%), rgb(102 140 255 / 24%) 45%, rgb(255 111 216 / 58%));
+    opacity: 0;
+    filter: blur(16px);
+    transition: opacity 500ms ease;
+  }
+
+  .glow-card:hover {
+    transform: translateY(-8px);
+    border-color: rgb(110 231 242 / 55%);
+    box-shadow: 0 32px 100px -32px rgb(102 140 255 / 60%);
+  }
+
+  .glow-card:hover::before {
+    opacity: 0.72;
+  }
+
+  .aurora-text {
+    background: linear-gradient(100deg, var(--brand-cream) 5%, var(--brand-glow) 42%, var(--brand-blue) 70%, var(--brand-pulse) 100%);
+    background-size: 180% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: aurora-shift 7s ease-in-out infinite alternate;
   }
 
   .ticket-edge {
@@ -251,6 +296,11 @@
   .image-reveal:hover::after {
     transform: translateX(130%);
   }
+}
+
+@keyframes aurora-shift {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
 }
 
 @keyframes slow-zoom {

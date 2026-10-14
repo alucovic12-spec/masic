@@ -17,7 +17,7 @@ export function Concept({ m }: { m: Messages }) {
             {c.materials.map((material) => (
               <li
                 key={material}
-                className="cursor-default rounded-[0.8rem_0.8rem_0.8rem_0.2rem] border-2 border-foreground/20 bg-card px-4 py-2 text-sm font-medium transition-all odd:-rotate-1 even:rotate-1 hover:rotate-0 hover:-translate-y-1 hover:border-brand-lime hover:bg-brand-lime hover:text-brand-ink"
+                className="cursor-default rounded-full border border-foreground/15 bg-card/70 px-4 py-2 text-sm font-medium backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue hover:bg-brand-blue hover:text-white hover:shadow-[0_0_28px_-8px_var(--brand-blue)]"
               >
                 {material}
               </li>
@@ -28,7 +28,7 @@ export function Concept({ m }: { m: Messages }) {
         <Reveal>
           <div className="relative mx-auto max-w-lg pb-14 pr-4 lg:max-w-none">
             <Parallax speed={50}>
-              <div className="image-reveal group relative aspect-[5/4] overflow-hidden rounded-[4rem_1rem_4rem_1rem] border-2 border-brand-ink shadow-[18px_18px_0_0_var(--brand-green)]">
+              <div className="image-reveal glow-card group relative aspect-[5/4] overflow-hidden rounded-[2.5rem] border border-brand-blue/25 shadow-[0_30px_90px_-35px_rgb(102_140_255_/_65%)]">
                 <Image
                   src="/images/space/hall-oak-tables.png"
                   alt=""

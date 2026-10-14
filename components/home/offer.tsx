@@ -25,13 +25,13 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
         <SectionHeading id="offer-title" eyebrow={o.eyebrow} title={o.title} intro={o.intro} />
       </Reveal>
 
-      <ul className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-12">
         {o.items.map((item, index) => {
           const photo = photos[index]
           return (
             <li
               key={item.title}
-              className="group flex flex-col overflow-hidden rounded-[2.5rem_0.8rem_2.5rem_0.8rem] border-2 border-brand-cream/20 bg-card motion-safe:transition-all motion-safe:duration-500 odd:rotate-[-0.6deg] even:rotate-[0.6deg] hover:rotate-0 hover:border-brand-lime hover:bg-brand-lime hover:text-brand-ink motion-safe:hover:-translate-y-3 hover:shadow-[10px_10px_0_0_var(--brand-sun)]"
+              className="glow-card group flex flex-col overflow-hidden rounded-[1.75rem] border border-brand-glow/15 bg-[linear-gradient(145deg,#151d33,#0d1222)] lg:col-span-4 lg:[&:nth-child(1)]:col-span-7 lg:[&:nth-child(2)]:col-span-5 lg:[&:nth-child(5)]:col-span-5 lg:[&:nth-child(6)]:col-span-7"
             >
               <div className="image-reveal relative aspect-[4/3] overflow-hidden">
                 {photo ? (
@@ -40,10 +40,10 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
-                    className="object-cover saturate-75 motion-safe:transition-all motion-safe:duration-700 group-hover:scale-110 group-hover:saturate-100"
+                    className="object-cover saturate-[0.85] motion-safe:transition-all motion-safe:duration-1000 group-hover:scale-[1.07] group-hover:saturate-125"
                   />
                 ) : (
-                  <div className="flex size-full items-center justify-center bg-brand-lime text-brand-cream">
+                  <div className="flex size-full items-center justify-center bg-brand-blue text-brand-cream">
                     <Wine aria-hidden className="size-16" strokeWidth={1.5} />
                   </div>
                 )}

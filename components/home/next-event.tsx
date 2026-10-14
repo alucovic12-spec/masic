@@ -17,7 +17,7 @@ export function NextEvent({ locale, m, event }: Props) {
   return (
     <Section labelledBy="next-event-title" className="py-[35px] sm:py-[35px] sm:pb-[51px]">
       <Reveal>
-        <div className="tone-ink ticket-edge group grid overflow-hidden border-2 border-brand-ink shadow-[14px_14px_0_0_var(--brand-lime)] motion-safe:transition-all motion-safe:duration-500 hover:shadow-[20px_20px_0_0_var(--brand-green)] motion-safe:hover:-translate-x-1 motion-safe:hover:-translate-y-1 md:grid-cols-[1.05fr_1.45fr]">
+        <div className="tone-ink glow-card group grid overflow-hidden rounded-[2rem] border border-brand-glow/20 bg-[linear-gradient(135deg,#10172b,#080b16_68%)] md:grid-cols-[1.2fr_1fr]">
           <div className="image-reveal relative min-h-72 overflow-hidden md:min-h-full">
             <Image
               src="/images/live-music.png"
@@ -29,7 +29,7 @@ export function NextEvent({ locale, m, event }: Props) {
             <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-brand-ink/70 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-brand-ink/80" />
             <span
               aria-hidden
-              className="absolute left-5 top-5 flex size-14 -rotate-6 items-center justify-center rounded-[1rem_1rem_1rem_0.25rem] bg-primary text-primary-foreground shadow-lg motion-safe:transition-transform motion-safe:duration-500 group-hover:rotate-6 group-hover:scale-110"
+              className="absolute left-5 top-5 flex size-14 items-center justify-center rounded-2xl border border-white/20 bg-brand-ink/55 text-brand-glow shadow-[0_0_35px_-8px_var(--brand-glow)] backdrop-blur-xl motion-safe:transition-all motion-safe:duration-500 group-hover:scale-110 group-hover:rotate-3"
             >
               <CalendarDays className="size-6" />
             </span>
