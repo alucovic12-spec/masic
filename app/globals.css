@@ -6,16 +6,16 @@
 :root {
   color-scheme: light;
 
-  --brand-ink: #111311;
-  --brand-anthracite: #1a1d1a;
-  --brand-cream: #f5f0e7;
-  --brand-sand: #d8d0c3;
-  --brand-green: #334a43;
-  --brand-sun: #d8bf91;
-  --brand-glow: #c9ae7c;
-  --brand-pulse: #8f7d69;
-  --brand-blue: #60746d;
-  --brand-gold: #d8bf91;
+  --brand-ink: #202320;
+  --brand-anthracite: #303430;
+  --brand-cream: #f4f0e8;
+  --brand-sand: #ddd4c6;
+  --brand-green: #b9d8c6;
+  --brand-sun: #d8c5a6;
+  --brand-glow: #a8cbb7;
+  --brand-pulse: #b7aa9b;
+  --brand-blue: #849b91;
+  --brand-gold: #d8c5a6;
 
   --background: var(--brand-cream);
   --foreground: var(--brand-ink);
@@ -26,10 +26,10 @@
   --primary: var(--brand-glow);
   --primary-foreground: var(--brand-ink);
   --secondary: var(--brand-green);
-  --secondary-foreground: #fff9f1;
+  --secondary-foreground: var(--brand-ink);
   --muted: var(--brand-sand);
-  --muted-foreground: #526070;
-  --accent: #d6ded8;
+  --muted-foreground: #666b66;
+  --accent: #dce9e1;
   --accent-foreground: var(--brand-ink);
   --destructive: #b42318;
   --border: color-mix(in oklab, var(--brand-ink) 14%, transparent);
@@ -100,9 +100,9 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: -0.045em;
-    line-height: 0.94;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
     text-wrap: balance;
   }
 
@@ -130,21 +130,21 @@
   */
   .tone-green {
     background-color: var(--brand-green);
-    color: var(--brand-cream);
-    --foreground: var(--brand-cream);
-    --card: #2d7d82;
-    --card-foreground: #fff9f1;
-    --muted: #2d7d82;
-    --muted-foreground: color-mix(in oklab, var(--brand-cream) 78%, transparent);
-    --primary: var(--brand-sun);
-    --primary-foreground: var(--brand-ink);
-    --border: color-mix(in oklab, var(--brand-cream) 24%, transparent);
-    --input: color-mix(in oklab, var(--brand-cream) 45%, transparent);
-    --ring: var(--brand-sun);
+    color: var(--brand-ink);
+    --foreground: var(--brand-ink);
+    --card: #c9e1d3;
+    --card-foreground: var(--brand-ink);
+    --muted: #a8cbb7;
+    --muted-foreground: color-mix(in oklab, var(--brand-ink) 68%, transparent);
+    --primary: var(--brand-ink);
+    --primary-foreground: var(--brand-cream);
+    --border: color-mix(in oklab, var(--brand-ink) 16%, transparent);
+    --input: color-mix(in oklab, var(--brand-ink) 32%, transparent);
+    --ring: var(--brand-ink);
   }
 
   .tone-glow {
-    background-color: #202621;
+    background-color: #343b36;
     color: var(--brand-cream);
     --foreground: var(--brand-cream);
     --primary: var(--brand-sun);
@@ -165,7 +165,7 @@
   }
 
   .tone-night {
-    background-color: #151815;
+    background-color: #252825;
     color: var(--brand-cream);
     --foreground: var(--brand-cream);
     --muted-foreground: color-mix(in oklab, var(--brand-cream) 62%, transparent);
@@ -173,7 +173,7 @@
   }
 
   .tone-dusk {
-    background-color: #1b201c;
+    background-color: #303832;
     color: var(--brand-cream);
     --foreground: var(--brand-cream);
     --muted-foreground: color-mix(in oklab, var(--brand-cream) 62%, transparent);
@@ -244,7 +244,7 @@
 
   .interior-page {
     min-height: 100svh;
-    background-color: #151815;
+    background-color: #252825;
     color: var(--brand-cream);
     --foreground: var(--brand-cream);
     --muted-foreground: rgb(255 246 232 / 58%);
@@ -306,9 +306,9 @@
     color: var(--brand-cream);
     font-family: var(--font-poppins), sans-serif;
     font-size: clamp(2.75rem, 7vw, 6.75rem);
-    font-weight: 700;
-    letter-spacing: -0.055em;
-    line-height: 0.94;
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 0.97;
     text-wrap: balance;
   }
 
@@ -323,8 +323,8 @@
   }
 
   .interior-panel {
-    border: 1px solid rgb(255 246 232 / 12%);
-    background: rgb(255 246 232 / 4%);
+    border: 1px solid rgb(244 240 232 / 13%);
+    background: linear-gradient(145deg, rgb(244 240 232 / 6%), rgb(185 216 198 / 3%));
     border-radius: 1.5rem;
     backdrop-filter: blur(12px);
     box-shadow: 0 20px 50px -42px rgb(0 0 0 / 70%);
@@ -358,9 +358,25 @@
   }
 
   .glow-card:hover {
-    transform: translateY(-4px);
-    border-color: rgb(216 191 145 / 32%);
-    box-shadow: 0 24px 54px -38px rgb(0 0 0 / 78%);
+    transform: translateY(-5px);
+    border-color: rgb(185 216 198 / 38%);
+    box-shadow: 0 26px 58px -38px rgb(0 0 0 / 72%);
+  }
+
+  .glow-card::after {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 2px;
+    border-radius: inherit;
+    background: var(--brand-green);
+    opacity: 0;
+    transition: opacity 350ms ease;
+    pointer-events: none;
+  }
+
+  .glow-card:hover::after {
+    opacity: 0.72;
   }
 
   .warm-title {

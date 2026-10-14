@@ -134,7 +134,7 @@ export function MenuBrowser({ locale, labels, categories, items }: Props) {
           <div className="mt-6 space-y-14">
             {groups.map(({ category, items: groupItems }) => (
               <section key={category.id} aria-labelledby={`menu-${category.id}`} className="scroll-mt-44">
-                <h2 id={`menu-${category.id}`} className="font-display text-3xl font-bold tracking-[-0.05em] text-brand-cream sm:text-4xl">
+                <h2 id={`menu-${category.id}`} className="font-display text-3xl font-medium tracking-[-0.035em] text-brand-cream sm:text-4xl">
                   {category.name}
                 </h2>
                 <ul className="mt-5 grid gap-3 md:grid-cols-2">

@@ -59,7 +59,7 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
         <h1
           id="hero-title"
           style={{ animationDelay: '100ms' }}
-          className="warm-title fade-up mt-5 max-w-5xl text-balance font-display text-6xl font-black leading-[0.84] tracking-[-0.07em] sm:text-8xl xl:text-[7.5rem]"
+          className="warm-title fade-up mt-5 max-w-5xl text-balance font-display text-6xl font-semibold leading-[0.92] tracking-[-0.05em] sm:text-8xl xl:text-[7.5rem]"
         >
           <span className="block">{firstLine}</span>
           {secondLine ? (

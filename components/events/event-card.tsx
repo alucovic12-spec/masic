@@ -38,7 +38,7 @@ export function EventCard({ event, locale, labels, headingLevel = 'h2' }: Props)
 
       <div className="min-w-0 flex-1">
         <EventBadges event={event} labels={labels} />
-        <Heading className="mt-3 font-display text-2xl font-bold leading-snug tracking-[-0.045em] text-brand-cream sm:text-3xl">
+        <Heading className="mt-3 font-display text-2xl font-medium leading-snug tracking-[-0.03em] text-brand-cream sm:text-3xl">
           <Link
             href={href}
             className="rounded-sm hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"

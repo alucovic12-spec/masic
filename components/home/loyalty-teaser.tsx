@@ -33,7 +33,7 @@ export function LoyaltyTeaser({ locale, m }: { locale: Locale; m: Messages }) {
                 aria-hidden
                 className="absolute -right-12 -top-12 size-48 rounded-full bg-brand-sun/10 motion-safe:transition-transform motion-safe:duration-700 group-hover:scale-125"
               />
-              <p className="relative font-display text-2xl font-extrabold uppercase tracking-[-0.05em] text-brand-cream">Parlament</p>
+              <p className="relative font-display text-2xl font-semibold uppercase tracking-[-0.025em] text-brand-cream">Parlament</p>
               <p className="relative mt-1 text-[0.625rem] uppercase tracking-[0.34em] text-brand-cream/80">People’s Bar</p>
               <div className="absolute inset-x-7 bottom-7 flex items-end justify-between">
                 <div>

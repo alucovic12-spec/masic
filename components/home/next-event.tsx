@@ -41,7 +41,7 @@ export function NextEvent({ locale, m, event }: Props) {
                 <span aria-hidden className="h-px w-10 bg-primary" />
                 {n.eyebrow}
               </p>
-              <h2 id="next-event-title" className="mt-5 text-balance font-display text-5xl font-extrabold leading-[0.9] tracking-[-0.055em] sm:text-7xl">
+              <h2 id="next-event-title" className="mt-5 text-balance font-display text-5xl font-semibold leading-[0.96] tracking-[-0.045em] sm:text-7xl">
                 {event ? event.title : n.title}
               </h2>
               {event ? (

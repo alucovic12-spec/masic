@@ -47,7 +47,7 @@ export function SectionHeading({ id, eyebrow, title, intro, className }: Section
         <span aria-hidden className="h-px w-10 bg-brand-sun/70" />
         {eyebrow}
       </p>
-      <h2 id={id} className="mt-5 max-w-[14ch] text-balance font-display text-5xl font-extrabold leading-[0.9] tracking-[-0.065em] text-brand-cream sm:text-7xl lg:text-8xl">
+      <h2 id={id} className="mt-5 max-w-[14ch] text-balance font-display text-5xl font-semibold leading-[0.96] tracking-[-0.045em] text-brand-cream sm:text-7xl lg:text-8xl">
         {title}
       </h2>
       {intro ? <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed font-light text-brand-cream/65 sm:text-lg">{intro}</p> : null}

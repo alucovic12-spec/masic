@@ -22,7 +22,7 @@ export function CareersTeaser({ locale, m }: { locale: Locale; m: Messages }) {
             <span aria-hidden className="h-px w-10 bg-brand-sun/70" />
             {c.eyebrow}
           </p>
-          <h2 id="careers-title" className="mt-6 max-w-5xl text-balance font-display text-6xl font-black leading-[0.86] tracking-[-0.07em] text-brand-cream sm:text-8xl lg:text-[7rem]">
+          <h2 id="careers-title" className="mt-6 max-w-5xl text-balance font-display text-6xl font-semibold leading-[0.94] tracking-[-0.05em] text-brand-cream sm:text-8xl lg:text-[7rem]">
             {c.title}
           </h2>
           <p className="mt-7 max-w-xl text-pretty text-lg font-light leading-relaxed text-brand-cream/68">{c.text}</p>

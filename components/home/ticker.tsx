@@ -10,7 +10,7 @@ export function Ticker({ m }: { m: Messages }) {
             {m.home.ticker.map((word) => (
               <li
                 key={word}
-                className="font-accent flex items-center gap-8 text-2xl font-extrabold uppercase tracking-[-0.04em] transition-colors hover:text-brand-sun sm:text-4xl"
+                className="font-accent flex items-center gap-8 text-2xl font-medium uppercase tracking-[0.02em] transition-colors hover:text-brand-sun sm:text-4xl"
               >
                 {word}
                 <span className="h-1 w-12 bg-brand-cream/30" />

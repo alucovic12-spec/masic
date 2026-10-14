@@ -55,7 +55,7 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
                 </span>
               </div>
               <div className="p-6 sm:p-7">
-                <h3 className="max-w-[12ch] font-display text-3xl font-bold leading-[0.98] tracking-[-0.045em] text-brand-cream transition-colors group-hover:text-[#fffaf1] sm:text-4xl">{item.title}</h3>
+                <h3 className="max-w-[12ch] font-display text-3xl font-medium leading-[1.04] tracking-[-0.03em] text-brand-cream transition-colors group-hover:text-[#fffaf1] sm:text-4xl">{item.title}</h3>
                 <p className="mt-3 text-base leading-relaxed font-light text-brand-cream/58 transition-colors group-hover:text-brand-cream/78">
                   {item.text}
                 </p>
