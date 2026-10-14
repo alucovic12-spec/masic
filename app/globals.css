@@ -2,51 +2,56 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
-@custom-variant dark (&:is(.dark *));
-
+/*
+  PARLAMENT design tokens, taken from Brand Book 01.
+  Parlament crna #11110F, antracit #1C1C19, topla bijela 3000K #FFE0A3,
+  slonovača #F1E9D8, duboka zelena #183C2F, stara cigla #713C2D.
+  The token names are kept from the first build: ink = crna, cream = slonovača,
+  sun = zlatna (highlights), coral = stara cigla (main accent).
+  Every other token is derived from the --brand-* variables below.
+*/
 :root {
-  /* Brand palette: warm ivory, charcoal, olive, burgundy-terracotta */
-  --ivory: oklch(0.966 0.014 84);
-  --ivory-deep: oklch(0.93 0.02 82);
-  --charcoal: oklch(0.235 0.008 60);
-  --charcoal-soft: oklch(0.3 0.01 60);
-  --olive: oklch(0.47 0.055 118);
-  --terracotta: oklch(0.48 0.13 33);
-  --terracotta-deep: oklch(0.41 0.12 30);
+  color-scheme: light;
 
-  --background: var(--ivory);
-  --foreground: var(--charcoal);
-  --card: oklch(0.985 0.008 84);
-  --card-foreground: var(--charcoal);
-  --popover: var(--card);
-  --popover-foreground: var(--charcoal);
-  --primary: var(--terracotta);
-  --primary-foreground: var(--ivory);
-  --secondary: var(--ivory-deep);
-  --secondary-foreground: var(--charcoal);
-  --muted: var(--ivory-deep);
-  --muted-foreground: oklch(0.46 0.012 60);
-  --accent: var(--olive);
-  --accent-foreground: var(--ivory);
-  --destructive: oklch(0.5 0.18 27);
-  --destructive-foreground: var(--ivory);
-  --border: oklch(0.85 0.02 80);
-  --input: oklch(0.8 0.02 80);
-  --ring: var(--terracotta);
-  --radius: 0.125rem;
+  --brand-ink: #11110f;
+  --brand-anthracite: #1c1c19;
+  --brand-cream: #f1e9d8;
+  --brand-sand: #e6dcc3;
+  --brand-green: #183c2f;
+  --brand-sun: #ffe0a3;
+  --brand-coral: #713c2d;
+  --brand-gold: #ffe0a3;
+
+  --background: var(--brand-cream);
+  --foreground: var(--brand-ink);
+  --card: #f7f1e3;
+  --card-foreground: var(--brand-ink);
+  --popover: #f7f1e3;
+  --popover-foreground: var(--brand-ink);
+  --primary: var(--brand-coral);
+  --primary-foreground: #fff8ec;
+  --secondary: var(--brand-green);
+  --secondary-foreground: var(--brand-cream);
+  --muted: var(--brand-sand);
+  --muted-foreground: #5a5346;
+  --accent: #e3d6b6;
+  --accent-foreground: var(--brand-ink);
+  --destructive: #b42318;
+  --border: color-mix(in oklab, var(--brand-ink) 14%, transparent);
+  --input: color-mix(in oklab, var(--brand-ink) 45%, transparent);
+  --ring: var(--brand-coral);
+  --radius: 1rem;
 }
 
 @theme inline {
-  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-
-  --color-ivory: var(--ivory);
-  --color-ivory-deep: var(--ivory-deep);
-  --color-charcoal: var(--charcoal);
-  --color-charcoal-soft: var(--charcoal-soft);
-  --color-olive: var(--olive);
-  --color-terracotta: var(--terracotta);
-  --color-terracotta-deep: var(--terracotta-deep);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-anthracite: var(--brand-anthracite);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-sand: var(--brand-sand);
+  --color-brand-green: var(--brand-green);
+  --color-brand-sun: var(--brand-sun);
+  --color-brand-coral: var(--brand-coral);
+  --color-brand-gold: var(--brand-gold);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -63,84 +68,184 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --radius-sm: calc(var(--radius) - 1px);
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 2px);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
 
-  --animate-scroll-line: scroll-line 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-  --animate-rise: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-
-  @keyframes scroll-line {
-    0% { transform: scaleY(0); transform-origin: top; }
-    45% { transform: scaleY(1); transform-origin: top; }
-    55% { transform: scaleY(1); transform-origin: bottom; }
-    100% { transform: scaleY(0); transform-origin: bottom; }
-  }
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-}
-
-@utility shell {
-  margin-inline: auto;
-  width: 100%;
-  max-width: 84rem;
-  padding-inline: 1.25rem;
-  @media (width >= 40rem) {
-    padding-inline: 2rem;
-  }
-  @media (width >= 64rem) {
-    padding-inline: 3rem;
-  }
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
-  .font-display {
-    font-weight: 650;
-    letter-spacing: -0.03em;
+  * {
+    @apply border-border;
   }
 
-  * {
-    @apply border-border outline-ring/60;
-  }
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
   }
+
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background font-sans text-foreground antialiased;
+    overflow-x: clip;
   }
-  /* Subtle film grain for an editorial, tactile feel */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 60;
-    pointer-events: none;
-    opacity: 0.06;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    text-wrap: balance;
   }
-  ::selection {
-    background: var(--terracotta);
-    color: var(--ivory);
+
+  /* Heavy weight is reserved for the big page headlines. */
+  h1,
+  h2 {
+    font-weight: 600;
   }
+
+  b,
+  strong,
+  th {
+    font-weight: 500;
+  }
+
   :focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 3px;
   }
-  h1, h2, h3 {
-    text-wrap: balance;
+
+  ::selection {
+    background: var(--brand-sun);
+    color: var(--brand-ink);
   }
-  p {
-    text-wrap: pretty;
+}
+
+@layer components {
+  /*
+    Surface tones. Each one re-maps the semantic tokens for everything inside it,
+    so buttons, eyebrows and muted text stay readable without per-component colour logic.
+  */
+  .tone-green {
+    background-color: var(--brand-green);
+    color: var(--brand-cream);
+    --foreground: var(--brand-cream);
+    --card: #20493a;
+    --card-foreground: var(--brand-cream);
+    --muted: #20493a;
+    --muted-foreground: color-mix(in oklab, var(--brand-cream) 78%, transparent);
+    --primary: var(--brand-sun);
+    --primary-foreground: var(--brand-ink);
+    --border: color-mix(in oklab, var(--brand-cream) 24%, transparent);
+    --input: color-mix(in oklab, var(--brand-cream) 45%, transparent);
+    --ring: var(--brand-sun);
+  }
+
+  .tone-sun {
+    background-color: var(--brand-sun);
+    color: var(--brand-ink);
+    --primary: var(--brand-ink);
+    --primary-foreground: var(--brand-cream);
+    --muted-foreground: color-mix(in oklab, var(--brand-ink) 80%, transparent);
+    --border: color-mix(in oklab, var(--brand-ink) 28%, transparent);
+    --ring: var(--brand-ink);
+  }
+
+  .tone-ink {
+    background-color: var(--brand-ink);
+    color: var(--brand-cream);
+    --foreground: var(--brand-cream);
+    --card: var(--brand-anthracite);
+    --card-foreground: var(--brand-cream);
+    --muted-foreground: color-mix(in oklab, var(--brand-cream) 72%, transparent);
+    --primary: var(--brand-sun);
+    --primary-foreground: var(--brand-ink);
+    --border: color-mix(in oklab, var(--brand-cream) 18%, transparent);
+    --ring: var(--brand-sun);
+  }
+
+  /* Same token remap as tone-ink, but transparent so a photo behind it stays visible. */
+  .tone-photo {
+    color: var(--brand-cream);
+    --foreground: var(--brand-cream);
+    --muted-foreground: color-mix(in oklab, var(--brand-cream) 85%, transparent);
+    --primary: var(--brand-sun);
+    --primary-foreground: var(--brand-ink);
+    --border: color-mix(in oklab, var(--brand-cream) 55%, transparent);
+    --ring: var(--brand-sun);
+  }
+
+  /* Highlighter-pen underline for one emphasised line in a headline. */
+  .marker {
+    background-image: linear-gradient(transparent 58%, var(--brand-sun) 58% 90%, transparent 90%);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding-inline: 0.12em;
+    margin-inline: -0.12em;
+  }
+
+  .marquee-track {
+    animation: marquee 38s linear infinite;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.7s ease-out;
+  }
+
+  .reveal[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .fade-up {
+    animation: fade-up 0.9s ease-out both;
+  }
+
+  .hero-slide-active {
+    animation: slow-zoom 9s ease-out both;
+  }
+}
+
+@keyframes slow-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
@@ -148,11 +253,24 @@
   html {
     scroll-behavior: auto;
   }
+
+  .reveal,
+  .reveal[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fade-up,
+  .hero-slide-active,
+  .marquee-track {
+    animation: none;
+  }
+
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
 }

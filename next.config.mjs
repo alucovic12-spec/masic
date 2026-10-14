@@ -1,12 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // `STATIC_EXPORT=1 pnpm build` writes a fully static site to /out for any host
-  // (Netlify, Cloudflare Pages, GitHub Pages, cPanel). Security headers for those
-  // hosts live in public/_headers.
-  output: process.env.STATIC_EXPORT === '1' ? 'export' : undefined,
-  trailingSlash: false,
-  images: {
-    unoptimized: true,
+  poweredByHeader: false,
+  experimental: {
+    // CV uploads are capped at 5 MB, so the multipart body needs headroom above the 1 MB default.
+    serverActions: { bodySizeLimit: '6mb' },
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Strict-Transport-Security', value: 'max-age=63072000' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+        ],
+      },
+    ]
   },
 }
 

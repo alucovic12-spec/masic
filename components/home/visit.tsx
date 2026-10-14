@@ -1,35 +1,99 @@
-import { ContactDetails } from '@/components/contact-details'
-import { MapPlaceholder } from '@/components/map-placeholder'
-import { OpeningHours } from '@/components/opening-hours'
-import { Eyebrow } from '@/components/section-heading'
-import { home } from '@/content/home'
-import { ui } from '@/content/ui'
-import type { Locale } from '@/lib/i18n'
+import { Clock, Mail, MapPin, Phone, Share2 } from 'lucide-react'
+import { LinkButton } from '@/components/shared/link-button'
+import { Reveal } from '@/components/shared/reveal'
+import { Section, SectionHeading } from '@/components/shared/section'
+import { localizedPath, type Locale } from '@/lib/i18n/config'
+import type { Messages } from '@/lib/i18n/messages'
+import { site } from '@/lib/site'
 
-export function Visit({ locale }: { locale: Locale }) {
-  const { visit } = home
-  const t = ui[locale]
+const iconBox =
+  'mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-full border border-foreground/20 text-primary transition-colors group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground'
+
+export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
+  const v = m.home.visit
+  const socials = Object.entries(site.social).filter((entry): entry is [string, string] => Boolean(entry[1]))
+
+  const rows = [
+    { icon: MapPin, label: v.address, value: site.contact.address, pending: v.addressPending },
+    { icon: Clock, label: v.hours, value: site.contact.hours, pending: v.hoursPending },
+    { icon: Phone, label: v.phone, value: site.contact.phone, pending: v.phonePending },
+    { icon: Mail, label: v.email, value: site.contact.email, pending: v.emailPending },
+  ]
+
   return (
-    <section aria-labelledby="visit-title" className="bg-ivory-deep py-24 md:py-36">
-      <div className="shell grid gap-14 lg:grid-cols-12 lg:gap-8">
-        <div className="lg:col-span-5">
-          <Eyebrow>{visit.eyebrow[locale]}</Eyebrow>
-          <h2 id="visit-title" className="mt-6 font-display text-4xl leading-[1.05] tracking-tight md:text-6xl">
-            {visit.title[locale]}
-          </h2>
-          {visit.intro && <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">{visit.intro[locale]}</p>}
-          <div className="mt-12 grid gap-12 sm:grid-cols-2 lg:grid-cols-1">
-            <ContactDetails locale={locale} />
-            <div>
-              <h3 className="text-[0.7rem] uppercase tracking-[0.24em] text-muted-foreground">{t.hours.title}</h3>
-              <OpeningHours locale={locale} className="mt-4" />
+    <Section labelledBy="visit-title">
+      <div className="grid gap-14 lg:grid-cols-2">
+        <Reveal>
+          <SectionHeading id="visit-title" eyebrow={v.eyebrow} title={v.title} />
+          <dl className="mt-12 space-y-6">
+            {rows.map(({ icon: Icon, label, value, pending }) => (
+              <div key={label} className="group flex gap-4">
+                <span className={iconBox}>
+                  <Icon aria-hidden className="size-4" />
+                </span>
+                <div>
+                  <dt className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{label}</dt>
+                  <dd className={value ? 'mt-1 text-lg' : 'mt-1 text-lg text-muted-foreground'}>
+                    {value && Icon === Mail ? (
+                      <a href={`mailto:${value}`} className="inline-flex min-h-11 items-center hover:text-primary">
+                        {value}
+                      </a>
+                    ) : (
+                      (value ?? pending)
+                    )}
+                  </dd>
+                </div>
+              </div>
+            ))}
+            <div className="group flex gap-4">
+              <span className={iconBox}>
+                <Share2 aria-hidden className="size-4" />
+              </span>
+              <div>
+                <dt className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{v.social}</dt>
+                <dd className="mt-1 text-lg">
+                  {socials.length > 0 ? (
+                    <ul className="flex flex-wrap gap-x-5">
+                      {socials.map(([name, url]) => (
+                        <li key={name}>
+                          <a href={url} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center capitalize hover:text-primary">
+                            {name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <span className="text-muted-foreground">{v.socialPending}</span>
+                  )}
+                </dd>
+              </div>
             </div>
+          </dl>
+
+          <div className="mt-12 flex flex-col gap-3 sm:flex-row">
+            <LinkButton href={localizedPath(locale, 'reservations')}>{v.reserve}</LinkButton>
+            <LinkButton href={localizedPath(locale, 'contact')} variant="outline">
+              {v.contact}
+            </LinkButton>
           </div>
-        </div>
-        <div className="lg:col-span-6 lg:col-start-7">
-          <MapPlaceholder locale={locale} className="lg:sticky lg:top-28 lg:aspect-[4/5]" />
-        </div>
+        </Reveal>
+
+        <Reveal>
+          <div
+            role="img"
+            aria-label={v.addressPending}
+            className="tone-ink group relative flex aspect-[4/3] h-full min-h-72 w-full items-center justify-center overflow-hidden rounded-3xl border border-brand-gold/40 transition-colors hover:border-brand-gold"
+          >
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-[radial-gradient(circle_at_center,color-mix(in_oklab,var(--brand-gold)_22%,transparent),transparent_65%)] opacity-60 transition-opacity duration-500 group-hover:opacity-100"
+            />
+            <span className="relative flex size-20 items-center justify-center rounded-full bg-brand-gold text-brand-ink motion-safe:transition-transform motion-safe:duration-500 group-hover:-translate-y-2 group-hover:scale-110">
+              <MapPin aria-hidden className="size-9" />
+            </span>
+          </div>
+        </Reveal>
       </div>
-    </section>
+    </Section>
   )
 }
