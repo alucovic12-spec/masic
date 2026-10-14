@@ -14,7 +14,7 @@ type Tab = 'register' | 'login'
 const initialState: MemberAuthState = { status: 'idle' }
 
 const inputClass =
-  'h-11 w-full rounded-xl border border-brand-cream/12 bg-brand-cream/[0.05] px-4 text-base text-brand-cream outline-none transition-colors placeholder:text-brand-cream/35 focus-visible:border-brand-glow/55 focus-visible:ring-2 focus-visible:ring-brand-glow/15 aria-[invalid=true]:border-destructive'
+  'h-11 w-full rounded-xl border border-brand-cream/12 bg-brand-cream/[0.05] px-4 text-base text-brand-cream outline-none transition-colors placeholder:text-brand-cream/35 focus-visible:border-brand-sun/55 focus-visible:ring-2 focus-visible:ring-brand-sun/15 aria-[invalid=true]:border-destructive'
 
 function errorText(labels: Labels, code: string | undefined) {
   if (!code) return undefined

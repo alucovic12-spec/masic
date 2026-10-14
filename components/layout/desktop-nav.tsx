@@ -42,7 +42,7 @@ export function DesktopNav({ items, label, className }: { items: NavItem[]; labe
           aria-hidden
           style={indicator ? { transform: `translateX(${indicator.left}px)`, width: indicator.width } : undefined}
           className={cn(
-            'pointer-events-none absolute inset-y-1 left-0 rounded-full bg-brand-gold shadow-[0_6px_20px_-6px_rgba(255,224,163,0.7)] transition-[transform,width,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
+            'pointer-events-none absolute inset-y-1 left-0 rounded-full bg-brand-gold transition-[transform,width,opacity] duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]',
             indicator ? 'opacity-100' : 'opacity-0',
           )}
         />

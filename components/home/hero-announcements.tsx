@@ -42,7 +42,7 @@ export function HeroAnnouncements({ locale, m, events }: Props) {
             <li key={event.id}>
               <Link
                 href={localizedPath(locale, 'events', [event.id])}
-                className="group relative flex h-full overflow-hidden glow-card rounded-2xl border border-brand-glow/15 bg-brand-ink/65 backdrop-blur-xl transition-all hover:border-brand-glow/60 focus-visible:border-brand-glow"
+                className="group relative flex h-full overflow-hidden glow-card rounded-2xl border border-brand-cream/15 bg-brand-ink/65 backdrop-blur-xl transition-all hover:border-brand-sun/40 focus-visible:border-brand-sun"
               >
                 <span className="relative block w-28 shrink-0 overflow-hidden sm:w-36">
                   {event.image ? (
@@ -62,7 +62,7 @@ export function HeroAnnouncements({ locale, m, events }: Props) {
                     <time dateTime={event.start} className="font-display text-3xl leading-none text-brand-cream sm:text-4xl">
                       {day}.{month}.
                     </time>
-                    <span className="rounded-full border border-brand-glow/40 bg-brand-glow/10 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-brand-glow">
+                    <span className="rounded-full border border-brand-sun/35 bg-brand-sun/10 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-brand-sun">
                       {m.events.types[event.type]}
                     </span>
                   </span>

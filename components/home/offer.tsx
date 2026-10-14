@@ -31,7 +31,7 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
           return (
             <li
               key={item.title}
-              className="glow-card group flex flex-col overflow-hidden rounded-[1.75rem] border border-brand-glow/15 bg-[linear-gradient(145deg,#151d33,#0d1222)] lg:col-span-4 lg:[&:nth-child(1)]:col-span-7 lg:[&:nth-child(2)]:col-span-5 lg:[&:nth-child(5)]:col-span-5 lg:[&:nth-child(6)]:col-span-7"
+              className="glow-card group flex flex-col overflow-hidden rounded-[1.75rem] border border-brand-cream/10 bg-brand-anthracite lg:col-span-4 lg:[&:nth-child(1)]:col-span-7 lg:[&:nth-child(2)]:col-span-5 lg:[&:nth-child(5)]:col-span-5 lg:[&:nth-child(6)]:col-span-7"
             >
               <div className="image-reveal relative aspect-[4/3] overflow-hidden">
                 {photo ? (
@@ -43,13 +43,13 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
                     className="object-cover saturate-[0.85] motion-safe:transition-all motion-safe:duration-1000 group-hover:scale-[1.07] group-hover:saturate-125"
                   />
                 ) : (
-                  <div className="flex size-full items-center justify-center bg-brand-blue text-brand-cream">
+                  <div className="flex size-full items-center justify-center bg-brand-green text-brand-cream">
                     <Wine aria-hidden className="size-16" strokeWidth={1.5} />
                   </div>
                 )}
                 <span
                   aria-hidden
-                  className="absolute left-4 top-4 flex size-12 items-center justify-center rounded-full border border-brand-cream/20 bg-brand-ink/55 font-display text-sm font-semibold text-brand-cream backdrop-blur-xl motion-safe:transition-all group-hover:border-brand-glow/60 group-hover:bg-brand-glow/15 group-hover:shadow-[0_0_24px_-6px_var(--brand-glow)]"
+                  className="absolute left-4 top-4 flex size-12 items-center justify-center rounded-full border border-brand-cream/20 bg-brand-ink/55 font-display text-sm font-semibold text-brand-cream backdrop-blur-xl motion-safe:transition-all group-hover:border-brand-sun/45 group-hover:bg-brand-sun/10"
                 >
                   {String(index + 1).padStart(2, '0')}
                 </span>

@@ -12,12 +12,12 @@ export function Concept({ m }: { m: Messages }) {
       <div className="grid items-center gap-16 lg:grid-cols-[0.92fr_1.08fr] lg:gap-28">
         <Reveal>
           <SectionHeading id="concept-title" eyebrow={c.eyebrow} title={c.title} intro={c.text} />
-          <h3 className="mt-12 text-xs font-semibold uppercase tracking-[0.26em] text-brand-glow">{c.materialsLabel}</h3>
+          <h3 className="mt-12 text-xs font-semibold uppercase tracking-[0.26em] text-brand-sun">{c.materialsLabel}</h3>
           <ul className="mt-5 flex flex-wrap gap-2">
             {c.materials.map((material) => (
               <li
                 key={material}
-                className="cursor-default rounded-full border border-brand-cream/12 bg-brand-cream/[0.05] px-4 py-2 text-sm font-medium text-brand-cream/75 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-glow/45 hover:bg-brand-cream/[0.09] hover:text-brand-cream hover:shadow-[0_0_28px_-10px_var(--brand-glow)]"
+                className="cursor-default rounded-full border border-brand-cream/12 bg-brand-cream/[0.05] px-4 py-2 text-sm font-medium text-brand-cream/75 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-sun/40 hover:bg-brand-cream/[0.08] hover:text-brand-cream"
               >
                 {material}
               </li>
@@ -28,7 +28,7 @@ export function Concept({ m }: { m: Messages }) {
         <Reveal>
           <div className="relative mx-auto max-w-lg pb-14 pr-4 lg:max-w-none">
             <Parallax speed={50}>
-              <div className="image-reveal glow-card group relative aspect-[5/4] overflow-hidden rounded-[2.5rem] border border-brand-blue/25 shadow-[0_30px_90px_-35px_rgb(102_140_255_/_65%)]">
+              <div className="image-reveal glow-card group relative aspect-[5/4] overflow-hidden rounded-[2.5rem] border border-brand-cream/12 shadow-[0_28px_60px_-42px_rgb(0_0_0_/_80%)]">
                 <Image
                   src="/images/space/hall-oak-tables.png"
                   alt=""

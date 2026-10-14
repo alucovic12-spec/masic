@@ -43,8 +43,8 @@ type SectionHeadingProps = {
 export function SectionHeading({ id, eyebrow, title, intro, className }: SectionHeadingProps) {
   return (
     <div className={cn('max-w-3xl', className)}>
-      <p className="font-accent inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-brand-glow">
-        <span aria-hidden className="h-px w-10 bg-gradient-to-r from-brand-glow to-brand-blue" />
+      <p className="font-accent inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-brand-sun">
+        <span aria-hidden className="h-px w-10 bg-brand-sun/70" />
         {eyebrow}
       </p>
       <h2 id={id} className="mt-5 max-w-[14ch] text-balance font-display text-5xl font-extrabold leading-[0.9] tracking-[-0.065em] text-brand-cream sm:text-7xl lg:text-8xl">

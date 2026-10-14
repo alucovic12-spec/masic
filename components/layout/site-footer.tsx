@@ -12,7 +12,7 @@ export function SiteFooter({ locale, m, items }: SiteFooterProps) {
   const socials = Object.entries(site.social).filter((entry): entry is [string, string] => Boolean(entry[1]))
 
   return (
-    <footer className="tone-ink relative overflow-hidden border-t border-brand-cream/10 before:pointer-events-none before:absolute before:-left-40 before:bottom-0 before:size-96 before:rounded-full before:bg-brand-blue/10 before:blur-[110px]">
+    <footer className="tone-ink relative overflow-hidden border-t border-brand-cream/10">
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-[1.4fr_0.8fr_1fr] lg:px-8">
         <div>
           <BrandWordmark locale={locale} variant="stacked" logoClassName="text-[1.75rem]" />

@@ -17,7 +17,7 @@ export function NextEvent({ locale, m, event }: Props) {
   return (
     <Section labelledBy="next-event-title" tone="night" className="py-16 sm:py-20">
       <Reveal>
-        <div className="tone-ink glow-card group grid overflow-hidden rounded-[2rem] border border-brand-glow/20 bg-[linear-gradient(135deg,#10172b,#080b16_68%)] md:grid-cols-[1.2fr_1fr]">
+        <div className="tone-ink glow-card group grid overflow-hidden rounded-[2rem] border border-brand-cream/12 bg-brand-anthracite md:grid-cols-[1.2fr_1fr]">
           <div className="image-reveal relative min-h-72 overflow-hidden md:min-h-full">
             <Image
               src="/images/live-music.png"
@@ -29,7 +29,7 @@ export function NextEvent({ locale, m, event }: Props) {
             <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-brand-ink/70 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-brand-ink/80" />
             <span
               aria-hidden
-              className="absolute left-5 top-5 flex size-14 items-center justify-center rounded-2xl border border-white/20 bg-brand-ink/55 text-brand-glow shadow-[0_0_35px_-8px_var(--brand-glow)] backdrop-blur-xl motion-safe:transition-all motion-safe:duration-500 group-hover:scale-110 group-hover:rotate-3"
+              className="absolute left-5 top-5 flex size-14 items-center justify-center rounded-2xl border border-brand-cream/20 bg-brand-ink/70 text-brand-sun shadow-none backdrop-blur-md motion-safe:transition-all motion-safe:duration-500 group-hover:scale-110 group-hover:rotate-3"
             >
               <CalendarDays className="size-6" />
             </span>

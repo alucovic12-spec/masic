@@ -49,8 +49,7 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-28 bg-gradient-to-b from-brand-ink/80 to-transparent"
       />
 
-      <div aria-hidden className="pointer-events-none absolute -left-32 bottom-16 -z-10 size-[34rem] rounded-full bg-brand-blue/20 blur-[110px]" />
-      <div aria-hidden className="pointer-events-none absolute bottom-0 left-[38%] -z-10 size-80 rounded-full bg-brand-pulse/15 blur-[100px]" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-brand-ink/50 to-transparent" />
 
       <div className="pointer-events-none mx-auto w-full max-w-[90rem] px-4 pb-12 pt-[38svh] sm:px-6 sm:pb-16 lg:px-8 lg:pb-12 lg:pt-14 [&>*]:pointer-events-auto">
         <p className="font-accent fade-up inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-brand-gold">
@@ -64,7 +63,7 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
         >
           <span className="block">{firstLine}</span>
           {secondLine ? (
-            <span className="mt-2 block w-fit rounded-2xl border border-brand-cream/15 bg-brand-cream/[0.08] px-4 py-2 text-[#fffaf1] shadow-[0_0_45px_-12px_rgb(255_246_232_/_38%)] backdrop-blur-xl sm:px-6">
+            <span className="mt-2 block w-fit rounded-2xl border border-brand-cream/20 bg-brand-ink/40 px-4 py-2 text-brand-cream shadow-none backdrop-blur-md sm:px-6">
               {secondLine}
             </span>
           ) : null}
@@ -94,7 +93,7 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
           {h.moments.map((moment) => (
             <li
               key={moment}
-              className="rounded-full border border-brand-glow/20 bg-white/[0.06] px-3.5 py-1.5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-glow/70 hover:bg-brand-glow/10 hover:shadow-[0_0_24px_-6px_var(--brand-glow)]"
+              className="rounded-full border border-brand-cream/20 bg-white/[0.06] px-3.5 py-1.5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-sun/55 hover:bg-brand-cream/[0.09] hover:text-brand-cream"
             >
               {moment}
             </li>

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 export const fieldClass =
-  'mt-2 block w-full rounded-xl border border-brand-cream/12 bg-brand-cream/[0.05] px-4 py-3 text-base text-brand-cream placeholder:text-brand-cream/35 focus-visible:border-brand-glow/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-glow/15 aria-[invalid=true]:border-destructive'
+  'mt-2 block w-full rounded-xl border border-brand-cream/12 bg-brand-cream/[0.05] px-4 py-3 text-base text-brand-cream placeholder:text-brand-cream/35 focus-visible:border-brand-sun/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-sun/15 aria-[invalid=true]:border-destructive'
 
 type Common = { id: string; label: string; error?: string; hint?: string }
 

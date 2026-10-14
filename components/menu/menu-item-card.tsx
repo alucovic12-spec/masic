@@ -19,7 +19,7 @@ export function MenuItemCard({ item, labels, formatPrice }: Props) {
   return (
     <li
       className={cn(
-        'glow-card flex gap-4 rounded-2xl border border-brand-cream/10 bg-brand-cream/[0.04] p-4 transition-all hover:border-brand-glow/35 hover:bg-brand-cream/[0.065] sm:p-5',
+        'glow-card flex gap-4 rounded-2xl border border-brand-cream/10 bg-brand-cream/[0.04] p-4 transition-all hover:border-brand-sun/30 hover:bg-brand-cream/[0.065] sm:p-5',
         item.unavailable && 'opacity-60',
       )}
     >

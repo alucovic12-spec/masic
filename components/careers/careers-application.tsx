@@ -235,8 +235,8 @@ function Application({ locale, labels, aside, onReset }: Props & { onReset: () =
                 aria-pressed={selected}
                 onClick={() => chooseType(value)}
                 className={cn(
-                  'glow-card flex flex-col items-start gap-3 rounded-2xl border bg-brand-cream/[0.04] p-6 text-left transition-all hover:border-brand-glow/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-glow',
-                  selected ? 'border-brand-glow/55 bg-brand-glow/[0.08]' : 'border-brand-cream/10',
+                  'glow-card flex flex-col items-start gap-3 rounded-2xl border bg-brand-cream/[0.04] p-6 text-left transition-all hover:border-brand-sun/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sun',
+                  selected ? 'border-brand-sun/55 bg-brand-sun/[0.08]' : 'border-brand-cream/10',
                 )}
               >
                 <span className="flex size-11 items-center justify-center rounded-full bg-primary/15 text-primary">
@@ -257,7 +257,7 @@ function Application({ locale, labels, aside, onReset }: Props & { onReset: () =
         <button
           type="button"
           onClick={startQuick}
-          className="mt-4 flex w-full items-center gap-4 rounded-2xl border border-brand-glow/25 bg-brand-glow/[0.05] p-5 text-left transition-all hover:-translate-y-1 hover:border-brand-glow/50 hover:bg-brand-glow/[0.09] hover:shadow-[0_20px_60px_-30px_var(--brand-glow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-glow"
+          className="mt-4 flex w-full items-center gap-4 rounded-2xl border border-brand-sun/25 bg-brand-sun/[0.05] p-5 text-left transition-all hover:-translate-y-1 hover:border-brand-sun/50 hover:bg-brand-sun/[0.09] hover:shadow-[0_20px_42px_-34px_rgb(0_0_0_/_75%)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sun"
         >
           <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
             <Zap className="size-5" aria-hidden="true" />

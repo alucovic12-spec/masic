@@ -22,16 +22,16 @@ export function LoyaltyTeaser({ locale, m }: { locale: Locale; m: Messages }) {
           <div className="group relative isolate mx-auto w-full max-w-md py-6">
             <div
               aria-hidden
-              className="absolute inset-x-6 inset-y-0 -z-10 rounded-[2.5rem] bg-gradient-to-br from-brand-glow via-brand-blue to-brand-pulse opacity-60 blur-sm motion-safe:transition-all motion-safe:duration-700 group-hover:scale-105 group-hover:opacity-90"
+              className="absolute inset-x-6 inset-y-0 -z-10 rounded-[2.5rem] bg-brand-sun/25 motion-safe:transition-all motion-safe:duration-700 group-hover:translate-y-1"
             />
             <div
               role="img"
               aria-label={m.nav.loyalty}
-              className="tone-ink relative aspect-[1.586/1] w-full overflow-hidden rounded-[2.25rem] border border-brand-cream/18 p-7 shadow-[0_30px_100px_-36px_rgb(102_140_255_/_70%)] motion-safe:transition-all motion-safe:duration-700 group-hover:-translate-y-2 group-hover:border-brand-glow/45 group-hover:shadow-[0_36px_120px_-30px_rgb(110_231_242_/_45%)]"
+              className="tone-ink relative aspect-[1.586/1] w-full overflow-hidden rounded-[2.25rem] border border-brand-cream/18 p-7 shadow-[0_28px_60px_-40px_rgb(0_0_0_/_85%)] motion-safe:transition-all motion-safe:duration-700 group-hover:-translate-y-1 group-hover:border-brand-sun/35"
             >
               <div
                 aria-hidden
-                className="absolute -right-12 -top-12 size-48 rounded-full bg-brand-pulse/35 blur-2xl motion-safe:transition-transform motion-safe:duration-700 group-hover:scale-125"
+                className="absolute -right-12 -top-12 size-48 rounded-full bg-brand-sun/10 motion-safe:transition-transform motion-safe:duration-700 group-hover:scale-125"
               />
               <p className="relative font-display text-2xl font-extrabold uppercase tracking-[-0.05em] text-brand-cream">Parlament</p>
               <p className="relative mt-1 text-[0.625rem] uppercase tracking-[0.34em] text-brand-cream/80">People’s Bar</p>

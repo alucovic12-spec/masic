@@ -31,7 +31,7 @@ export function GalleryTeaser({ locale, m }: { locale: Locale; m: Messages }) {
           <li
             key={label}
             className={cn(
-              'glow-card image-reveal group relative overflow-hidden rounded-[1.75rem] border border-brand-blue/20 bg-brand-ink motion-safe:transition-all motion-safe:duration-700 lg:group-hover/list:opacity-55 lg:group-hover/list:scale-[0.98] lg:hover:!scale-[1.02] lg:hover:!opacity-100',
+              'glow-card image-reveal group relative overflow-hidden rounded-[1.75rem] border border-brand-cream/12 bg-brand-ink motion-safe:transition-all motion-safe:duration-700 lg:group-hover/list:opacity-55 lg:group-hover/list:scale-[0.98] lg:hover:!scale-[1.02] lg:hover:!opacity-100',
               tiles[index].position,
             )}
           >
@@ -46,7 +46,7 @@ export function GalleryTeaser({ locale, m }: { locale: Locale; m: Messages }) {
               aria-hidden
               className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-brand-ink/90 to-transparent"
             />
-            <p className="font-accent absolute bottom-4 left-4 rounded-full border border-white/20 bg-brand-ink/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-cream backdrop-blur-xl motion-safe:transition-all motion-safe:duration-500 group-hover:-translate-y-1 group-hover:border-brand-glow/70 group-hover:shadow-[0_0_24px_-6px_var(--brand-glow)]">
+            <p className="font-accent absolute bottom-4 left-4 rounded-full border border-white/20 bg-brand-ink/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-cream backdrop-blur-xl motion-safe:transition-all motion-safe:duration-500 group-hover:-translate-y-1 group-hover:border-brand-sun/45 group-hover:bg-brand-ink/75">
               {label}
             </p>
           </li>

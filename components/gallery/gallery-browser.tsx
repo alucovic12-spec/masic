@@ -54,8 +54,8 @@ export function GalleryBrowser({
             className={cn(
               'h-10 rounded-full border px-4 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
               filter === item.id
-                ? 'border-brand-cream bg-brand-cream text-brand-ink shadow-[0_0_30px_-12px_rgb(255_246_232_/_65%)]'
-                : 'border-brand-cream/12 bg-brand-cream/[0.04] text-brand-cream/60 hover:border-brand-glow/45 hover:text-brand-cream',
+                ? 'border-brand-cream bg-brand-cream text-brand-ink'
+                : 'border-brand-cream/12 bg-brand-cream/[0.04] text-brand-cream/60 hover:border-brand-sun/40 hover:text-brand-cream',
             )}
           >
             {item.label}
@@ -78,7 +78,7 @@ export function GalleryBrowser({
                 aria-label={`${labels.open}: ${item.caption}`}
                 onClick={() => setOpenIndex(index)}
                 className={cn(
-                  'glow-card group relative block w-full overflow-hidden rounded-[1.5rem] border border-brand-cream/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-glow focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ink',
+                  'glow-card group relative block w-full overflow-hidden rounded-[1.5rem] border border-brand-cream/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-sun focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ink',
                   tileShape[item.aspect],
                 )}
               >
