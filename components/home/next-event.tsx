@@ -17,7 +17,7 @@ export function NextEvent({ locale, m, event }: Props) {
   return (
     <Section labelledBy="next-event-title" className="py-[35px] sm:py-[35px] sm:pb-[51px]">
       <Reveal>
-        <div className="tone-ink ticket-edge group grid overflow-hidden border-2 border-brand-ink shadow-[14px_14px_0_0_var(--brand-coral)] motion-safe:transition-all motion-safe:duration-500 hover:shadow-[20px_20px_0_0_var(--brand-green)] motion-safe:hover:-translate-x-1 motion-safe:hover:-translate-y-1 md:grid-cols-[1.05fr_1.45fr]">
+        <div className="tone-ink ticket-edge group grid overflow-hidden border-2 border-brand-ink shadow-[14px_14px_0_0_var(--brand-violet)] motion-safe:transition-all motion-safe:duration-500 hover:shadow-[20px_20px_0_0_var(--brand-green)] motion-safe:hover:-translate-x-1 motion-safe:hover:-translate-y-1 md:grid-cols-[1.05fr_1.45fr]">
           <div className="image-reveal relative min-h-72 overflow-hidden md:min-h-full">
             <Image
               src="/images/live-music.png"

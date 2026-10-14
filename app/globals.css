@@ -12,7 +12,7 @@
   --brand-sand: #dbe9e8;
   --brand-green: #236c72;
   --brand-sun: #ffe0a3;
-  --brand-coral: #ff5a5f;
+  --brand-violet: #7c5cff;
   --brand-gold: #ffe0a3;
 
   --background: var(--brand-cream);
@@ -21,7 +21,7 @@
   --card-foreground: var(--brand-ink);
   --popover: #fff9f1;
   --popover-foreground: var(--brand-ink);
-  --primary: var(--brand-coral);
+  --primary: var(--brand-violet);
   --primary-foreground: var(--brand-ink);
   --secondary: var(--brand-green);
   --secondary-foreground: #fff9f1;
@@ -32,7 +32,7 @@
   --destructive: #b42318;
   --border: color-mix(in oklab, var(--brand-ink) 14%, transparent);
   --input: color-mix(in oklab, var(--brand-ink) 45%, transparent);
-  --ring: var(--brand-coral);
+  --ring: var(--brand-violet);
   --radius: 1.15rem;
 }
 
@@ -43,7 +43,7 @@
   --color-brand-sand: var(--brand-sand);
   --color-brand-green: var(--brand-green);
   --color-brand-sun: var(--brand-sun);
-  --color-brand-coral: var(--brand-coral);
+  --color-brand-violet: var(--brand-violet);
   --color-brand-gold: var(--brand-gold);
 
   --color-background: var(--background);
@@ -139,8 +139,8 @@
     --ring: var(--brand-sun);
   }
 
-  .tone-coral {
-    background-color: var(--brand-coral);
+  .tone-violet {
+    background-color: var(--brand-violet);
     color: var(--brand-ink);
     --foreground: var(--brand-ink);
     --primary: var(--brand-ink);

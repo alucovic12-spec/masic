@@ -82,7 +82,7 @@ export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
           <div
             role="img"
             aria-label={v.addressPending}
-            className="tone-ink soft-noise group relative flex aspect-[4/3] h-full min-h-72 w-full items-center justify-center overflow-hidden rounded-[4rem_1rem_4rem_1rem] border-2 border-brand-ink shadow-[16px_16px_0_0_var(--brand-coral)] transition-all hover:shadow-[20px_20px_0_0_var(--brand-green)]"
+            className="tone-ink soft-noise group relative flex aspect-[4/3] h-full min-h-72 w-full items-center justify-center overflow-hidden rounded-[4rem_1rem_4rem_1rem] border-2 border-brand-ink shadow-[16px_16px_0_0_var(--brand-violet)] transition-all hover:shadow-[20px_20px_0_0_var(--brand-green)]"
           >
             <div
               aria-hidden

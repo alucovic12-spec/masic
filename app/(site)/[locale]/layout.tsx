@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Bricolage_Grotesque, DM_Sans } from 'next/font/google'
+import { DM_Sans, Syne } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import { MobileNav } from '@/components/layout/mobile-nav'
@@ -12,7 +12,7 @@ import { getNavItems, splitMobileNav } from '@/lib/navigation'
 import { getSiteUrl, site } from '@/lib/site'
 import '../../globals.css'
 
-const display = Bricolage_Grotesque({
+const display = Syne({
   subsets: ['latin', 'latin-ext'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-heading',

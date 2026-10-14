@@ -31,7 +31,7 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
           return (
             <li
               key={item.title}
-              className="group flex flex-col overflow-hidden rounded-[2.5rem_0.8rem_2.5rem_0.8rem] border-2 border-brand-cream/20 bg-card motion-safe:transition-all motion-safe:duration-500 odd:rotate-[-0.6deg] even:rotate-[0.6deg] hover:rotate-0 hover:border-brand-coral hover:bg-brand-coral hover:text-brand-ink motion-safe:hover:-translate-y-3 hover:shadow-[10px_10px_0_0_var(--brand-sun)]"
+              className="group flex flex-col overflow-hidden rounded-[2.5rem_0.8rem_2.5rem_0.8rem] border-2 border-brand-cream/20 bg-card motion-safe:transition-all motion-safe:duration-500 odd:rotate-[-0.6deg] even:rotate-[0.6deg] hover:rotate-0 hover:border-brand-violet hover:bg-brand-violet hover:text-brand-ink motion-safe:hover:-translate-y-3 hover:shadow-[10px_10px_0_0_var(--brand-sun)]"
             >
               <div className="image-reveal relative aspect-[4/3] overflow-hidden">
                 {photo ? (
@@ -43,7 +43,7 @@ export function Offer({ locale, m }: { locale: Locale; m: Messages }) {
                     className="object-cover saturate-75 motion-safe:transition-all motion-safe:duration-700 group-hover:scale-110 group-hover:saturate-100"
                   />
                 ) : (
-                  <div className="flex size-full items-center justify-center bg-brand-coral text-brand-cream">
+                  <div className="flex size-full items-center justify-center bg-brand-violet text-brand-cream">
                     <Wine aria-hidden className="size-16" strokeWidth={1.5} />
                   </div>
                 )}
