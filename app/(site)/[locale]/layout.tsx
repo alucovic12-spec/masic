@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { DM_Sans, Syne } from 'next/font/google'
+import { DM_Sans, Space_Grotesk } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import { MobileNav } from '@/components/layout/mobile-nav'
@@ -12,9 +12,9 @@ import { getNavItems, splitMobileNav } from '@/lib/navigation'
 import { getSiteUrl, site } from '@/lib/site'
 import '../../globals.css'
 
-const display = Syne({
+const display = Space_Grotesk({
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-heading',
   display: 'swap',
 })

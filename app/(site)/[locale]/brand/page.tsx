@@ -26,7 +26,7 @@ const palette = [
   { name: 'Topla bijela 3000K', hex: '#FFE0A3', swatch: 'bg-brand-gold', light: true },
   { name: 'Puderasto jutro', hex: '#F8EFF2', swatch: 'bg-brand-cream', light: true },
   { name: 'Petrol', hex: '#236C72', swatch: 'bg-brand-green', light: false },
-  { name: 'Električna ljubičasta', hex: '#7C5CFF', swatch: 'bg-brand-violet', light: false },
+  { name: 'Svježa limeta', hex: '#C7F36B', swatch: 'bg-brand-lime', light: true },
 ]
 
 const rules = [

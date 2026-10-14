@@ -61,7 +61,7 @@ export function Hero({ locale, m, events = [] }: { locale: Locale; m: Messages; 
         >
           <span className="block">{firstLine}</span>
           {secondLine ? (
-            <span className="mt-3 block w-fit -rotate-1 rounded-[1.25rem_1.25rem_1.25rem_0.3rem] bg-brand-violet px-4 py-1 text-brand-ink sm:px-6">
+            <span className="mt-3 block w-fit -rotate-1 rounded-[1.25rem_1.25rem_1.25rem_0.3rem] bg-brand-lime px-4 py-1 text-brand-ink sm:px-6">
               {secondLine}
             </span>
           ) : null}

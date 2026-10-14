@@ -22,7 +22,7 @@ export function LoyaltyTeaser({ locale, m }: { locale: Locale; m: Messages }) {
           <div className="group relative isolate mx-auto w-full max-w-md py-6">
             <div
               aria-hidden
-              className="absolute inset-x-6 inset-y-0 -z-10 rotate-3 rounded-[3rem_1rem_3rem_1rem] bg-brand-violet motion-safe:transition-transform motion-safe:duration-500 group-hover:rotate-6"
+              className="absolute inset-x-6 inset-y-0 -z-10 rotate-3 rounded-[3rem_1rem_3rem_1rem] bg-brand-lime motion-safe:transition-transform motion-safe:duration-500 group-hover:rotate-6"
             />
             <div
               role="img"
@@ -31,7 +31,7 @@ export function LoyaltyTeaser({ locale, m }: { locale: Locale; m: Messages }) {
             >
               <div
                 aria-hidden
-                className="absolute -right-12 -top-12 size-48 rounded-full bg-brand-violet/60 motion-safe:transition-transform motion-safe:duration-700 group-hover:scale-125"
+                className="absolute -right-12 -top-12 size-48 rounded-full bg-brand-lime/60 motion-safe:transition-transform motion-safe:duration-700 group-hover:scale-125"
               />
               <p className="relative font-display text-2xl uppercase tracking-tight text-brand-gold">Parlament</p>
               <p className="relative mt-1 text-[0.625rem] uppercase tracking-[0.34em] text-brand-cream/80">People’s Bar</p>

@@ -31,7 +31,7 @@ export function GalleryTeaser({ locale, m }: { locale: Locale; m: Messages }) {
           <li
             key={label}
             className={cn(
-              'image-reveal group relative overflow-hidden border-2 border-brand-ink bg-brand-ink shadow-[6px_6px_0_0_var(--brand-green)] motion-safe:transition-all motion-safe:duration-500 odd:rounded-[2.5rem_0.6rem_2.5rem_0.6rem] even:rounded-[0.6rem_2.5rem_0.6rem_2.5rem] lg:group-hover/list:opacity-50 lg:hover:!opacity-100 lg:hover:-translate-y-2 lg:hover:shadow-[10px_10px_0_0_var(--brand-violet)]',
+              'image-reveal group relative overflow-hidden border-2 border-brand-ink bg-brand-ink shadow-[6px_6px_0_0_var(--brand-green)] motion-safe:transition-all motion-safe:duration-500 odd:rounded-[2.5rem_0.6rem_2.5rem_0.6rem] even:rounded-[0.6rem_2.5rem_0.6rem_2.5rem] lg:group-hover/list:opacity-50 lg:hover:!opacity-100 lg:hover:-translate-y-2 lg:hover:shadow-[10px_10px_0_0_var(--brand-lime)]',
               tiles[index].position,
             )}
           >
@@ -46,7 +46,7 @@ export function GalleryTeaser({ locale, m }: { locale: Locale; m: Messages }) {
               aria-hidden
               className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-brand-ink/90 to-transparent"
             />
-            <p className="font-accent absolute bottom-4 left-4 rounded-[0.9rem_0.9rem_0.9rem_0.2rem] bg-brand-sun px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-ink motion-safe:transition-all motion-safe:duration-500 group-hover:-translate-y-1 group-hover:-rotate-2 group-hover:bg-brand-violet">
+            <p className="font-accent absolute bottom-4 left-4 rounded-[0.9rem_0.9rem_0.9rem_0.2rem] bg-brand-sun px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-ink motion-safe:transition-all motion-safe:duration-500 group-hover:-translate-y-1 group-hover:-rotate-2 group-hover:bg-brand-lime">
               {label}
             </p>
           </li>
