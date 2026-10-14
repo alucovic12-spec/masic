@@ -8,7 +8,7 @@ export function Concept({ m }: { m: Messages }) {
   const c = m.home.concept
 
   return (
-    <Section labelledBy="concept-title" tone="dusk">
+    <Section labelledBy="concept-title" tone="dusk" sectionClassName="!pt-[43px] !pb-[46px]">
       <div className="grid items-center gap-16 lg:grid-cols-[0.92fr_1.08fr] lg:gap-28">
         <Reveal>
           <SectionHeading id="concept-title" eyebrow={c.eyebrow} title={c.title} intro={c.text} />

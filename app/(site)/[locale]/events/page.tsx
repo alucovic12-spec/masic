@@ -3,7 +3,8 @@ import { EventBrowser } from '@/components/events/event-browser'
 import { getEvents } from '@/lib/events/get-events'
 import type { Locale } from '@/lib/i18n/config'
 import { getMessages } from '@/lib/i18n/messages'
-import { buildMetadata } from '@/lib/seo'
+import { JsonLd } from '@/components/shared/json-ld'
+import { breadcrumbJsonLd, buildMetadata } from '@/lib/seo'
 import { site } from '@/lib/site'
 
 export const revalidate = 3600
@@ -23,6 +24,7 @@ export default async function EventsPage({ params }: Props) {
 
   return (
     <main className="interior-page">
+      <JsonLd data={breadcrumbJsonLd(locale, 'events')} />
       <header className="interior-hero">
         <div className="interior-hero-inner">
         <p className="interior-eyebrow">{m.events.eyebrow}</p>

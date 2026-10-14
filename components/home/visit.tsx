@@ -21,7 +21,7 @@ export function Visit({ locale, m }: { locale: Locale; m: Messages }) {
   ]
 
   return (
-    <Section labelledBy="visit-title" tone="sand">
+    <Section labelledBy="visit-title" tone="sand" sectionClassName="!pt-[76px] !pb-[78px]">
       <div className="grid gap-14 lg:grid-cols-2">
         <Reveal>
           <SectionHeading id="visit-title" eyebrow={v.eyebrow} title={v.title} />

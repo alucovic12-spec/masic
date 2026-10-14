@@ -9,7 +9,7 @@ export function LoyaltyTeaser({ locale, m }: { locale: Locale; m: Messages }) {
   const l = m.home.loyalty
 
   return (
-    <Section labelledBy="loyalty-title" tone="green">
+    <Section labelledBy="loyalty-title" tone="green" sectionClassName="!pt-[85px] !pb-[61px]">
       <div className="grid items-center gap-16 lg:grid-cols-2">
         <Reveal>
           <SectionHeading id="loyalty-title" eyebrow={l.eyebrow} title={l.title} intro={l.text} />

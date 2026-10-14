@@ -6,7 +6,8 @@ import type { Locale } from '@/lib/i18n/config'
 import { getMessages } from '@/lib/i18n/messages'
 import { signOutMember } from '@/lib/loyalty/actions'
 import type { LoyaltyMember } from '@/lib/loyalty/types'
-import { buildMetadata } from '@/lib/seo'
+import { JsonLd } from '@/components/shared/json-ld'
+import { breadcrumbJsonLd, buildMetadata } from '@/lib/seo'
 import { createClient } from '@/lib/supabase/server'
 
 type Props = {
@@ -83,6 +84,7 @@ export default async function LoyaltyPage({ params, searchParams }: Props) {
 
   return (
     <main className="interior-page">
+      <JsonLd data={breadcrumbJsonLd(locale, 'loyalty')} />
       <header className="interior-hero">
         <div className="interior-hero-inner">
           <p className="interior-eyebrow">{t.eyebrow}</p>

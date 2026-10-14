@@ -7,10 +7,12 @@ import { EventActions } from '@/components/events/event-actions'
 import { EventBadges } from '@/components/events/event-badges'
 import { EventCta } from '@/components/events/event-cta'
 import { eventPriceText } from '@/components/events/event-price'
+import { JsonLd } from '@/components/shared/json-ld'
 import { PhotoPlaceholder } from '@/components/shared/photo-placeholder'
 import { getEvent, getEventIds } from '@/lib/events/get-events'
 import { isLocale, localizedPath, locales, type Locale } from '@/lib/i18n/config'
 import { getMessages } from '@/lib/i18n/messages'
+import { absoluteUrl, alternateLanguages, breadcrumbJsonLd, defaultOgImage } from '@/lib/seo'
 import { getSiteUrl, site } from '@/lib/site'
 
 export const revalidate = 3600
@@ -29,15 +31,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const m = getMessages(locale)
   const canonical = localizedPath(locale, 'events', [slug])
-  const languages: Record<string, string> = Object.fromEntries(
-    locales.map((l) => [l, localizedPath(l, 'events', [slug])]),
-  )
-  languages['x-default'] = localizedPath('hr', 'events', [slug])
+  const image = event.image ? { url: event.image, alt: event.title } : defaultOgImage
 
   return {
     title: event.title,
     description: event.description,
-    alternates: { canonical, languages },
+    alternates: { canonical, languages: alternateLanguages('events', [slug]) },
     openGraph: {
       type: 'website',
       siteName: site.name,
@@ -45,8 +44,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: event.description,
       url: canonical,
       locale: m.meta.ogLocale,
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => getMessages(l).meta.ogLocale),
+      images: [image],
     },
-    twitter: { card: 'summary_large_image', title: event.title, description: event.description },
+    twitter: { card: 'summary_large_image', title: event.title, description: event.description, images: [image.url] },
   }
 }
 
@@ -73,7 +74,10 @@ export default async function EventPage({ params }: Props) {
         eventStatus:
           event.status === 'cancelled' ? 'https://schema.org/EventCancelled' : 'https://schema.org/EventScheduled',
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-        url: `${getSiteUrl()}${localizedPath(locale, 'events', [slug])}`,
+        url: absoluteUrl(localizedPath(locale, 'events', [slug])),
+        inLanguage: locale,
+        image: absoluteUrl(event.image ?? defaultOgImage.url),
+        organizer: { '@type': 'Organization', name: site.name, url: getSiteUrl() },
         location: {
           '@type': 'Place',
           name: site.name,
@@ -90,6 +94,7 @@ export default async function EventPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
         />
       ) : null}
+      <JsonLd data={breadcrumbJsonLd(locale, 'events', { name: event.title, rest: [slug] })} />
 
       <Link
         href={eventsHref}
@@ -115,7 +120,7 @@ export default async function EventPage({ params }: Props) {
         <div>
           {event.image ? (
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-              <Image src={event.image} alt="" fill priority sizes="(min-width: 1024px) 600px, 100vw" className="object-cover" />
+              <Image src={event.image} alt={event.title} fill priority sizes="(min-width: 1024px) 600px, 100vw" className="object-cover" />
             </div>
           ) : (
             <PhotoPlaceholder label={labels.photoLabel} className="aspect-[16/9]" />
